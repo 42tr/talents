@@ -1,0 +1,91 @@
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.directory
+
+# IDE和编辑器相关
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+/.vs/
+.project
+.classpath
+.settings/
+*.iml
+*.iws
+*.ipr
+*.bak
+
+# 编译生成的文件
+/target/
+/bin/
+/out/
+/build/
+/dist/
+*.class
+*.jar
+*.war
+*.ear
+
+# 日志和数据库
+*.log
+*.sqlite
+*.db
+/logs/
+
+# 依赖管理
+/node_modules/
+/bower_components/
+/jspm_packages/
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
+/package-lock.json
+/yarn.lock
+/.pnp
+/.pnp.js
+/.gradle/
+/.mvn/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/pom.xml.next
+/release.properties
+/dependency-reduced-pom.xml
+
+# 前端构建输出
+/dist/
+/build/
+/.cache/
+/.nuxt/
+/.next/
+/.vuepress/dist
+/coverage/
+/.nyc_output/
+/storybook-static/
+
+# 环境配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+/config/local.*
+
+# 临时文件
+/tmp/
+/temp/
+*.tmp
+
+# 其他
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+/typings/
+.eslintcache
+.stylelintcache
+.vercel

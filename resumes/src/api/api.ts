@@ -4,3 +4,14 @@ import type { Talent } from '../types/talent'
 export function getTalentList(): Promise<Talent[]> {
   return http.get('/talents')
 }
+
+export function uploadResume(file: File) {
+  const formData = new FormData()
+  formData.append('resume', file)
+  console.log(formData)
+  return http.post('/talent/upload-resume', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+}

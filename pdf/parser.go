@@ -55,6 +55,7 @@ const PROMPT = `<optimized_prompt>
 4. 学历只返回最高的
 5. 技能样例：Java、Python、C、大模型应用、大模型微调
 6. 返回的手机号为数字，不要返回字符串
+7. 输出时不要返回 markdown 标识
 </instructions>
 
 <output_format>
@@ -84,6 +85,9 @@ func GenerateTalentFromPDF(pdfBytes []byte) (*db.Talent, error) {
 
 	// Parse the extracted text to create a Talent
 	talent := &db.Talent{}
+
+	resp = strings.ReplaceAll(resp, "```json", "")
+	resp = strings.ReplaceAll(resp, "```", "")
 
 	err = json.Unmarshal([]byte(resp), &talent)
 	if err != nil {

@@ -11,8 +11,9 @@ var cli *openai.Client
 func init() {
 
 	// 1. 创建自定义配置
-	config := openai.DefaultConfig("your-api-key")
-	config.BaseURL = "http://222.190.139.186:1025/v1"
+	config := openai.DefaultConfig("sk-2f913ff9b3414a7591fb2c2f79396fda")
+	// config.BaseURL = "http://222.190.139.186:1025/v1"
+	config.BaseURL = "https://api.deepseek.com/v1"
 
 	// 2. 使用配置创建客户端
 	cli = openai.NewClientWithConfig(config)
@@ -23,7 +24,8 @@ func Chat(query string) (string, error) {
 	resp, err := cli.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
-			Model: "Qwen2.5-14B-Instruct",
+			// Model: "Qwen3-14B",
+			Model: "deepseek-chat",
 			Messages: []openai.ChatCompletionMessage{
 				{Role: "user", Content: query},
 			},

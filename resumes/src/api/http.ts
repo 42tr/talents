@@ -4,7 +4,7 @@ import type { AxiosInstance, AxiosResponse } from 'axios'
 
 const http: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL, // 根据需要配置
-  timeout: 10000
+  timeout: 60_000
 })
 
 // 请求拦截器

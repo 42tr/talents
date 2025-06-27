@@ -273,7 +273,7 @@ function showTalentDetails(phone) {
   }
 
   // Add job position to details
-  const jobPositionHtml = `<span class="job-position" style="color: ${scoreColor}">${escapeHtml(talent.jobPosition || "未指定")}</span>`;
+  const jobPositionHtml = `<span class="job-position-detail">${escapeHtml(talent.jobPosition || "未指定")}</span>`;
 
   detailsContainer.innerHTML = `
         <div class="row mb-3">

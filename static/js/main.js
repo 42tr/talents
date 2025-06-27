@@ -28,7 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener(
     "mouseenter",
     function (e) {
-      if (e.target.classList.contains("with-hover")) {
+      if (
+        e.target &&
+        e.target.classList &&
+        e.target.classList.contains("with-hover")
+      ) {
         const tooltipText = e.target.textContent;
         showTooltip(e.target, tooltipText);
       }
@@ -46,6 +50,9 @@ function loadTalents(query = "") {
     ? `/talents?query=${encodeURIComponent(query)}`
     : "/talents";
 
+  // Add cyberpunk loading effect
+  showCyberLoading(true);
+
   fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -55,11 +62,12 @@ function loadTalents(query = "") {
     })
     .then((data) => {
       talentsData = data;
+      showCyberLoading(false);
       renderTalentList(data);
     })
     .catch((error) => {
       console.error("Error loading talents:", error);
-      showAlert("加载人才数据失败，请稍后重试。", "danger");
+      showAlert("[ 错误 ] 数据库连接失败 - 系统异常", "danger");
     });
 }
 
@@ -87,13 +95,15 @@ function renderTalentList(talents) {
     // Calculate color based on score
     const scoreColor = getScoreColor(talent.averageScore);
 
-    // Set talent data in the card
-    card.querySelector(".talent-name").textContent = talent.name || "-";
-    card.querySelector(".talent-name").style.color = scoreColor;
+    // Set talent data in the card with glitch effect
+    const nameElement = card.querySelector(".talent-name");
+    nameElement.textContent = talent.name || "UNKNOWN";
+    nameElement.style.color = scoreColor;
+    addGlitchEffect(nameElement);
 
     const jobPositionElement = card.querySelector(".job-position");
-    jobPositionElement.textContent = talent.jobPosition || "未指定岗位";
-    jobPositionElement.style.color = scoreColor;
+    jobPositionElement.textContent = talent.jobPosition || "未分配职位";
+    addTypewriterEffect(jobPositionElement);
 
     // Set scores
     if (talent.experienceScore) {
@@ -388,7 +398,7 @@ function handleResumeUpload() {
   const uploadStatus = document.getElementById("uploadStatus");
 
   if (!fileInput.files.length) {
-    showAlert("请选择要上传的PDF简历文件。", "danger", uploadStatus);
+    showAlert("[ 错误 ] 未检测到档案 - 请选择PDF格式", "danger", uploadStatus);
     return;
   }
 
@@ -399,7 +409,7 @@ function handleResumeUpload() {
   }
 
   // Show loading state
-  showAlert("正在上传并解析简历，请稍候...", "info", uploadStatus);
+  showAlert("[ 传输中 ] 档案上传中 - 解析协议启动...", "info", uploadStatus);
 
   // Create form data
   const formData = new FormData();
@@ -417,7 +427,7 @@ function handleResumeUpload() {
       return response.json();
     })
     .then((data) => {
-      showAlert("简历上传并解析成功!", "success", uploadStatus);
+      showAlert("[ 成功 ] 档案已同步至数据库", "success", uploadStatus);
       document.getElementById("resumeUploadForm").reset();
 
       // Hide the upload modal
@@ -435,7 +445,7 @@ function handleResumeUpload() {
     })
     .catch((error) => {
       console.error("Error uploading resume:", error);
-      showAlert("简历上传失败，请稍后重试。", "danger", uploadStatus);
+      showAlert("[ 传输失败 ] 网络异常 - 请重新尝试", "danger", uploadStatus);
     });
 }
 
@@ -451,7 +461,7 @@ function handleSearch() {
 function showAlert(message, type, container = null) {
   const alert = document.createElement("div");
   alert.className = `alert alert-${type}`;
-  alert.textContent = message;
+  alert.innerHTML = `<span style="font-family: 'Orbitron', monospace;">${message}</span>`;
 
   if (container) {
     container.innerHTML = "";
@@ -491,3 +501,220 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+// Cyberpunk Effects Functions
+
+// Show cyber loading animation
+function showCyberLoading(show) {
+  const loader = document.getElementById("cyberLoader");
+  if (loader) {
+    loader.style.display = show ? "block" : "none";
+  } else if (show) {
+    // Create loader if it doesn't exist
+    const loaderDiv = document.createElement("div");
+    loaderDiv.id = "cyberLoader";
+    loaderDiv.innerHTML = `
+      <div class="cyber-loader">
+        <div class="cyber-text">[ 数据同步中... ]</div>
+        <div class="cyber-bar">
+          <div class="cyber-progress"></div>
+        </div>
+      </div>
+    `;
+    loaderDiv.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 15, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    `;
+    document.body.appendChild(loaderDiv);
+  }
+}
+
+// Add glitch effect to element
+function addGlitchEffect(element) {
+  element.addEventListener("mouseenter", function () {
+    element.classList.add("glitch");
+    setTimeout(() => element.classList.remove("glitch"), 1000);
+  });
+}
+
+// Add typewriter effect to element
+function addTypewriterEffect(element) {
+  const text = element.textContent;
+  element.textContent = "";
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      element.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, Math.random() * 100 + 50);
+    }
+  }
+
+  // Start typing after a small delay
+  setTimeout(type, 300);
+}
+
+// Create cyber particle effect
+function createCyberParticles() {
+  const particlesContainer = document.createElement("div");
+  particlesContainer.className = "cyber-particles";
+  particlesContainer.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  `;
+
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement("div");
+    particle.style.cssText = `
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: ${Math.random() > 0.5 ? "#9d4edd" : "#00f5ff"};
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      opacity: ${Math.random() * 0.5 + 0.5};
+      animation: float ${Math.random() * 10 + 10}s linear infinite;
+    `;
+    particlesContainer.appendChild(particle);
+  }
+
+  document.body.appendChild(particlesContainer);
+}
+
+// Add digital rain effect
+function addDigitalRain() {
+  const canvas = document.createElement("canvas");
+  canvas.id = "digitalRain";
+  canvas.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: 0;
+  `;
+
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+  const matrixArray = matrix.split("");
+
+  const fontSize = 10;
+  const columns = canvas.width / fontSize;
+
+  const drops = [];
+  for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+  }
+
+  function draw() {
+    ctx.fillStyle = "rgba(10, 10, 15, 0.04)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00f5ff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+}
+
+// Initialize cyberpunk effects on page load
+document.addEventListener("DOMContentLoaded", function () {
+  // Add digital rain background
+  addDigitalRain();
+
+  // Add floating particles
+  createCyberParticles();
+
+  // Add CSS for animations
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0); }
+      100% { transform: translateY(-100vh) translateX(100px); }
+    }
+
+    .glitch {
+      animation: glitch-anim 0.3s infinite;
+    }
+
+    @keyframes glitch-anim {
+      0% { transform: skew(0deg); }
+      20% { transform: skew(2deg) translateX(2px); }
+      40% { transform: skew(-2deg) translateX(-2px); }
+      60% { transform: skew(1deg); }
+      80% { transform: skew(-1deg); }
+      100% { transform: skew(0deg); }
+    }
+
+    .cyber-loader {
+      text-align: center;
+    }
+
+    .cyber-text {
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      color: #00f5ff;
+      text-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+      margin-bottom: 20px;
+      animation: pulse 1s infinite;
+    }
+
+    .cyber-bar {
+      width: 300px;
+      height: 4px;
+      background: rgba(157, 78, 221, 0.3);
+      border: 1px solid #9d4edd;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .cyber-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #9d4edd, #ff006e, #00f5ff);
+      animation: scan 2s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(400%); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+  `;
+  document.head.appendChild(style);
+});

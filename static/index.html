@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>人才简历系统</title>
+        <title>TALENT-NET | 赛博人才数据库</title>
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="container">
-            <h1 class="text-center mb-4">人才简历管理系统</h1>
+            <h1 class="text-center mb-4">TALENT-NET 2077</h1>
 
             <!-- 搜索和上传区域 -->
             <div class="search-bar">
@@ -21,14 +21,14 @@
                         type="text"
                         id="searchInput"
                         class="form-control"
-                        placeholder="输入姓名或邮箱搜索"
+                        placeholder="[ 输入代号或邮箱进行搜索 ]"
                     />
                     <button
                         class="btn btn-outline-secondary"
                         type="button"
                         id="searchButton"
                     >
-                        搜索
+                        扫描
                     </button>
                     <button
                         class="btn btn-primary"
@@ -37,7 +37,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#uploadModal"
                     >
-                        上传简历
+                        上传档案
                     </button>
                 </div>
                 <div id="searchStatus" class="mt-2"></div>
@@ -49,7 +49,7 @@
             </div>
 
             <div id="emptyMessage" class="text-center p-5 d-none">
-                <p class="fs-5">暂无人才数据</p>
+                <p class="fs-5">[ 数据库为空 - 等待初始化 ]</p>
             </div>
 
             <!-- 上传简历模态框 -->
@@ -64,7 +64,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="uploadModalLabel">
-                                上传简历
+                                档案上传终端
                             </h5>
                             <button
                                 type="button"
@@ -80,7 +80,7 @@
                             >
                                 <div class="mb-3">
                                     <label for="resumeFile" class="form-label"
-                                        >选择PDF简历文件</label
+                                        >选择档案文件 [PDF格式]</label
                                     >
                                     <input
                                         class="form-control"
@@ -125,7 +125,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="talentModalLabel">
-                                人才详情
+                                人员档案详情
                             </h5>
                             <button
                                 type="button"
@@ -150,7 +150,7 @@
                                 href="#"
                                 target="_blank"
                                 class="btn btn-primary"
-                                >查看简历</a
+                                >查看完整档案</a
                             >
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                     <div class="info-grid">
                         <div class="info-col">
                             <div class="info-item">
-                                <strong>电话:</strong>
+                                <strong>通讯:</strong>
                                 <span class="truncated-text phone-text"></span>
                             </div>
                             <div class="info-item">
@@ -214,11 +214,11 @@
                         </div>
                         <div class="info-col">
                             <div class="info-item">
-                                <strong>工作年限:</strong>
+                                <strong>经验:</strong>
                                 <span class="truncated-text years-text"></span>
                             </div>
                             <div class="info-item">
-                                <strong>期望薪资:</strong>
+                                <strong>薪资:</strong>
                                 <span class="truncated-text salary-text"></span>
                             </div>
                             <div class="info-item">
@@ -226,7 +226,7 @@
                                 <span class="truncated-text native-text"></span>
                             </div>
                             <div class="info-item">
-                                <strong>意向城市:</strong>
+                                <strong>目标:</strong>
                                 <span class="truncated-text cities-text"></span>
                             </div>
                         </div>
@@ -253,7 +253,7 @@
                     </div>
                     <div class="action-buttons">
                         <button class="btn btn-primary view-resume">
-                            查看简历
+                            查看档案
                         </button>
                     </div>
                 </div>

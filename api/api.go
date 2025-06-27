@@ -2,9 +2,15 @@ package api
 
 import (
 	"fmt"
+	"io"
 	"net/http"
+	"os"
+	"path/filepath"
+	"strconv"
+	"time"
 
 	"talents/db"
+	"talents/pdf"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -19,6 +25,7 @@ func Router() *gin.Engine {
 	r.PUT("/talent/:id", updateTalent)
 	r.DELETE("/talent/:id", deleteTalent)
 	r.GET("/talents", searchTalents)
+	r.POST("/talent/upload-resume", uploadResumeAndCreateTalent)
 
 	return r
 }
@@ -85,4 +92,66 @@ func searchTalents(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, talents)
+}
+
+func uploadResumeAndCreateTalent(c *gin.Context) {
+	file, header, err := c.Request.FormFile("resume")
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "No resume file provided"})
+		return
+	}
+	defer file.Close()
+
+	if filepath.Ext(header.Filename) != ".pdf" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Only PDF files are supported"})
+		return
+	}
+
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	filename := timestamp + "_" + header.Filename
+	resumePath := filepath.Join("resumes", filename)
+
+	if err := os.MkdirAll("resumes", os.ModePerm); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
+		return
+	}
+
+	out, err := os.Create(resumePath)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save resume"})
+		return
+	}
+	defer out.Close()
+
+	fileBytes, err := io.ReadAll(file)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to read resume"})
+		return
+	}
+
+	file.Seek(0, 0)
+
+	_, err = io.Copy(out, file)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save resume"})
+		return
+	}
+
+	talent, err := pdf.GenerateTalentFromPDF(fileBytes)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse resume: " + err.Error()})
+		return
+	}
+
+	// Save the talent to the database
+	if err := db.CreateTalent(talent); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save talent: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "Resume processed successfully",
+		"talent":  talent,
+		"file":    resumePath,
+	})
 }

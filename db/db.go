@@ -21,8 +21,6 @@ func init() {
 		ExperienceScore: 8,
 		EducationScore:  9,
 		TechnicalScore:  10,
-		InterviewScore:  9,
-		CulturalScore:   8,
 		AverageScore:    9,
 	})
 }

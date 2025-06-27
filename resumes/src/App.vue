@@ -20,7 +20,7 @@ async function getList() {
 <template>
   <div>
     <div style="margin-bottom: 16px">
-      <n-input placeholder="搜索">
+      <n-input placeholder="搜索" style="width: 62%">
         <template #prefix>
           <n-icon :component="Flash" />
         </template>

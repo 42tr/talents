@@ -17,9 +17,12 @@ const scoreColor = computed(() => {
 </script>
 
 <template>
-  <n-card class="card" :title="data.name" :style="{ borderColor: scoreColor }">
+  <n-card class="card" :style="{ borderColor: scoreColor, color: scoreColor }">
+    <template #header>
+      <span :style="{ color: scoreColor }">{{ data.name }}</span>
+    </template>
     <template #header-extra>
-      <span :style="{ color: scoreColor }">{{ data.averageScore }}</span>
+      <span :style="{ color: scoreColor, fontWeight: 'bold', fontSize: '1.6em' }">{{ data.averageScore }}</span>
     </template>
     卡片内容
   </n-card>

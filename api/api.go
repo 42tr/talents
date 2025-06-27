@@ -26,6 +26,8 @@ func Router() *gin.Engine {
 	r.DELETE("/talent/:id", deleteTalent)
 	r.GET("/talents", searchTalents)
 	r.POST("/talent/upload-resume", uploadResumeAndCreateTalent)
+	r.Static("/resumes", "./resumes")
+	r.GET("/resume/:phone", getResumeByPhone)
 
 	return r
 }
@@ -143,6 +145,9 @@ func uploadResumeAndCreateTalent(c *gin.Context) {
 		return
 	}
 
+	// Save the resume path in the talent object
+	talent.ResumePath = resumePath
+
 	// Save the talent to the database
 	if err := db.CreateTalent(talent); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save talent: " + err.Error()})
@@ -154,4 +159,20 @@ func uploadResumeAndCreateTalent(c *gin.Context) {
 		"talent":  talent,
 		"file":    resumePath,
 	})
+}
+
+func getResumeByPhone(c *gin.Context) {
+	phone := c.Param("phone")
+	talent, err := db.GetTalent(phone)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Talent not found"})
+		return
+	}
+
+	if talent.ResumePath == "" {
+		c.JSON(http.StatusNotFound, gin.H{"error": "No resume available for this talent"})
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/"+talent.ResumePath)
 }

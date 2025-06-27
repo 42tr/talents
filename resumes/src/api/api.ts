@@ -15,3 +15,7 @@ export function uploadResume(file: File) {
     }
   })
 }
+
+export function getResumeUrl(phone: string | number): string {
+  return `${import.meta.env.VITE_API_BASE_URL}/resume/${phone}`
+}

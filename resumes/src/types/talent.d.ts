@@ -12,6 +12,8 @@ export interface Talent {
   grade?: string
   created_at?: string
   updated_at?: string
+  resumePath?: string // 简历文件路径
+  skills?: string[] // 技能列表
 }
 
 export interface ApplicantScore {

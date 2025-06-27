@@ -49,6 +49,7 @@ type Talent struct {
 	TechnicalScore  float32     `json:"technicalScore"`  // 技术分
 	IntentScore     float32     `json:"intentScore"`     // 意向分
 	AverageScore    float32     `json:"averageScore"`
+	ResumePath      string      `json:"resumePath"` // 简历文件路径
 }
 
 func (this *Talent) CalcScore() {

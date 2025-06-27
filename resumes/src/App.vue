@@ -25,8 +25,8 @@ async function handleUpload({ file }: UploadCustomRequestOptions) {
 </script>
 
 <template>
-  <div>
-    <div style="margin-bottom: 16px">
+  <div class="container">
+    <div class="search-bar">
       <n-input-group>
         <n-input placeholder="搜索" style="width: 62%">
           <template #prefix>
@@ -39,10 +39,42 @@ async function handleUpload({ file }: UploadCustomRequestOptions) {
       </n-input-group>
     </div>
 
-    <n-space>
+    <div class="talent-grid">
       <Info v-for="talent in talents" :data="talent" :key="talent.phone" />
-    </n-space>
+    </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 24px;
+}
+
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 24px;
+  justify-content: center;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .talent-grid {
+    grid-template-columns: repeat(auto-fill, 280px);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .talent-grid {
+    grid-template-columns: repeat(1, 300px);
+    justify-content: center;
+  }
+}
+</style>

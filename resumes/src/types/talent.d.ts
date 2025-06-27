@@ -1,19 +1,29 @@
 export interface Talent {
-  id: number
+  id?: number
   name: string
+  age?: number
   email?: string
-  phone?: string
-  experienceScore: number // 经验分数
-  educationScore: number // 教育分数
-  interviewScore: number // 面试分数
-  technicalScore: number // 技术分数
-  culturalScore: number // 文化分数
-  averageScore: number // 平均分数
+  phone?: string | number
+  education?: string
+  major?: string
+  skills?: string[]
+  years?: number
+  native?: string
+  blog?: string
+  github?: string
+  universities?: string[]
+  companies?: string[]
+  expectCities?: string[]
+  expectSalary?: number
+  experienceScore?: number // 经验分数
+  educationScore?: number // 教育分数
+  technicalScore?: number // 技术分数
+  intentScore?: number // 意向分数
+  averageScore?: number // 平均分数
   grade?: string
   created_at?: string
   updated_at?: string
   resumePath?: string // 简历文件路径
-  skills?: string[] // 技能列表
 }
 
 export interface ApplicantScore {

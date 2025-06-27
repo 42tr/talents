@@ -50,16 +50,17 @@ const PROMPT = `<optimized_prompt>
 
 <instructions>
 1. 分析用户输入，提取关键信息
-2. 获取应聘者姓名、年龄、手机号、邮箱、学历、上过的大学列表、专业、技能、工作年限、籍贯、意向城市列表、期望薪资、工作过的公司列表、博客地址、Github地址
+2. 获取应聘者姓名、年龄、手机号、邮箱、学历、上过的大学列表、专业、技能、工作年限、籍贯、意向城市列表、期望薪资、工作过的公司列表、博客地址、Github地址、应聘岗位
 3. 仅返回指定内容，不要返回多余内容
 4. 学历只返回最高的
 5. 技能样例：Java、Python、C、大模型应用、大模型微调
 6. 返回的手机号为数字，不要返回字符串
 7. 输出时不要返回 markdown 标识
+8. 应聘岗位指简历中明确提到的求职意向岗位，如果没有明确提到，请根据简历内容推断最可能的岗位
 </instructions>
 
 <output_format>
-{"name":"xx","age":1,"phone":13323313233,"email":"11@qq.com","education":"xx","universities":["xx","xx"],"major":"xx","skills":["x1","x2"],"years":1,"native":"xx","expectCities":["xx","xx"],"expectSalary":10000,"companies":["xx","xx"],"blog":"xx","github":"xx"}
+{"name":"xx","age":1,"phone":13323313233,"email":"11@qq.com","education":"xx","universities":["xx","xx"],"major":"xx","skills":["x1","x2"],"years":1,"native":"xx","expectCities":["xx","xx"],"expectSalary":10000,"companies":["xx","xx"],"blog":"xx","github":"xx","jobPosition":"xx"}
 </output_format>
 </optimized_prompt>`
 

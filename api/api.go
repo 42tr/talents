@@ -20,6 +20,7 @@ func Router() *gin.Engine {
 	r := gin.Default()
 	r.Use(cors.Default())
 
+	// API endpoints
 	r.POST("/talent", createTalent)
 	r.GET("/talent/:id", getTalent)
 	r.PUT("/talent/:id", updateTalent)
@@ -28,6 +29,14 @@ func Router() *gin.Engine {
 	r.POST("/talent/upload-resume", uploadResumeAndCreateTalent)
 	r.Static("/resumes", "./resumes")
 	r.GET("/resume/:phone", getResumeByPhone)
+
+	// Serve static files for the frontend
+	r.Static("/static", "./static")
+
+	// Serve the main index.html
+	r.GET("/", func(c *gin.Context) {
+		c.File("./static/index.html")
+	})
 
 	return r
 }

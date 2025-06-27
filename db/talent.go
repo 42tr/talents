@@ -42,6 +42,7 @@ type Talent struct {
 	Native          string      `json:"native"`
 	Universities    StringSlice `gorm:"type:text" json:"universities"`
 	Companies       StringSlice `gorm:"type:text" json:"companies"`
+	JobPosition     string      `json:"jobPosition"` // 应聘岗位
 	ExpectCities    StringSlice `gorm:"type:text" json:"expectCities"`
 	ExpectSalary    int         `json:"expectSalary"`
 	ExperienceScore float32     `json:"experienceScore"` // 经验分

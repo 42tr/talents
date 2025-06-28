@@ -14,13 +14,13 @@ func init() {
 		panic("failed to connect database")
 	}
 	db.AutoMigrate(&Talent{})
-	CreateTalent(&Talent{
-		Name:            "John Doe",
-		Email:           "john.doe@example.com",
-		Phone:           12345678901,
-		ExperienceScore: 8,
-		EducationScore:  9,
-		TechnicalScore:  10,
-		AverageScore:    9,
-	})
+	// CreateTalent(&Talent{
+	// 	Name:            "John Doe",
+	// 	Email:           "john.doe@example.com",
+	// 	Phone:           12345678901,
+	// 	ExperienceScore: 8,
+	// 	EducationScore:  9,
+	// 	TechnicalScore:  10,
+	// 	AverageScore:    9,
+	// })
 }

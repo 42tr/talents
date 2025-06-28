@@ -468,8 +468,11 @@ function handleResumeUpload() {
 
       // Show the talent details
       setTimeout(() => {
-        if (data.talent && data.talent.phone) {
-          showTalentDetails(data.talent.phone);
+        // if (data.talent && data.talent.phone) {
+        //   showTalentDetails(data.talent.phone);
+        // }
+        if (data.talent) {
+          showTalentDetails(data.talent);
         }
       }, 500);
     })

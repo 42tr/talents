@@ -677,30 +677,21 @@ h1 {
     overflow: visible;
     white-space: normal;
     word-wrap: break-word;
-    background: linear-gradient(
-        135deg,
-        rgba(26, 26, 46, 0.95),
-        rgba(10, 10, 15, 0.95)
-    );
-    border: 2px solid rgba(0, 245, 255, 0.3);
-    border-radius: 16px;
-    padding: 16px 20px;
+    background: rgba(18, 18, 30, 0.9);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: 4px;
+    padding: 8px 12px;
     position: absolute;
     z-index: 1000;
-    box-shadow:
-        0 10px 40px rgba(157, 78, 221, 0.6),
-        0 0 60px rgba(255, 0, 110, 0.4),
-        inset 0 0 20px rgba(0, 245, 255, 0.1);
-    min-width: 250px;
-    max-width: 380px;
-    margin-top: 8px;
-    margin-left: -20px;
-    animation: tooltipSlideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    max-width: 320px;
+    margin-top: 4px;
+    margin-left: -10px;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text-primary);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    will-change: opacity;
 }
 
 /* Mobile touch support */
@@ -738,41 +729,9 @@ h1 {
     word-wrap: break-word;
 }
 
-.truncated-text:hover::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(
-        45deg,
-        var(--cyber-purple),
-        var(--cyber-pink),
-        var(--cyber-blue),
-        var(--cyber-purple)
-    );
-    border-radius: 16px;
-    opacity: 0.7;
-    z-index: -1;
-    animation: rotateGradient 4s linear infinite;
-    background-size: 300% 300%;
-}
+/* 移除悬浮边框装饰效果，减少额外的渲染层 */
 
-@keyframes rotateGradient {
-    0% {
-        background-position: 0% 50%;
-        filter: hue-rotate(0deg);
-    }
-    50% {
-        background-position: 100% 50%;
-        filter: hue-rotate(180deg);
-    }
-    100% {
-        background-position: 0% 50%;
-        filter: hue-rotate(360deg);
-    }
-}
+/* 移除旧的 rotateGradient 动画，不再需要 */
 
 @media (hover: none) and (pointer: coarse) {
     .info-item.full-width .truncated-text:active {
@@ -899,9 +858,7 @@ h1 {
 
 .with-hover {
     cursor: pointer;
-    transition:
-        color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-        text-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.2s ease;
     text-decoration: none !important;
     border: none !important;
     position: relative;
@@ -911,7 +868,6 @@ h1 {
 
 .with-hover:hover {
     color: var(--cyber-pink);
-    text-shadow: 0 0 5px rgba(255, 0, 110, 0.8);
     text-decoration: none !important;
 }
 
@@ -931,30 +887,21 @@ h1 {
     overflow: visible;
     white-space: normal;
     word-wrap: break-word;
-    background: linear-gradient(
-        135deg,
-        rgba(26, 26, 46, 0.95),
-        rgba(10, 10, 15, 0.95)
-    );
-    border: 2px solid rgba(0, 245, 255, 0.3);
-    border-radius: 16px;
-    padding: 16px 20px;
+    background: rgba(18, 18, 30, 0.9);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: 4px;
+    padding: 8px 12px;
     position: absolute;
     z-index: 1000;
-    box-shadow:
-        0 10px 40px rgba(157, 78, 221, 0.6),
-        0 0 60px rgba(255, 0, 110, 0.4),
-        inset 0 0 20px rgba(0, 245, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     min-width: 200px;
-    max-width: 300px;
-    margin-top: 8px;
-    margin-left: -20px;
-    animation: tooltipSlideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(20px) saturate(180%);
+    max-width: 320px;
+    margin-top: 4px;
+    margin-left: -10px;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text-primary);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    will-change: opacity;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -1384,22 +1331,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
     }
 }
 
-@keyframes tooltipSlideIn {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, -15px, 0) scale(0.9);
-        filter: blur(5px);
-    }
-    50% {
-        opacity: 0.8;
-        filter: blur(2px);
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) scale(1);
-        filter: blur(0);
-    }
-}
+/* 移除动画，使用CSS原生特性 */
 
 /* 响应式设计调整 */
 /* 修复模态框z-index问题 */

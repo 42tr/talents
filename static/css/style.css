@@ -53,9 +53,9 @@ body::before {
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
     position: relative;
 }
 
@@ -121,13 +121,35 @@ h1 {
 }
 
 .search-bar {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     position: relative;
+    background: rgba(10, 10, 15, 0.6);
+    border-radius: 28px;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.2);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: search-bar-glow 4s infinite alternate;
+}
+
+@keyframes search-bar-glow {
+    0% {
+        box-shadow: 0 0 25px rgba(0, 245, 255, 0.2);
+        border: 1px solid rgba(0, 245, 255, 0.3);
+    }
+    100% {
+        box-shadow:
+            0 0 35px rgba(0, 245, 255, 0.4),
+            0 0 50px rgba(157, 78, 221, 0.2);
+        border: 1px solid rgba(0, 245, 255, 0.5);
+    }
 }
 
 .input-group {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     padding: 20px;
     background: rgba(26, 26, 46, 0.8);
     border: 2px solid var(--cyber-purple);
@@ -144,10 +166,11 @@ h1 {
     color: var(--cyber-cyan);
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
-    padding: 12px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 16px;
     transition: all 0.3s ease;
     flex: 1;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .form-control::placeholder {
@@ -168,11 +191,12 @@ h1 {
     letter-spacing: 0.1em;
     padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn::before {
@@ -197,8 +221,9 @@ h1 {
 
 .btn-outline-secondary {
     background: transparent;
-    border: 2px solid var(--cyber-cyan);
-    color: var(--cyber-cyan);
+    border: 1px solid var(--cyber-blue);
+    color: var(--cyber-blue);
+    border-radius: 16px;
 }
 
 .btn-outline-secondary:hover {
@@ -209,9 +234,10 @@ h1 {
 }
 
 .btn-primary {
-    background: var(--cyber-gradient);
+    background: var(--cyber-purple);
     color: white;
     border: none;
+    border-radius: 16px;
 }
 
 .btn-primary:hover {
@@ -221,22 +247,25 @@ h1 {
 
 .talent-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
     justify-content: center;
     align-items: start;
+    padding: 10px;
+    margin-top: 30px;
 }
 
 @media (max-width: 480px) {
     .talent-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
+        gap: 25px;
+        padding: 0 15px;
     }
 
     .card {
-        min-height: 260px;
+        min-height: 280px;
         width: 100%;
+        margin: 0 auto 25px auto;
     }
 
     .card-header {
@@ -311,22 +340,22 @@ h1 {
 
 @media (max-width: 1200px) {
     .talent-grid {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
     }
 
     .card {
         width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
+        max-width: 290px;
+        margin: 0 auto 20px auto;
     }
 }
 
 @media (max-width: 768px) {
     .talent-grid {
         grid-template-columns: 1fr;
-        padding: 0 15px;
-        gap: 25px;
+        padding: 0 20px;
+        gap: 30px;
     }
 
     .card {
@@ -382,23 +411,22 @@ h1 {
         rgba(26, 26, 46, 0.9),
         rgba(10, 10, 15, 0.9)
     );
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, var(--cyber-purple), var(--cyber-pink))
-        1;
-    border-radius: 15px;
-    width: 280px;
-    min-height: 320px;
+    border: 2px solid var(--cyber-purple);
+    border-radius: 28px;
+    overflow: hidden;
+    width: 290px;
+    min-height: 340px;
     display: flex;
     flex-direction: column;
     transition:
         transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
     position: relative;
     margin-bottom: 1.5rem;
     backdrop-filter: blur(10px);
     will-change: transform, box-shadow;
     transform: translateZ(0);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
 }
 
 .card::before {
@@ -444,15 +472,16 @@ h1 {
 .card-header {
     background: linear-gradient(
         135deg,
-        rgba(157, 78, 221, 0.2),
-        rgba(255, 0, 110, 0.2)
+        rgba(157, 78, 221, 0.25),
+        rgba(255, 0, 110, 0.25)
     );
-    padding: 12px;
+    padding: 18px;
     border-bottom: 1px solid rgba(0, 245, 255, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 15px;
+    border-radius: 26px 26px 0 0;
 }
 
 .header-content {
@@ -596,13 +625,14 @@ h1 {
 }
 
 .card-content {
-    padding: 12px;
+    padding: 20px;
     flex: 1;
     overflow-y: auto;
-    color: var(--text-secondary);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
+    position: relative;
+    border-radius: 0 0 26px 26px;
 }
 
 .card-content::-webkit-scrollbar {
@@ -926,22 +956,29 @@ h1 {
 
 .detail-section {
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 12px;
+    padding-bottom: 8px;
     border-top: 1px solid rgba(157, 78, 221, 0.3);
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    background: rgba(26, 26, 46, 0.4);
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 10px;
 }
 
 .action-buttons {
-    margin-top: 10px;
-    padding: 8px;
+    margin-top: 15px;
+    padding: 15px;
     border-top: 1px solid rgba(0, 245, 255, 0.3);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(10, 10, 15, 0.5);
     display: flex;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary.view-resume,
@@ -949,8 +986,8 @@ h1 {
     background: linear-gradient(45deg, var(--cyber-purple), var(--cyber-pink));
     border: none;
     color: white;
-    border-radius: 20px;
-    padding: 6px 15px;
+    border-radius: 22px;
+    padding: 8px 18px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -999,20 +1036,40 @@ h1 {
         rgba(10, 10, 15, 0.95)
     );
     border: 2px solid var(--cyber-purple);
-    border-radius: 15px;
+    border-radius: 30px;
     color: var(--text-primary);
-    box-shadow: 0 0 40px rgba(157, 78, 221, 0.8);
+    box-shadow:
+        0 0 40px rgba(157, 78, 221, 0.8),
+        inset 0 0 15px rgba(157, 78, 221, 0.3);
     backdrop-filter: blur(10px);
+    overflow: hidden;
+    transform: translateZ(0);
+    animation: modal-glow 3s infinite alternate;
+}
+
+@keyframes modal-glow {
+    0% {
+        box-shadow:
+            0 0 40px rgba(157, 78, 221, 0.7),
+            inset 0 0 15px rgba(157, 78, 221, 0.3);
+    }
+    100% {
+        box-shadow:
+            0 0 50px rgba(157, 78, 221, 0.9),
+            0 0 70px rgba(255, 0, 110, 0.5),
+            inset 0 0 20px rgba(157, 78, 221, 0.4);
+    }
 }
 
 .modal-header {
     background: linear-gradient(
         135deg,
-        rgba(157, 78, 221, 0.2),
-        rgba(255, 0, 110, 0.2)
+        rgba(157, 78, 221, 0.3),
+        rgba(255, 0, 110, 0.3)
     );
-    border-bottom: 1px solid rgba(0, 245, 255, 0.3);
-    padding: 20px;
+    padding: 18px 32px;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.5);
+    border-radius: 28px 28px 0 0;
 }
 
 .modal-title {
@@ -1035,9 +1092,10 @@ h1 {
 }
 
 .modal-body {
-    padding: 30px;
+    padding: 28px 32px;
     max-height: 70vh;
     overflow-y: auto;
+    position: relative;
 }
 
 .modal-body::-webkit-scrollbar {
@@ -1054,35 +1112,41 @@ h1 {
 }
 
 .modal-footer {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(10, 10, 15, 0.7);
     border-top: 1px solid rgba(0, 245, 255, 0.3);
-    padding: 15px 30px;
+    padding: 20px 32px;
+    border-radius: 0 0 28px 28px;
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
 }
 
 .btn-secondary {
     background: transparent;
     border: 1px solid var(--cyber-cyan);
     color: var(--cyber-cyan);
-    border-radius: 20px;
-    padding: 6px 15px;
+    border-radius: 22px;
+    padding: 8px 18px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.75rem;
     transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.1);
 }
 
 .btn-secondary.view-details {
     background: linear-gradient(
         135deg,
-        rgba(0, 245, 255, 0.1),
-        rgba(157, 78, 221, 0.1)
+        rgba(0, 245, 255, 0.15),
+        rgba(157, 78, 221, 0.15)
     );
     border: 1px solid transparent;
     background-clip: padding-box;
     color: var(--cyber-cyan);
     position: relative;
     overflow: hidden;
+    border-radius: 22px;
 }
 
 .btn-secondary.view-details::before {
@@ -1121,16 +1185,19 @@ h1 {
 .btn-secondary.view-details:hover {
     color: white;
     text-shadow: 0 0 10px rgba(0, 245, 255, 0.8);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow:
-        0 4px 15px rgba(0, 245, 255, 0.5),
-        0 0 30px rgba(157, 78, 221, 0.3);
+        0 6px 20px rgba(0, 245, 255, 0.6),
+        0 0 35px rgba(157, 78, 221, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover {
     background: var(--cyber-cyan);
     color: var(--cyber-bg);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.7);
+    transform: translateY(-2px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 警告和状态样式 */
@@ -1192,19 +1259,24 @@ h1 {
     );
     border: 1px solid var(--cyber-purple);
     color: var(--cyber-cyan);
-    padding: 5px 15px;
-    margin: 5px;
-    border-radius: 20px;
+    padding: 8px 18px;
+    margin: 6px;
+    border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(157, 78, 221, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 .skill-badge:hover {
     background: linear-gradient(45deg, var(--cyber-purple), var(--cyber-pink));
     color: white;
-    transform: translate3d(0, -2px, 0);
-    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.6);
+    transform: translate3d(0, -3px, 0) scale(1.05);
+    box-shadow:
+        0 5px 15px rgba(157, 78, 221, 0.6),
+        0 0 20px rgba(255, 0, 110, 0.4);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* 详情行样式 */

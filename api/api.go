@@ -3,11 +3,13 @@ package api
 import (
 	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
 	"os"
 	"path/filepath"
 	"sort"
 	"strconv"
+	"sync"
 	"time"
 
 	"talents/db"
@@ -204,6 +206,8 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 		return
 	}
 
+	// Use a mutex to protect concurrent access to results and errors slices
+	var mutex sync.Mutex
 	results := make([]gin.H, 0, len(files))
 	errors := make([]gin.H, 0)
 
@@ -212,98 +216,124 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 		return
 	}
 
+	// Use a wait group to wait for all goroutines to complete
+	var wg sync.WaitGroup
+
+	// Process files concurrently
 	for _, fileHeader := range files {
-		// Skip non-PDF files
-		if filepath.Ext(fileHeader.Filename) != ".pdf" {
-			errors = append(errors, gin.H{
+		wg.Add(1)
+		// Start a goroutine for each file
+		go func(fileHeader *multipart.FileHeader) {
+			defer wg.Done()
+
+			// Skip non-PDF files
+			if filepath.Ext(fileHeader.Filename) != ".pdf" {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Only PDF files are supported",
+				})
+				mutex.Unlock()
+				return
+			}
+
+			// Open the file
+			file, err := fileHeader.Open()
+			if err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to open file",
+				})
+				mutex.Unlock()
+				return
+			}
+			defer file.Close()
+
+			// Create a unique filename with timestamp
+			timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+			filename := timestamp + "_" + fileHeader.Filename
+			resumePath := filepath.Join("resumes", filename)
+
+			// Create the output file
+			out, err := os.Create(resumePath)
+			if err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to save resume",
+				})
+				mutex.Unlock()
+				return
+			}
+			defer out.Close()
+
+			// Read file bytes for PDF processing
+			fileBytes, err := io.ReadAll(file)
+			if err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to read resume",
+				})
+				mutex.Unlock()
+				return
+			}
+
+			// Reset file position for copying
+			file.Seek(0, 0)
+
+			// Copy file to output
+			_, err = io.Copy(out, file)
+			if err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to save resume",
+				})
+				mutex.Unlock()
+				return
+			}
+
+			// Generate talent from PDF
+			talent, err := pdf.GenerateTalentFromPDF(fileBytes)
+			if err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to parse resume: " + err.Error(),
+				})
+				mutex.Unlock()
+				return
+			}
+
+			// Save the resume path in the talent object
+			talent.ResumePath = resumePath
+
+			// Save the talent to the database
+			if err := db.CreateTalent(talent); err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to save talent: " + err.Error(),
+				})
+				mutex.Unlock()
+				return
+			}
+
+			// Add success result
+			mutex.Lock()
+			results = append(results, gin.H{
 				"filename": fileHeader.Filename,
-				"error":    "Only PDF files are supported",
+				"talent":   talent,
+				"file":     resumePath,
 			})
-			continue
-		}
-
-		// Open the file
-		file, err := fileHeader.Open()
-		if err != nil {
-			errors = append(errors, gin.H{
-				"filename": fileHeader.Filename,
-				"error":    "Failed to open file",
-			})
-			continue
-		}
-
-		// Create a unique filename with timestamp
-		timestamp := strconv.FormatInt(time.Now().Unix(), 10)
-		filename := timestamp + "_" + fileHeader.Filename
-		resumePath := filepath.Join("resumes", filename)
-
-		// Create the output file
-		out, err := os.Create(resumePath)
-		if err != nil {
-			file.Close()
-			errors = append(errors, gin.H{
-				"filename": fileHeader.Filename,
-				"error":    "Failed to save resume",
-			})
-			continue
-		}
-
-		// Read file bytes for PDF processing
-		fileBytes, err := io.ReadAll(file)
-		if err != nil {
-			file.Close()
-			out.Close()
-			errors = append(errors, gin.H{
-				"filename": fileHeader.Filename,
-				"error":    "Failed to read resume",
-			})
-			continue
-		}
-
-		// Reset file position for copying
-		file.Seek(0, 0)
-
-		// Copy file to output
-		_, err = io.Copy(out, file)
-		file.Close()
-		out.Close()
-		if err != nil {
-			errors = append(errors, gin.H{
-				"filename": fileHeader.Filename,
-				"error":    "Failed to save resume",
-			})
-			continue
-		}
-
-		// Generate talent from PDF
-		talent, err := pdf.GenerateTalentFromPDF(fileBytes)
-		if err != nil {
-			errors = append(errors, gin.H{
-				"filename": fileHeader.Filename,
-				"error":    "Failed to parse resume: " + err.Error(),
-			})
-			continue
-		}
-
-		// Save the resume path in the talent object
-		talent.ResumePath = resumePath
-
-		// Save the talent to the database
-		if err := db.CreateTalent(talent); err != nil {
-			errors = append(errors, gin.H{
-				"filename": fileHeader.Filename,
-				"error":    "Failed to save talent: " + err.Error(),
-			})
-			continue
-		}
-
-		// Add success result
-		results = append(results, gin.H{
-			"filename": fileHeader.Filename,
-			"talent":   talent,
-			"file":     resumePath,
-		})
+			mutex.Unlock()
+		}(fileHeader)
 	}
+
+	// Wait for all goroutines to complete
+	wg.Wait()
 
 	c.JSON(http.StatusOK, gin.H{
 		"message":    "Batch processing completed",

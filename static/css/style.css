@@ -551,6 +551,7 @@ h1 {
 }
 
 .score-item {
+    width: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;

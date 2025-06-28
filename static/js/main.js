@@ -99,11 +99,15 @@ function renderTalentList(talents) {
     const nameElement = card.querySelector(".talent-name");
     nameElement.textContent = talent.name || "UNKNOWN";
     nameElement.style.color = scoreColor;
+    nameElement.setAttribute("data-text", nameElement.textContent); // For glitch effect
     addGlitchEffect(nameElement);
 
     const jobPositionElement = card.querySelector(".job-position");
-    jobPositionElement.textContent = talent.jobPosition || "未分配职位";
-    addTypewriterEffect(jobPositionElement);
+    const jobText = talent.jobPosition || "未分配职位";
+    jobPositionElement.textContent = jobText;
+    jobPositionElement.title = jobText; // Add tooltip for full position
+    // Skip typewriter effect for better performance
+    // addTypewriterEffect(jobPositionElement);
 
     // Set scores
     if (talent.experienceScore) {
@@ -137,45 +141,55 @@ function renderTalentList(talents) {
       : "-";
     totalScoreElement.style.color = scoreColor;
 
-    // Set basic info
-    card.querySelector(".phone-text").textContent = formatPhone(talent.phone);
-    card.querySelector(".email-text").textContent = talent.email || "-";
-    card.querySelector(".education-text").textContent = talent.education || "-";
-    card.querySelector(".major-text").textContent = talent.major || "-";
-    card.querySelector(".years-text").textContent = talent.years
-      ? `${talent.years} 年`
-      : "-";
-    card.querySelector(".salary-text").textContent = talent.expectSalary
-      ? `${talent.expectSalary}K`
-      : "-";
-    card.querySelector(".native-text").textContent = talent.native || "-";
+    // Set basic info with tooltips
+    const phoneElement = card.querySelector(".phone-text");
+    phoneElement.textContent = formatPhone(talent.phone);
+    phoneElement.title = phoneElement.textContent;
 
-    // Set array-based info
-    card.querySelector(".cities-text").textContent =
-      Array.isArray(talent.expectCities) && talent.expectCities.length
-        ? talent.expectCities.join(", ")
-        : "暂无";
+    const educationElement = card.querySelector(".education-text");
+    educationElement.textContent = talent.education || "-";
+    educationElement.title = educationElement.textContent;
 
-    card.querySelector(".skills-text").textContent =
+    const majorElement = card.querySelector(".major-text");
+    majorElement.textContent = talent.major || "-";
+    majorElement.title = majorElement.textContent;
+
+    const yearsElement = card.querySelector(".years-text");
+    yearsElement.textContent = talent.years ? `${talent.years} 年` : "-";
+    yearsElement.title = yearsElement.textContent;
+
+    // Set array-based info with full content display
+    const skillsElement = card.querySelector(".skills-text");
+    skillsElement.textContent =
       Array.isArray(talent.skills) && talent.skills.length
         ? talent.skills.join(", ")
         : "暂无";
+    skillsElement.title = skillsElement.textContent;
 
-    card.querySelector(".companies-text").textContent =
+    const companiesElement = card.querySelector(".companies-text");
+    companiesElement.textContent =
       Array.isArray(talent.companies) && talent.companies.length
         ? talent.companies.join(", ")
         : "暂无";
+    companiesElement.title = companiesElement.textContent;
 
-    card.querySelector(".universities-text").textContent =
+    const universitiesElement = card.querySelector(".universities-text");
+    universitiesElement.textContent =
       Array.isArray(talent.universities) && talent.universities.length
         ? talent.universities.join(", ")
         : "暂无";
+    universitiesElement.title = universitiesElement.textContent;
 
     // Set card border color based on score
     const cardElement = card.querySelector(".card");
     cardElement.style.borderLeft = `4px solid ${scoreColor}`;
 
     // Set up event listeners
+    const detailsButton = card.querySelector(".view-details");
+    detailsButton.addEventListener("click", function () {
+      console.log("查看详情按钮被点击", talent);
+      showTalentDetails(talent);
+    });
 
     const resumeButton = card.querySelector(".view-resume");
     if (talent.resumePath) {
@@ -228,16 +242,24 @@ function formatPhone(phone) {
 }
 
 // Show talent details in the modal
-function showTalentDetails(phone) {
-  const talent = talentsData.find(
-    (t) => t.phone.toString() === phone.toString(),
-  );
-  if (!talent) return;
+function showTalentDetails(talent) {
+  console.log("showTalentDetails 被调用，talent:", talent);
+  if (!talent) {
+    console.error("没有传入 talent 数据");
+    return;
+  }
 
   const detailsContainer = document.getElementById("talentDetails");
   const modalTitle = document.getElementById("talentModalLabel");
   const resumeBtn = document.getElementById("viewResumeBtn");
   const scoreColor = getScoreColor(talent.averageScore);
+
+  console.log("找到的元素:", {
+    detailsContainer: detailsContainer,
+    modalTitle: modalTitle,
+    resumeBtn: resumeBtn,
+    talentModal: talentModal,
+  });
 
   modalTitle.textContent = `${talent.name} 的详细信息`;
   modalTitle.style.color = scoreColor;
@@ -389,7 +411,13 @@ function showTalentDetails(phone) {
   }
 
   // Show the modal
-  talentModal.show();
+  console.log("准备显示模态框");
+  try {
+    talentModal.show();
+    console.log("模态框显示成功");
+  } catch (error) {
+    console.error("显示模态框时出错:", error);
+  }
 }
 
 // Handle resume upload
@@ -541,7 +569,17 @@ function showCyberLoading(show) {
 function addGlitchEffect(element) {
   element.addEventListener("mouseenter", function () {
     element.classList.add("glitch");
-    setTimeout(() => element.classList.remove("glitch"), 1000);
+    const startTime = performance.now();
+
+    function removeGlitch(currentTime) {
+      if (currentTime - startTime >= 1000) {
+        element.classList.remove("glitch");
+      } else {
+        requestAnimationFrame(removeGlitch);
+      }
+    }
+
+    requestAnimationFrame(removeGlitch);
   });
 }
 
@@ -550,17 +588,30 @@ function addTypewriterEffect(element) {
   const text = element.textContent;
   element.textContent = "";
   let index = 0;
+  let lastTime = 0;
+  let nextDelay = 100; // Reduced initial delay for faster typing
 
-  function type() {
-    if (index < text.length) {
-      element.textContent += text.charAt(index);
-      index++;
-      setTimeout(type, Math.random() * 100 + 50);
+  function type(currentTime) {
+    if (!lastTime) {
+      lastTime = currentTime;
+    }
+
+    if (currentTime - lastTime >= nextDelay) {
+      if (index < text.length) {
+        // Type multiple characters at once for smoother effect
+        const charsToAdd = Math.min(2, text.length - index);
+        element.textContent += text.substr(index, charsToAdd);
+        index += charsToAdd;
+        lastTime = currentTime;
+        nextDelay = Math.random() * 50 + 25; // Faster typing speed
+        requestAnimationFrame(type);
+      }
+    } else {
+      requestAnimationFrame(type);
     }
   }
 
-  // Start typing after a small delay
-  setTimeout(type, 300);
+  requestAnimationFrame(type);
 }
 
 // Create cyber particle effect

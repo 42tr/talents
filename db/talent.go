@@ -182,16 +182,16 @@ func (this *Talent) CalcScore() {
 	}
 	this.TechnicalScore = calTechnicalScore(this.Skills, this.Blog, this.Github)
 
-	calIntentScore := func(expectCities []string) float32 {
-		if len(expectCities) == 0 {
-			return 8
-		}
-		if utils.StringSliceContainsAny(expectCities, "南京") {
-			return 10
-		}
-		return 5
-	}
-	this.IntentScore = calIntentScore(this.Universities)
+	// calIntentScore := func(expectCities []string) float32 {
+	// 	if len(expectCities) == 0 {
+	// 		return 8
+	// 	}
+	// 	if utils.StringSliceContainsAny(expectCities, "南京") {
+	// 		return 10
+	// 	}
+	// 	return 5
+	// }
+	// this.IntentScore = calIntentScore(this.Universities)
 
 	// calculateAverageScore calculates average of non-zero scores
 	calcAvgScore := func(scores ...float32) float32 {
@@ -210,7 +210,7 @@ func (this *Talent) CalcScore() {
 		// 计算平均值并保留一位小数
 		return format_score(total / float32(count))
 	}
-	this.AverageScore = calcAvgScore(this.ExperienceScore, this.EducationScore, this.TechnicalScore, this.IntentScore)
+	this.AverageScore = calcAvgScore(this.ExperienceScore, this.EducationScore, this.TechnicalScore)
 }
 
 func CreateTalent(t *Talent) error {

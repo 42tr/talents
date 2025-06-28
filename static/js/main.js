@@ -134,13 +134,13 @@ function renderTalentList(talents) {
       card.querySelector(".technical-score").textContent = "-";
     }
 
-    if (talent.intentScore) {
-      card.querySelector(".intent-score").textContent =
-        talent.intentScore.toFixed(1);
-      card.querySelector(".intent-score").style.color = scoreColor;
-    } else {
-      card.querySelector(".intent-score").textContent = "-";
-    }
+    // if (talent.intentScore) {
+    //   card.querySelector(".intent-score").textContent =
+    //     talent.intentScore.toFixed(1);
+    //   card.querySelector(".intent-score").style.color = scoreColor;
+    // } else {
+    //   card.querySelector(".intent-score").textContent = "-";
+    // }
 
     // Set total score
     const totalScoreElement = card.querySelector(".total-score");
@@ -246,9 +246,10 @@ function showTooltip(element, text) {
 // Format phone number for display
 function formatPhone(phone) {
   if (!phone) return "-";
-  const phoneStr = phone.toString();
-  if (phoneStr.length !== 11) return phoneStr;
-  return `${phoneStr.substring(0, 3)}****${phoneStr.substring(7)}`;
+  // const phoneStr = phone.toString();
+  // if (phoneStr.length !== 11) return phoneStr;
+  // return `${phoneStr.substring(0, 3)}****${phoneStr.substring(7)}`;
+  return phone;
 }
 
 // Show talent details in the modal

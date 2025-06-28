@@ -25,14 +25,14 @@ func init() {
 		panic(err)
 	}
 	for _, university := range universities {
-		_m[university.UnivNameEn] = university.Score
+		_m[university.UnivNameCn] = university.Score
 	}
 }
 
 func CalcScore(universities []string) float32 {
 	score := float32(0.1)
 	for _, university := range universities {
-		score = max(score, _m[university])
+		score = max(score, calcScore(university))
 	}
 	return score
 }

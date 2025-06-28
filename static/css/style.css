@@ -704,24 +704,12 @@ h1 {
 
 .truncated-text:hover,
 .truncated-text:focus {
-    overflow: visible;
-    white-space: normal;
-    word-wrap: break-word;
-    background: rgba(18, 18, 30, 0.9);
-    border: 1px solid rgba(0, 245, 255, 0.2);
-    border-radius: 4px;
-    padding: 8px 12px;
-    position: absolute;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    min-width: 200px;
-    max-width: 320px;
-    margin-top: 4px;
-    margin-left: -10px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--text-primary);
-    will-change: opacity;
+    /* Keep text truncated on hover */
+    overflow: hidden;
+    white-space: nowrap;
+    /* Just add a subtle visual indication */
+    border-bottom: 1px solid rgba(0, 245, 255, 0.4);
+    color: var(--cyber-blue);
 }
 
 /* Mobile touch support */
@@ -731,32 +719,21 @@ h1 {
     }
 
     .truncated-text:active {
-        overflow: visible;
-        white-space: normal;
-        word-wrap: break-word;
-        background: rgba(26, 26, 46, 0.98);
-        border: 1px solid var(--cyber-purple);
-        border-radius: 8px;
-        padding: 8px 12px;
-        position: absolute;
-        z-index: 1000;
-        box-shadow: 0 4px 20px rgba(157, 78, 221, 0.6);
-        min-width: 200px;
-        max-width: 90vw;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: -8px;
+        /* Keep text truncated on active state for mobile */
+        overflow: hidden;
+        white-space: nowrap;
+        /* Just add a subtle visual indication */
+        border-bottom: 1px solid rgba(157, 78, 221, 0.5);
+        color: var(--cyber-blue);
     }
 }
 
 /* Special handling for full-width items */
 .info-item.full-width .truncated-text:hover,
 .info-item.full-width .truncated-text:focus {
-    left: 0;
-    right: auto;
-    max-width: 90%;
-    white-space: normal;
-    word-wrap: break-word;
+    /* Keep consistent with other truncated text */
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* 移除悬浮边框装饰效果，减少额外的渲染层 */
@@ -765,9 +742,12 @@ h1 {
 
 @media (hover: none) and (pointer: coarse) {
     .info-item.full-width .truncated-text:active {
-        left: 0;
-        transform: none;
-        max-width: 90%;
+        /* Keep text truncated on active state for mobile */
+        overflow: hidden;
+        white-space: nowrap;
+        /* Just add a subtle visual indication */
+        border-bottom: 1px solid rgba(157, 78, 221, 0.5);
+        color: var(--cyber-blue);
     }
 }
 
@@ -914,43 +894,22 @@ h1 {
 
 .major-text:hover,
 .major-text:focus {
-    overflow: visible;
-    white-space: normal;
-    word-wrap: break-word;
-    background: rgba(18, 18, 30, 0.9);
-    border: 1px solid rgba(0, 245, 255, 0.2);
-    border-radius: 4px;
-    padding: 8px 12px;
-    position: absolute;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    min-width: 200px;
-    max-width: 320px;
-    margin-top: 4px;
-    margin-left: -10px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--text-primary);
-    will-change: opacity;
+    /* Keep text truncated on hover */
+    overflow: hidden;
+    white-space: nowrap;
+    /* Just add a subtle visual indication */
+    border-bottom: 1px solid rgba(0, 245, 255, 0.4);
+    color: var(--cyber-blue);
 }
 
 @media (hover: none) and (pointer: coarse) {
     .major-text:active {
-        overflow: visible;
-        white-space: normal;
-        word-wrap: break-word;
-        background: rgba(26, 26, 46, 0.98);
-        border: 1px solid var(--cyber-purple);
-        border-radius: 8px;
-        padding: 8px 12px;
-        position: absolute;
-        z-index: 1000;
-        box-shadow: 0 4px 20px rgba(157, 78, 221, 0.6);
-        min-width: 200px;
-        max-width: 90vw;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: -8px;
+        /* Keep text truncated on active state for mobile */
+        overflow: hidden;
+        white-space: nowrap;
+        /* Just add a subtle visual indication */
+        border-bottom: 1px solid rgba(157, 78, 221, 0.5);
+        color: var(--cyber-blue);
     }
 }
 

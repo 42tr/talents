@@ -216,14 +216,15 @@ function getScoreColor(score) {
 
 // Show tooltip for text that may be truncated
 function showTooltip(element, text) {
-  // Use bootstrap tooltip
+  // Disabled hover tooltips to prevent content changes on hover
+  // If tooltips are needed later, uncomment the code below
+  /*
   const tooltip = new bootstrap.Tooltip(element, {
     title: text,
     placement: "top",
     trigger: "hover",
   });
 
-  // Dispose tooltip when mouse leaves
   element.addEventListener(
     "mouseleave",
     function () {
@@ -231,6 +232,7 @@ function showTooltip(element, text) {
     },
     { once: true },
   );
+  */
 }
 
 // Format phone number for display

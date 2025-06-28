@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"time"
 
@@ -27,6 +28,7 @@ func Router() *gin.Engine {
 	r.DELETE("/talent/:id", deleteTalent)
 	r.GET("/talents", searchTalents)
 	r.POST("/talent/upload-resume", uploadResumeAndCreateTalent)
+	r.POST("/talent/upload-resumes", uploadMultipleResumesAndCreateTalents)
 	r.Static("/resumes", "./resumes")
 	r.GET("/resume/:phone", getResumeByPhone)
 
@@ -101,6 +103,9 @@ func searchTalents(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
+	sort.Slice(talents, func(i, j int) bool {
+		return talents[i].AverageScore > talents[j].AverageScore
+	})
 
 	c.JSON(http.StatusOK, talents)
 }
@@ -184,4 +189,128 @@ func getResumeByPhone(c *gin.Context) {
 	}
 
 	c.Redirect(http.StatusFound, "/"+talent.ResumePath)
+}
+
+func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
+	form, err := c.MultipartForm()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to parse form"})
+		return
+	}
+
+	files := form.File["resumes[]"]
+	if len(files) == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "No resume files provided"})
+		return
+	}
+
+	results := make([]gin.H, 0, len(files))
+	errors := make([]gin.H, 0)
+
+	if err := os.MkdirAll("resumes", os.ModePerm); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
+		return
+	}
+
+	for _, fileHeader := range files {
+		// Skip non-PDF files
+		if filepath.Ext(fileHeader.Filename) != ".pdf" {
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Only PDF files are supported",
+			})
+			continue
+		}
+
+		// Open the file
+		file, err := fileHeader.Open()
+		if err != nil {
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Failed to open file",
+			})
+			continue
+		}
+
+		// Create a unique filename with timestamp
+		timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+		filename := timestamp + "_" + fileHeader.Filename
+		resumePath := filepath.Join("resumes", filename)
+
+		// Create the output file
+		out, err := os.Create(resumePath)
+		if err != nil {
+			file.Close()
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Failed to save resume",
+			})
+			continue
+		}
+
+		// Read file bytes for PDF processing
+		fileBytes, err := io.ReadAll(file)
+		if err != nil {
+			file.Close()
+			out.Close()
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Failed to read resume",
+			})
+			continue
+		}
+
+		// Reset file position for copying
+		file.Seek(0, 0)
+
+		// Copy file to output
+		_, err = io.Copy(out, file)
+		file.Close()
+		out.Close()
+		if err != nil {
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Failed to save resume",
+			})
+			continue
+		}
+
+		// Generate talent from PDF
+		talent, err := pdf.GenerateTalentFromPDF(fileBytes)
+		if err != nil {
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Failed to parse resume: " + err.Error(),
+			})
+			continue
+		}
+
+		// Save the resume path in the talent object
+		talent.ResumePath = resumePath
+
+		// Save the talent to the database
+		if err := db.CreateTalent(talent); err != nil {
+			errors = append(errors, gin.H{
+				"filename": fileHeader.Filename,
+				"error":    "Failed to save talent: " + err.Error(),
+			})
+			continue
+		}
+
+		// Add success result
+		results = append(results, gin.H{
+			"filename": fileHeader.Filename,
+			"talent":   talent,
+			"file":     resumePath,
+		})
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message":    "Batch processing completed",
+		"total":      len(files),
+		"successful": len(results),
+		"failed":     len(errors),
+		"results":    results,
+		"errors":     errors,
+	})
 }

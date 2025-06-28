@@ -4,6 +4,7 @@ import (
 	"database/sql/driver"
 	"encoding/json"
 	"errors"
+	"talents/university"
 	"talents/utils"
 )
 
@@ -68,22 +69,7 @@ func (this *Talent) CalcScore() {
 	this.ExperienceScore = calExperienceScore(this.Companies)
 
 	calEducationScore := func(universities []string, education string, major string) float32 {
-		var score float32
-		if utils.StringSliceContainsAny(_UNIVERSITIES_LV0, universities...) {
-			score = 9
-		}
-		if utils.StringSliceContainsAny(_UNIVERSITIES_LV1, universities...) {
-			score = 8
-		}
-		if utils.StringSliceContainsAny(_UNIVERSITIES_LV2, universities...) {
-			score = 7
-		}
-		if utils.StringSliceContainsAny(_UNIVERSITIES_LV3, universities...) {
-			score = 6
-		}
-		if utils.StringSliceContainsAny(_UNIVERSITIES_LV4, universities...) {
-			score = 5
-		}
+		score := university.CalcScore(universities)
 		if utils.StringSliceContainsAny(_MAJORS_RELATED, education) {
 			score += 1
 		}
@@ -98,29 +84,98 @@ func (this *Talent) CalcScore() {
 	this.EducationScore = calEducationScore(this.Universities, this.Education, this.Major)
 
 	calTechnicalScore := func(skills []string, blog string, github string) float32 {
-		if !utils.StringSliceContainsAny(skills, "python") {
-			return 0
-		}
 		score := float32(5.0)
+		switch this.JobPosition {
+		case "后端":
+			if !utils.StringSliceContainsAny(skills, "python") {
+				return 0.1
+			}
+
+			if utils.StringSliceContainsAny(skills, "大模型微调") {
+				score += 0.7
+			} else if utils.StringSliceContainsAny(skills, "大模型") {
+				score += 0.8
+			}
+			if utils.StringSliceContainsAny(skills, "rust") {
+				score += 0.5
+			}
+			for _, skill := range []string{"java", "go", "c", "c++", "javascript", "js", "react", "angular", "vue", "node", "database", "sql", "nosql", "docker", "kubernetes", "k8s", "mysql", "redis", "postgresql", "mongodb", "elasticsearch", "es", "prometheus"} {
+				if utils.StringSliceContainsAny(skills, skill) {
+					score += 0.1
+				}
+			}
+		case "算法":
+			if !utils.StringSliceContainsAny(skills, "python") {
+				return 0.1
+			}
+			return 10
+		case "前端":
+			if !utils.StringSliceContainsAny(skills, "vue3") {
+				return 0.1
+			}
+			if utils.StringSliceContainsAny(skills, "react") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "angular") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "vite") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "git") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "typescript", "ts") {
+				score += 1
+			}
+		case "运维":
+			if !utils.StringSliceContainsAny(skills, "docker") {
+				return 0.1
+			}
+			if utils.StringSliceContainsAny(skills, "大模型") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "kubernetes", "k8s") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "shell") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "arm64") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "mysql", "redis", "postgresql", "mongodb", "elasticsearch", "es", "prometheus") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "c", "java", "python", "go", "rust") {
+				score += 1
+			}
+		case "嵌入式":
+			if utils.StringSliceContainsAny(skills, "c", "c++") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "arm", "stm32", "esp32", "esp8266", "bsp") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "ai") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "transformer", "embedding") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "昇腾", "寒武纪") {
+				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "量化") {
+				score += 1
+			}
+		}
+
 		if blog != "" {
 			score += 0.5
 		}
 		if github != "" {
 			score += 0.5
-		}
-		if utils.StringSliceContainsAny(skills, "大模型应用") {
-			score += 0.8
-		}
-		if utils.StringSliceContainsAny(skills, "大模型微调") {
-			score += 0.7
-		}
-		if utils.StringSliceContainsAny(skills, "rust") {
-			score += 0.5
-		}
-		for _, skill := range _SKILLS {
-			if utils.StringSliceContainsAny(skills, skill) {
-				score += 0.1
-			}
 		}
 
 		return min(format_score(score), 10)
@@ -144,10 +199,8 @@ func (this *Talent) CalcScore() {
 		count := 0
 
 		for _, score := range scores {
-			if score > 0 {
-				total += score
-				count++
-			}
+			total += score
+			count++
 		}
 
 		if count == 0 {

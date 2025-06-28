@@ -1469,3 +1469,67 @@ input[type="file"]::-webkit-file-upload-button:hover {
         order: 2;
     }
 }
+
+/* Batch Upload Results */
+.batch-upload-results {
+    margin-top: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.batch-upload-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.batch-upload-results::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.batch-upload-results::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.upload-success,
+.upload-errors {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+.batch-upload-results h6 {
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-shadow: 0 0 5px currentColor;
+}
+
+.batch-upload-results .list-group {
+    border-radius: 0;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.batch-upload-results .list-group-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: rgba(0, 255, 255, 0.1);
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.batch-upload-results .list-group-item-success {
+    border-left: 3px solid #00ff9d;
+}
+
+.batch-upload-results .list-group-item-danger {
+    border-left: 3px solid #ff0055;
+}
+
+.batch-upload-results .list-group-item small {
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 3px;
+}

@@ -80,7 +80,8 @@
                             >
                                 <div class="mb-3">
                                     <label for="resumeFile" class="form-label"
-                                        >选择档案文件 [PDF格式]</label
+                                        >选择档案文件
+                                        [支持批量上传，仅PDF格式]</label
                                     >
                                     <input
                                         class="form-control"
@@ -88,6 +89,7 @@
                                         id="resumeFile"
                                         name="resume"
                                         accept=".pdf"
+                                        multiple
                                     />
                                 </div>
                                 <div id="uploadStatus" class="mt-3"></div>
@@ -106,7 +108,7 @@
                                 class="btn btn-primary"
                                 id="submitUpload"
                             >
-                                上传并解析
+                                批量上传并解析
                             </button>
                         </div>
                     </div>
@@ -185,6 +187,10 @@
                                 <span
                                     class="score-value technical-score"
                                 ></span>
+                            </div>
+                            <div class="score-item">
+                                <span class="score-label">意向</span>
+                                <span class="score-value intent-score"></span>
                             </div>
                         </div>
                     </div>

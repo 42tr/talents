@@ -134,6 +134,14 @@ function renderTalentList(talents) {
       card.querySelector(".technical-score").textContent = "-";
     }
 
+    if (talent.intentScore) {
+      card.querySelector(".intent-score").textContent =
+        talent.intentScore.toFixed(1);
+      card.querySelector(".intent-score").style.color = scoreColor;
+    } else {
+      card.querySelector(".intent-score").textContent = "-";
+    }
+
     // Set total score
     const totalScoreElement = card.querySelector(".total-score");
     totalScoreElement.textContent = talent.averageScore
@@ -432,21 +440,33 @@ function handleResumeUpload() {
     return;
   }
 
-  const file = fileInput.files[0];
-  if (file.type !== "application/pdf") {
-    showAlert("只支持上传PDF格式的简历。", "danger", uploadStatus);
-    return;
+  const files = fileInput.files;
+
+  // Validate all files are PDFs
+  for (let i = 0; i < files.length; i++) {
+    if (files[i].type !== "application/pdf") {
+      showAlert("只支持上传PDF格式的简历。", "danger", uploadStatus);
+      return;
+    }
   }
 
   // Show loading state
-  showAlert("[ 传输中 ] 档案上传中 - 解析协议启动...", "info", uploadStatus);
+  showAlert(
+    `[ 传输中 ] ${files.length}个档案上传中 - 解析协议启动...`,
+    "info",
+    uploadStatus,
+  );
 
   // Create form data
   const formData = new FormData();
-  formData.append("resume", file);
 
-  // Upload the resume
-  fetch("/talent/upload-resume", {
+  // Append all files with the name "resumes[]"
+  for (let i = 0; i < files.length; i++) {
+    formData.append("resumes[]", files[i]);
+  }
+
+  // Use the batch upload endpoint
+  fetch("/talent/upload-resumes", {
     method: "POST",
     body: formData,
   })
@@ -457,27 +477,51 @@ function handleResumeUpload() {
       return response.json();
     })
     .then((data) => {
-      showAlert("[ 成功 ] 档案已同步至数据库", "success", uploadStatus);
-      document.getElementById("resumeUploadForm").reset();
+      const successCount = data.successful || 0;
+      const failedCount = data.failed || 0;
+      const totalCount = data.total || 0;
 
-      // Hide the upload modal
-      uploadModal.hide();
+      let statusMessage = `[ 处理完成 ] 共${totalCount}个档案: ${successCount}个成功, ${failedCount}个失败`;
+      let statusType = "success";
 
-      // Reload the talent list
-      loadTalents();
+      if (failedCount > 0 && successCount > 0) {
+        statusType = "warning";
+      } else if (failedCount > 0 && successCount === 0) {
+        statusType = "danger";
+      }
 
-      // Show the talent details
-      setTimeout(() => {
-        // if (data.talent && data.talent.phone) {
-        //   showTalentDetails(data.talent.phone);
-        // }
-        if (data.talent) {
-          showTalentDetails(data.talent);
-        }
-      }, 500);
+      showAlert(statusMessage, statusType, uploadStatus);
+
+      // Show detailed results
+      showBatchUploadResults(data, uploadStatus);
+
+      if (successCount > 0) {
+        // Reset form and reload talents after a short delay
+        setTimeout(() => {
+          document.getElementById("resumeUploadForm").reset();
+
+          // Hide the upload modal
+          uploadModal.hide();
+
+          // Reload the talent list
+          loadTalents();
+
+          // If only one talent was uploaded successfully, show its details
+          if (
+            successCount === 1 &&
+            data.results &&
+            data.results[0] &&
+            data.results[0].talent
+          ) {
+            setTimeout(() => {
+              showTalentDetails(data.results[0].talent);
+            }, 500);
+          }
+        }, 3000); // Give user more time to see the results message
+      }
     })
     .catch((error) => {
-      console.error("Error uploading resume:", error);
+      console.error("Error uploading resumes:", error);
       showAlert("[ 传输失败 ] 网络异常 - 请重新尝试", "danger", uploadStatus);
     });
 }
@@ -488,6 +532,69 @@ function handleSearch() {
   const query = searchInput.value.trim();
 
   loadTalents(query);
+}
+
+/**
+ * Displays detailed results from a batch upload
+ * @param {Object} data - The response data from the batch upload
+ * @param {HTMLElement} container - The element to display results in
+ */
+function showBatchUploadResults(data, container) {
+  if (!data || !container) return;
+
+  const { results = [], errors = [] } = data;
+
+  let detailsHTML = '<div class="batch-upload-results mt-3">';
+
+  // Add success section if there are successful uploads
+  if (results.length > 0) {
+    detailsHTML += '<div class="upload-success mb-2">';
+    detailsHTML += '<h6 class="text-success">成功上传:</h6>';
+    detailsHTML += '<ul class="list-group">';
+
+    results.forEach((result) => {
+      const filename = escapeHtml(result.filename);
+      const talentName =
+        result.talent && result.talent.name
+          ? escapeHtml(result.talent.name)
+          : "未知姓名";
+
+      detailsHTML += `<li class="list-group-item list-group-item-success">
+        <small>${filename}</small>
+        <div><strong>${talentName}</strong></div>
+      </li>`;
+    });
+
+    detailsHTML += "</ul></div>";
+  }
+
+  // Add error section if there are failed uploads
+  if (errors.length > 0) {
+    detailsHTML += '<div class="upload-errors">';
+    detailsHTML += '<h6 class="text-danger">上传失败:</h6>';
+    detailsHTML += '<ul class="list-group">';
+
+    errors.forEach((error) => {
+      const filename = escapeHtml(error.filename);
+      const errorMsg = escapeHtml(error.error);
+
+      detailsHTML += `<li class="list-group-item list-group-item-danger">
+        <small>${filename}</small>
+        <div><strong>错误:</strong> ${errorMsg}</div>
+      </li>`;
+    });
+
+    detailsHTML += "</ul></div>";
+  }
+
+  detailsHTML += "</div>";
+
+  // Create a new element to hold the results
+  const resultsElement = document.createElement("div");
+  resultsElement.innerHTML = detailsHTML;
+
+  // Append to container after the alert
+  container.appendChild(resultsElement);
 }
 
 // Show alert message

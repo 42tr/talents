@@ -140,13 +140,6 @@ func uploadResumeAndCreateTalent(c *gin.Context) {
 		return
 	}
 	defer out.Close()
-
-	fileBytes, err := io.ReadAll(file)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to read resume"})
-		return
-	}
-
 	file.Seek(0, 0)
 
 	_, err = io.Copy(out, file)
@@ -155,7 +148,7 @@ func uploadResumeAndCreateTalent(c *gin.Context) {
 		return
 	}
 
-	talent, err := pdf.GenerateTalentFromPDF(fileBytes)
+	talent, err := pdf.GenerateTalentFromPDF(resumePath)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse resume: " + err.Error()})
 		return
@@ -268,18 +261,6 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 			}
 			defer out.Close()
 
-			// Read file bytes for PDF processing
-			fileBytes, err := io.ReadAll(file)
-			if err != nil {
-				mutex.Lock()
-				errors = append(errors, gin.H{
-					"filename": fileHeader.Filename,
-					"error":    "Failed to read resume",
-				})
-				mutex.Unlock()
-				return
-			}
-
 			// Reset file position for copying
 			file.Seek(0, 0)
 
@@ -296,7 +277,7 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 			}
 
 			// Generate talent from PDF
-			talent, err := pdf.GenerateTalentFromPDF(fileBytes)
+			talent, err := pdf.GenerateTalentFromPDF(resumePath)
 			if err != nil {
 				mutex.Lock()
 				errors = append(errors, gin.H{

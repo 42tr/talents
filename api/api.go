@@ -32,6 +32,7 @@ func Router() *gin.Engine {
 	r.GET("/talents", searchTalents)
 	r.POST("/talent/upload-resume", uploadResumeAndCreateTalent)
 	r.POST("/talent/upload-resumes", uploadMultipleResumesAndCreateTalents)
+	r.POST("/talents/recalculate-scores", recalculateScores)
 	r.Static("/resumes", "./resumes")
 	r.GET("/resume/:phone", getResumeByPhone)
 
@@ -398,5 +399,29 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 		"results":         results,
 		"duplicates":      duplicates,
 		"errors":          errors,
+	})
+}
+
+// recalculateScores updates scores for all talents based on current scoring logic
+func recalculateScores(c *gin.Context) {
+	// Recalculate scores for all talents
+	result, err := db.RecalculateAllTalentScores()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error":   err.Error(),
+			"message": "分数重新计算失败",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message":         "分数重新计算完成",
+		"total_count":     result.TotalCount,
+		"updated_count":   result.UpdatedCount,
+		"no_change_count": result.NoChangeCount,
+		"average_change":  result.AverageChange,
+		"maximum_change":  result.MaximumChange,
+		"score_changes":   result.ScoreChanges,
+		"maximum_talent":  result.MaximumTalent,
 	})
 }

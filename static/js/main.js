@@ -2,17 +2,53 @@
 let talentsData = [];
 let talentModal;
 let uploadModal;
+let recalculateModal;
 
 // Initialize the application when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Bootstrap modals
   talentModal = new bootstrap.Modal(document.getElementById("talentModal"));
   uploadModal = new bootstrap.Modal(document.getElementById("uploadModal"));
+  recalculateModal = new bootstrap.Modal(
+    document.getElementById("recalculateModal"),
+  );
 
   // Set up event listeners
   document
     .getElementById("submitUpload")
     .addEventListener("click", handleResumeUpload);
+  document
+    .getElementById("recalculateButton")
+    .addEventListener("click", function () {
+      // Reset the recalculate modal state
+      document
+        .getElementById("recalculateConfirmArea")
+        .classList.remove("d-none");
+      document.getElementById("recalculateResultsArea").classList.add("d-none");
+      document.getElementById("recalculateStatus").innerHTML = "";
+      document.getElementById("confirmRecalculate").disabled = false;
+      document.getElementById("confirmRecalculate").textContent =
+        "确认重新计算";
+      recalculateModal.show();
+    });
+  document
+    .getElementById("confirmRecalculate")
+    .addEventListener("click", handleScoreRecalculation);
+  // Toggle score changes table
+  document
+    .getElementById("toggleScoreTable")
+    .addEventListener("click", function () {
+      const tableWrapper = document.getElementById("scoreChangesTableWrapper");
+      const isHidden = tableWrapper.classList.contains("d-none");
+
+      if (isHidden) {
+        tableWrapper.classList.remove("d-none");
+        this.textContent = "隐藏详情";
+      } else {
+        tableWrapper.classList.add("d-none");
+        this.textContent = "显示详情";
+      }
+    });
   document
     .getElementById("searchButton")
     .addEventListener("click", handleSearch);
@@ -582,6 +618,147 @@ function handleResumeUpload() {
     .catch((error) => {
       console.error("Error uploading resumes:", error);
       showAlert("[ 传输失败 ] 网络异常 - 请重新尝试", "danger", uploadStatus);
+    });
+}
+
+// Handle score recalculation
+function handleScoreRecalculation() {
+  const recalculateStatus = document.getElementById("recalculateStatus");
+  const confirmArea = document.getElementById("recalculateConfirmArea");
+  const resultsArea = document.getElementById("recalculateResultsArea");
+
+  // Hide results area and show confirm area initially
+  confirmArea.classList.remove("d-none");
+  resultsArea.classList.add("d-none");
+
+  // Show loading state
+  showAlert(
+    "[ 计算中 ] 正在根据最新评分标准重新计算所有应聘者分数...",
+    "info",
+    recalculateStatus,
+  );
+
+  // Disable the confirm button during processing
+  document.getElementById("confirmRecalculate").disabled = true;
+  document.getElementById("confirmRecalculate").textContent = "正在计算...";
+
+  // Call the API to recalculate scores
+  fetch("/talents/recalculate-scores", {
+    method: "POST",
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const totalCount = data.total_count || 0;
+      const updatedCount = data.updated_count || 0;
+      const noChangeCount = data.no_change_count || 0;
+      const averageChange = data.average_change || 0;
+      const maximumChange = data.maximum_change || 0;
+      const scoreChanges = data.score_changes || [];
+      const maximumTalent = data.maximum_talent || null;
+
+      // Sort score changes by the magnitude of change (largest first)
+      scoreChanges.sort((a, b) => {
+        const aDiff = Math.abs(a.new_avg_score - a.old_avg_score);
+        const bDiff = Math.abs(b.new_avg_score - b.old_avg_score);
+        return bDiff - aDiff; // Descending order
+      });
+
+      // Hide confirmation area
+      confirmArea.classList.add("d-none");
+
+      // Display summary message
+      let statusMessage = `[ 计算完成 ] 共${totalCount}个档案，${updatedCount}个已更新，${noChangeCount}个无变化`;
+      let statusType = "success";
+      showAlert(statusMessage, statusType, recalculateStatus);
+
+      // Update summary statistics
+      document.getElementById("totalCount").textContent = totalCount;
+      document.getElementById("updatedCount").textContent = updatedCount;
+      document.getElementById("noChangeCount").textContent = noChangeCount;
+      document.getElementById("avgChange").textContent =
+        averageChange.toFixed(2);
+
+      // Display max change if available
+      if (maximumTalent) {
+        document.getElementById("maxChangeName").textContent =
+          maximumTalent.name;
+        document.getElementById("maxChangeDetails").textContent =
+          `${maximumTalent.education} · ${maximumTalent.universities[0] || ""}`;
+        document.getElementById("maxChangeOldScore").textContent = (
+          maximumTalent.averageScore - maximumChange
+        ).toFixed(1);
+        document.getElementById("maxChangeNewScore").textContent =
+          maximumTalent.averageScore.toFixed(1);
+
+        const diffElem = document.getElementById("maxChangeDiff");
+        const isPositive = maximumChange > 0;
+        diffElem.textContent = `${isPositive ? "+" : ""}${maximumChange.toFixed(1)}`;
+        diffElem.style.color = isPositive ? "#00ff9d" : "#ff5555";
+      } else {
+        document.getElementById("maxChangeArea").classList.add("d-none");
+      }
+
+      // Populate score changes table
+      if (scoreChanges.length > 0) {
+        const tableBody = document.getElementById("scoreChangesTableBody");
+        tableBody.innerHTML = "";
+
+        // Add table info about sort order
+        const infoRow = document.createElement("tr");
+        infoRow.innerHTML = `<td colspan="4" class="text-center text-muted"><small>按分数变化幅度从大到小排序</small></td>`;
+        tableBody.appendChild(infoRow);
+
+        scoreChanges.forEach((change) => {
+          const row = document.createElement("tr");
+
+          // Calculate score difference for display
+          const diff = change.new_avg_score - change.old_avg_score;
+          const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+          const diffColor = diff > 0 ? "#00ff9d" : "#ff5555";
+
+          row.innerHTML = `
+            <td>${change.talent.name}</td>
+            <td>${change.old_avg_score.toFixed(1)}</td>
+            <td>${change.new_avg_score.toFixed(1)}</td>
+            <td style="color: ${diffColor};">${diffText}</td>
+          `;
+
+          // Add event listener to show talent details when clicked
+          row.style.cursor = "pointer";
+          row.addEventListener("click", () => {
+            showTalentDetails(change.talent);
+          });
+
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Show results area
+      resultsArea.classList.remove("d-none");
+
+      // Re-enable the confirm button and change its text
+      document.getElementById("confirmRecalculate").disabled = false;
+      document.getElementById("confirmRecalculate").textContent = "重新计算";
+
+      // Reload talent list in the background
+      loadTalents();
+    })
+    .catch((error) => {
+      console.error("Error recalculating scores:", error);
+      showAlert(
+        "[ 操作失败 ] 网络异常或服务器错误",
+        "danger",
+        recalculateStatus,
+      );
+
+      // Re-enable the confirm button
+      document.getElementById("confirmRecalculate").disabled = false;
+      document.getElementById("confirmRecalculate").textContent = "重新计算";
     });
 }
 

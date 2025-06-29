@@ -111,8 +111,8 @@ func (this *Talent) CalcScore() {
 			}
 			return 10
 		case "前端":
-			if !utils.StringSliceContainsAny(skills, "vue3") {
-				return 0.1
+			if utils.StringSliceContainsAny(skills, "vue3") {
+				score += 1
 			}
 			if utils.StringSliceContainsAny(skills, "react") {
 				score += 0.5
@@ -240,6 +240,115 @@ func ListTalents() ([]*Talent, error) {
 		return nil, err
 	}
 	return talents, nil
+}
+
+// ScoreChange represents the score changes for a talent
+type ScoreChange struct {
+	Talent       *Talent `json:"talent"`
+	OldAvgScore  float32 `json:"old_avg_score"`
+	NewAvgScore  float32 `json:"new_avg_score"`
+	ScoreDiff    float32 `json:"score_diff"`
+	OldExpScore  float32 `json:"old_exp_score"`
+	NewExpScore  float32 `json:"new_exp_score"`
+	OldEduScore  float32 `json:"old_edu_score"`
+	NewEduScore  float32 `json:"new_edu_score"`
+	OldTechScore float32 `json:"old_tech_score"`
+	NewTechScore float32 `json:"new_tech_score"`
+}
+
+// RecalculationResult contains the results of a recalculation operation
+type RecalculationResult struct {
+	TotalCount    int           `json:"total_count"`
+	UpdatedCount  int           `json:"updated_count"`
+	NoChangeCount int           `json:"no_change_count"`
+	ScoreChanges  []ScoreChange `json:"score_changes"`
+	AverageChange float32       `json:"average_change"`
+	MaximumChange float32       `json:"maximum_change"`
+	MaximumTalent *Talent       `json:"maximum_talent"`
+}
+
+// RecalculateAllTalentScores recalculates scores for all talents in the database
+func RecalculateAllTalentScores() (*RecalculationResult, error) {
+	// Get all talents
+	talents, err := ListTalents()
+	if err != nil {
+		return nil, err
+	}
+
+	// Initialize result
+	result := &RecalculationResult{
+		TotalCount:   len(talents),
+		ScoreChanges: make([]ScoreChange, 0),
+	}
+
+	// Track the maximum change
+	var maxChange float32 = 0
+	var maxTalent *Talent = nil
+
+	// Recalculate scores for each talent
+	for _, talent := range talents {
+		// Store original scores
+		originalAvgScore := talent.AverageScore
+		originalExpScore := talent.ExperienceScore
+		originalEduScore := talent.EducationScore
+		originalTechScore := talent.TechnicalScore
+
+		// Recalculate scores
+		talent.CalcScore()
+
+		// Calculate absolute difference
+		scoreDiff := talent.AverageScore - originalAvgScore
+		absDiff := scoreDiff
+		if absDiff < 0 {
+			absDiff = -absDiff
+		}
+
+		// Only update if score changed
+		if absDiff > 0.001 { // Use a small epsilon for float comparison
+			// Update the database
+			if err := db.Save(talent).Error; err != nil {
+				return nil, err
+			}
+
+			// Create a score change record
+			scoreChange := ScoreChange{
+				Talent:       talent,
+				OldAvgScore:  originalAvgScore,
+				NewAvgScore:  talent.AverageScore,
+				ScoreDiff:    scoreDiff,
+				OldExpScore:  originalExpScore,
+				NewExpScore:  talent.ExperienceScore,
+				OldEduScore:  originalEduScore,
+				NewEduScore:  talent.EducationScore,
+				OldTechScore: originalTechScore,
+				NewTechScore: talent.TechnicalScore,
+			}
+
+			// Add to result
+			result.ScoreChanges = append(result.ScoreChanges, scoreChange)
+			result.UpdatedCount++
+
+			// Update average change
+			result.AverageChange += absDiff
+
+			// Track maximum change
+			if absDiff > maxChange {
+				maxChange = absDiff
+				maxTalent = talent
+			}
+		} else {
+			result.NoChangeCount++
+		}
+	}
+
+	// Calculate final average
+	if result.UpdatedCount > 0 {
+		result.AverageChange = result.AverageChange / float32(result.UpdatedCount)
+		result.MaximumChange = maxChange
+		result.MaximumTalent = maxTalent
+	}
+
+	return result, nil
 }
 
 func SearchTalents(query string) ([]*Talent, error) {

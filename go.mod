@@ -5,7 +5,6 @@ go 1.24.4
 require (
 	github.com/gin-contrib/cors v1.7.5
 	github.com/gin-gonic/gin v1.10.1
-	github.com/ledongthuc/pdf v0.0.0-20250511090121-5959a4027728
 	github.com/sashabaranov/go-openai v1.40.1
 	gorm.io/driver/sqlite v1.6.0
 	gorm.io/gorm v1.30.0

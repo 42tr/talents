@@ -13,7 +13,7 @@ type University struct {
 	Score      float32 `json:"score"`
 }
 
-//go:embed university.json
+//go:embed university_total.json
 var _str string
 var _m map[string]float32
 

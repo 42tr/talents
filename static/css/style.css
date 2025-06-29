@@ -724,7 +724,7 @@ h1 {
     font-size: 1.3rem;
     color: white;
     position: relative;
-    animation: spin 8s linear infinite;
+    /* animation: spin 8s linear infinite; */
     flex-shrink: 0;
     will-change: transform;
     transform-style: preserve-3d;

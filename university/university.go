@@ -39,20 +39,20 @@ func CalcScore(universities []string) float32 {
 
 func calcScore(name string) float32 {
 	score := _m[name]
-	// Convert the score from 0-1076.1 to 0-10 scale
+	// Convert the score from 0-1076.1 to 0-8 scale
 	var convertedScore float32
 	switch {
 	case score == 0:
 		convertedScore = 0
 	case score <= 100:
-		// Map linearly from 0-100 to 0-2
-		convertedScore = score * 2 / 100
+		// Map linearly from 0-100 to 0-1
+		convertedScore = score / 100
 	case score <= 300:
-		// Map linearly from 100-300 to 2-8
-		convertedScore = 2 + (score-100)*6/200
+		// Map linearly from 100-300 to 1-6
+		convertedScore = 1 + (score-100)*5/200
 	default:
-		// Map linearly from 300-1076.1 to 8-10
-		convertedScore = 8 + (score-300)*2/776.1
+		// Map linearly from 300-1076.1 to 6-8
+		convertedScore = 6 + (score-300)*2/776.1
 	}
 
 	return convertedScore

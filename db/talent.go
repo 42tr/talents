@@ -57,21 +57,38 @@ type Talent struct {
 
 func (this *Talent) CalcScore() {
 	calExperienceScore := func(companies StringSlice) float32 {
-		lv1s := []string{"阿里", "腾讯", "百度", "字节跳动"}
-		if utils.StringSliceContainsAny(lv1s, companies...) {
-			return 9
-		}
-		lv2s := []string{"华为", "中兴", "小米", "oppo", "vivo", "realme"}
+		score := float32(5)
+		lv2s := []string{"华为", "中兴", "小米", "oppo", "vivo", "realme", "思杰", "二十八", "十四", "京东", "哔哩哔哩"}
 		if utils.StringSliceContainsAny(lv2s, companies...) {
-			return 7.5
+			score = 5.5
 		}
-		return 6
+		lv1s := []string{"阿里", "腾讯", "百度", "字节跳动", "甲骨文"}
+		if utils.StringSliceContainsAny(lv1s, companies...) {
+			score = 7
+		}
+		lv0s := []string{"谷歌"}
+		if utils.StringSliceContainsAny(lv0s, companies...) {
+			score = 8
+		}
+		if this.Years >= 2 {
+			score += 0.5
+		}
+		if this.Years >= 5 {
+			score += 0.5
+		}
+		if this.Years >= 7 {
+			score += 0.5
+		}
+		if this.Years >= 10 {
+			score += 0.5
+		}
+		return score
 	}
 	this.ExperienceScore = calExperienceScore(this.Companies)
 
 	calEducationScore := func(universities []string, education string, major string) float32 {
 		score := university.CalcScore(universities)
-		if utils.StringSliceContainsAny(_MAJORS_RELATED, education) {
+		if utils.StringSliceContainsAny([]string{"软件", "计算机", "物联网", "人工智能", "大数据", "云计算", "嵌入式", "电子信息"}, major) {
 			score += 1
 		}
 		if education == "硕士" {
@@ -89,18 +106,41 @@ func (this *Talent) CalcScore() {
 		switch this.JobPosition {
 		case "后端":
 			if !utils.StringSliceContainsAny(skills, "python") {
-				return 0.1
+				score -= 2
+			}
+			if !utils.StringSliceContainsAny(skills, "大模型", "ollama", "vllm", "transformer", "pytorch", "numpy", "langchain") {
+				score -= 2
 			}
 
 			if utils.StringSliceContainsAny(skills, "大模型微调") {
-				score += 0.7
-			} else if utils.StringSliceContainsAny(skills, "大模型") {
-				score += 0.8
+				score += 0.5
 			}
 			if utils.StringSliceContainsAny(skills, "rust") {
 				score += 0.5
 			}
-			for _, skill := range []string{"java", "go", "c", "c++", "javascript", "js", "react", "angular", "vue", "node", "database", "sql", "nosql", "docker", "kubernetes", "k8s", "mysql", "redis", "postgresql", "mongodb", "elasticsearch", "es", "prometheus"} {
+			if utils.StringSliceContainsAny(skills, "kubernetes", "k8s") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "docker") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "es", "elasticsearch", "elk") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "transformer", "numpy", "pytorch") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "javascript", "js", "angular", "vue", "react", "nodejs") {
+				score += 0.2
+			}
+			if utils.StringSliceContainsAny(skills, "mysql", "postgresql", "sql", "tidb") {
+				score += 0.2
+			}
+			if utils.StringSliceContainsAny(skills, "设计模式") {
+				score += 0.2
+			}
+
+			for _, skill := range []string{"java", "go", "c", "c++", "nosql", "redis", "mongodb", "prometheus", "ollama", "vllm", "fastapi", "kafka", "rabbitmq", "zookeeper", "rocketmq", "pulsar", "minio", "etcd", "langchain"} {
 				if utils.StringSliceContainsAny(skills, skill) {
 					score += 0.1
 				}
@@ -109,7 +149,16 @@ func (this *Talent) CalcScore() {
 			if !utils.StringSliceContainsAny(skills, "python") {
 				return 0.1
 			}
-			return 10
+			score := float32(5.0)
+			if utils.StringSliceContainsAny(skills, "transformer") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "pytorch") {
+				score += 0.5
+			}
+			if utils.StringSliceContainsAny(skills, "微调") {
+				score += 0.5
+			}
 		case "前端":
 			if utils.StringSliceContainsAny(skills, "vue3") {
 				score += 1
@@ -131,7 +180,7 @@ func (this *Talent) CalcScore() {
 			}
 		case "运维":
 			if !utils.StringSliceContainsAny(skills, "docker") {
-				return 0.1
+				score -= 2
 			}
 			if utils.StringSliceContainsAny(skills, "大模型") {
 				score += 1
@@ -148,8 +197,11 @@ func (this *Talent) CalcScore() {
 			if utils.StringSliceContainsAny(skills, "mysql", "redis", "postgresql", "mongodb", "elasticsearch", "es", "prometheus") {
 				score += 1
 			}
-			if utils.StringSliceContainsAny(skills, "c", "java", "python", "go", "rust") {
+			if utils.StringSliceContainsAny(skills, "python") {
 				score += 1
+			}
+			if utils.StringSliceContainsAny(skills, "c", "java", "python", "go", "rust") {
+				score += 0.5
 			}
 		case "嵌入式":
 			if utils.StringSliceContainsAny(skills, "c", "c++") {
@@ -170,10 +222,13 @@ func (this *Talent) CalcScore() {
 			if utils.StringSliceContainsAny(skills, "量化") {
 				score += 1
 			}
+			if utils.StringSliceContainsAny(skills, "移植") {
+				score += 1
+			}
 		}
 
 		if blog != "" {
-			score += 0.5
+			score += 1
 		}
 		if github != "" {
 			score += 0.5
@@ -267,6 +322,13 @@ type RecalculationResult struct {
 	MaximumTalent *Talent       `json:"maximum_talent"`
 }
 
+func abs(num float32) float32 {
+	if num < 0 {
+		return -num
+	}
+	return num
+}
+
 // RecalculateAllTalentScores recalculates scores for all talents in the database
 func RecalculateAllTalentScores() (*RecalculationResult, error) {
 	// Get all talents
@@ -332,8 +394,8 @@ func RecalculateAllTalentScores() (*RecalculationResult, error) {
 			result.AverageChange += absDiff
 
 			// Track maximum change
-			if absDiff > maxChange {
-				maxChange = absDiff
+			if abs(scoreDiff) > abs(maxChange) {
+				maxChange = scoreDiff
 				maxTalent = talent
 			}
 		} else {

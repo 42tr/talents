@@ -252,9 +252,9 @@ function renderTalentList(talents) {
 // Get color based on score
 function getScoreColor(score) {
   if (!score) return "#999";
-  if (score >= 9) return "#52c41a"; // 优秀 - 绿色
-  if (score >= 7) return "#1890ff"; // 良好 - 蓝色
-  if (score >= 6) return "#faad14"; // 及格 - 黄色
+  if (score >= 7) return "#52c41a"; // 优秀 - 绿色
+  if (score >= 6) return "#1890ff"; // 良好 - 蓝色
+  if (score >= 5) return "#faad14"; // 及格 - 黄色
   return "#f5222d"; // 不及格 - 红色
 }
 
@@ -434,10 +434,6 @@ function showTalentDetails(talent) {
                     <div class="me-3 mb-2">
                         <div class="text-center mb-1">技术</div>
                         <div class="score-circle" style="background-color: ${scoreColor}">${talent.technicalScore?.toFixed(1) || "-"}</div>
-                    </div>
-                    <div class="me-3 mb-2">
-                        <div class="text-center mb-1">意向</div>
-                        <div class="score-circle" style="background-color: ${scoreColor}">${talent.intentScore?.toFixed(1) || "-"}</div>
                     </div>
                     <div class="me-3 mb-2">
                         <div class="text-center mb-1">平均</div>
@@ -889,13 +885,13 @@ function showAlert(message, type, container = null) {
     container.appendChild(alert);
 
     // Auto hide after 5 seconds for success messages
-    if (type === "success" || type === "info") {
-      setTimeout(() => {
-        if (container.contains(alert)) {
-          container.removeChild(alert);
-        }
-      }, 5000);
-    }
+    // if (type === "success" || type === "info") {
+    //   setTimeout(() => {
+    //     if (container.contains(alert)) {
+    //       container.removeChild(alert);
+    //     }
+    //   }, 5000);
+    // }
   } else {
     // If no container specified, add to body
     document.body.appendChild(alert);

@@ -52,6 +52,7 @@ type Talent struct {
 	IntentScore     float32     `json:"intentScore"`     // 意向分
 	AverageScore    float32     `json:"averageScore"`
 	ResumePath      string      `json:"resumePath"` // 简历文件路径
+	Hash            string      `json:"hash"`
 }
 
 func (this *Talent) CalcScore() {
@@ -251,4 +252,14 @@ func SearchTalents(query string) ([]*Talent, error) {
 		return nil, err
 	}
 	return talents, nil
+}
+
+// GetTalentByHash checks if a talent with the given resume hash already exists
+func GetTalentByHash(hash string) (*Talent, error) {
+	var talent Talent
+	err := db.Where("hash = ?", hash).First(&talent).Error
+	if err != nil {
+		return nil, err
+	}
+	return &talent, nil
 }

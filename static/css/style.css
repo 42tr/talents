@@ -1529,8 +1529,32 @@ input[type="file"]::-webkit-file-upload-button:hover {
     border-left: 3px solid #ff0055;
 }
 
+.batch-upload-results .list-group-item-info {
+    border-left: 3px solid #00aeff;
+}
+
 .batch-upload-results .list-group-item small {
     opacity: 0.7;
     display: block;
     margin-bottom: 3px;
+}
+
+.upload-duplicates {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+.view-duplicate-details {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    background-color: rgba(0, 174, 255, 0.1);
+    border-color: rgba(0, 174, 255, 0.5);
+    color: #00aeff;
+    transition: all 0.3s ease;
+}
+
+.view-duplicate-details:hover {
+    background-color: rgba(0, 174, 255, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 5px #00aeff;
 }

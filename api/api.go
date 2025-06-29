@@ -14,6 +14,7 @@ import (
 
 	"talents/db"
 	"talents/pdf"
+	"talents/utils"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -148,14 +149,46 @@ func uploadResumeAndCreateTalent(c *gin.Context) {
 		return
 	}
 
+	// Calculate file hash
+	fileHash, err := utils.CalculateFileHash(resumePath)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to calculate file hash: " + err.Error()})
+		return
+	}
+
+	// Check if a talent with the same resume hash already exists
+	existingTalent, err := db.GetTalentByHash(fileHash)
+	if err == nil {
+		// Talent with same hash already exists
+		c.JSON(http.StatusOK, gin.H{
+			"message":         "档案已存在",
+			"total":           1,
+			"successful":      0,
+			"duplicate_count": 1,
+			"failed":          0,
+			"duplicates": []gin.H{
+				{
+					"filename":        header.Filename,
+					"existing_file":   existingTalent.ResumePath,
+					"existing_talent": existingTalent,
+				},
+			},
+		})
+
+		// Remove the duplicate file
+		os.Remove(resumePath)
+		return
+	}
+
 	talent, err := pdf.GenerateTalentFromPDF(resumePath)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse resume: " + err.Error()})
 		return
 	}
 
-	// Save the resume path in the talent object
+	// Save the resume path and hash in the talent object
 	talent.ResumePath = resumePath
+	talent.Hash = fileHash
 
 	// Save the talent to the database
 	if err := db.CreateTalent(talent); err != nil {
@@ -164,9 +197,18 @@ func uploadResumeAndCreateTalent(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
-		"message": "Resume processed successfully",
-		"talent":  talent,
-		"file":    resumePath,
+		"message":         "Resume processed successfully",
+		"total":           1,
+		"successful":      1,
+		"duplicate_count": 0,
+		"failed":          0,
+		"results": []gin.H{
+			{
+				"filename": header.Filename,
+				"talent":   talent,
+				"file":     resumePath,
+			},
+		},
 	})
 }
 
@@ -203,6 +245,7 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 	var mutex sync.Mutex
 	results := make([]gin.H, 0, len(files))
 	errors := make([]gin.H, 0)
+	duplicates := make([]gin.H, 0)
 
 	if err := os.MkdirAll("resumes", os.ModePerm); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
@@ -276,6 +319,35 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 				return
 			}
 
+			// Calculate file hash
+			fileHash, err := utils.CalculateFileHash(resumePath)
+			if err != nil {
+				mutex.Lock()
+				errors = append(errors, gin.H{
+					"filename": fileHeader.Filename,
+					"error":    "Failed to calculate file hash: " + err.Error(),
+				})
+				mutex.Unlock()
+				return
+			}
+
+			// Check if a talent with the same resume hash already exists
+			existingTalent, err := db.GetTalentByHash(fileHash)
+			if err == nil {
+				// Talent with same hash already exists
+				mutex.Lock()
+				duplicates = append(duplicates, gin.H{
+					"filename":        fileHeader.Filename,
+					"existing_file":   existingTalent.ResumePath,
+					"existing_talent": existingTalent,
+				})
+				mutex.Unlock()
+
+				// Remove the duplicate file
+				os.Remove(resumePath)
+				return
+			}
+
 			// Generate talent from PDF
 			talent, err := pdf.GenerateTalentFromPDF(resumePath)
 			if err != nil {
@@ -288,8 +360,9 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 				return
 			}
 
-			// Save the resume path in the talent object
+			// Save the resume path and hash in the talent object
 			talent.ResumePath = resumePath
+			talent.Hash = fileHash
 
 			// Save the talent to the database
 			if err := db.CreateTalent(talent); err != nil {
@@ -317,11 +390,13 @@ func uploadMultipleResumesAndCreateTalents(c *gin.Context) {
 	wg.Wait()
 
 	c.JSON(http.StatusOK, gin.H{
-		"message":    "Batch processing completed",
-		"total":      len(files),
-		"successful": len(results),
-		"failed":     len(errors),
-		"results":    results,
-		"errors":     errors,
+		"message":         "Batch processing completed",
+		"total":           len(files),
+		"successful":      len(results),
+		"duplicate_count": len(duplicates),
+		"failed":          len(errors),
+		"results":         results,
+		"duplicates":      duplicates,
+		"errors":          errors,
 	})
 }

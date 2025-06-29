@@ -461,13 +461,21 @@ function handleResumeUpload() {
   // Create form data
   const formData = new FormData();
 
-  // Append all files with the name "resumes[]"
-  for (let i = 0; i < files.length; i++) {
-    formData.append("resumes[]", files[i]);
+  // Use the appropriate endpoint based on number of files
+  let url = "/talent/upload-resumes";
+
+  if (files.length === 1) {
+    // For single file upload
+    formData.append("resume", files[0]);
+    url = "/talent/upload-resume";
+  } else {
+    // For multiple files upload
+    for (let i = 0; i < files.length; i++) {
+      formData.append("resumes[]", files[i]);
+    }
   }
 
-  // Use the batch upload endpoint
-  fetch("/talent/upload-resumes", {
+  fetch(url, {
     method: "POST",
     body: formData,
   })
@@ -478,17 +486,54 @@ function handleResumeUpload() {
       return response.json();
     })
     .then((data) => {
+      // Normalize response data for single file uploads
+      if (!data.results && !data.duplicates && (data.talent || data.file)) {
+        // Convert single file response to batch format
+        data = {
+          total: 1,
+          successful: data.talent ? 1 : 0,
+          duplicate_count:
+            data.message && data.message.includes("已存在") ? 1 : 0,
+          failed: 0,
+          results: data.talent
+            ? [{ filename: "档案", talent: data.talent, file: data.file }]
+            : [],
+          duplicates:
+            data.message && data.message.includes("已存在")
+              ? [
+                  {
+                    filename: "档案",
+                    existing_talent: data.talent,
+                    existing_file: data.file,
+                  },
+                ]
+              : [],
+        };
+      }
+
       const successCount = data.successful || 0;
       const failedCount = data.failed || 0;
+      const duplicateCount = data.duplicate_count || 0;
       const totalCount = data.total || 0;
 
-      let statusMessage = `[ 处理完成 ] 共${totalCount}个档案: ${successCount}个成功, ${failedCount}个失败`;
+      let statusMessage = `[ 处理完成 ] 共${totalCount}个档案: ${successCount}个成功, ${duplicateCount}个已存在, ${failedCount}个失败`;
       let statusType = "success";
 
-      if (failedCount > 0 && successCount > 0) {
+      if (failedCount > 0 && (successCount > 0 || duplicateCount > 0)) {
         statusType = "warning";
-      } else if (failedCount > 0 && successCount === 0) {
+      } else if (
+        failedCount > 0 &&
+        successCount === 0 &&
+        duplicateCount === 0
+      ) {
         statusType = "danger";
+      } else if (
+        duplicateCount > 0 &&
+        successCount === 0 &&
+        failedCount === 0
+      ) {
+        statusType = "info";
+        statusMessage = `[ 提示 ] 档案已存在系统中，无需重复上传`;
       }
 
       showAlert(statusMessage, statusType, uploadStatus);
@@ -496,13 +541,15 @@ function handleResumeUpload() {
       // Show detailed results
       showBatchUploadResults(data, uploadStatus);
 
-      if (successCount > 0) {
+      if (successCount > 0 || duplicateCount > 0) {
         // Reset form and reload talents after a short delay
         setTimeout(() => {
           document.getElementById("resumeUploadForm").reset();
 
-          // Hide the upload modal
-          uploadModal.hide();
+          // Hide the upload modal if there were successes or duplicates
+          if (successCount > 0 || duplicateCount > 0) {
+            uploadModal.hide();
+          }
 
           // Reload the talent list
           loadTalents();
@@ -516,6 +563,17 @@ function handleResumeUpload() {
           ) {
             setTimeout(() => {
               showTalentDetails(data.results[0].talent);
+            }, 500);
+          }
+          // If only one duplicate was found, show its details
+          else if (
+            duplicateCount === 1 &&
+            data.duplicates &&
+            data.duplicates[0] &&
+            data.duplicates[0].existing_talent
+          ) {
+            setTimeout(() => {
+              showTalentDetails(data.duplicates[0].existing_talent);
             }, 500);
           }
         }, 3000); // Give user more time to see the results message
@@ -543,7 +601,7 @@ function handleSearch() {
 function showBatchUploadResults(data, container) {
   if (!data || !container) return;
 
-  const { results = [], errors = [] } = data;
+  const { results = [], errors = [], duplicates = [] } = data;
 
   let detailsHTML = '<div class="batch-upload-results mt-3">';
 
@@ -563,6 +621,31 @@ function showBatchUploadResults(data, container) {
       detailsHTML += `<li class="list-group-item list-group-item-success">
         <small>${filename}</small>
         <div><strong>${talentName}</strong></div>
+      </li>`;
+    });
+
+    detailsHTML += "</ul></div>";
+  }
+
+  // Add duplicates section if there are duplicate files
+  if (duplicates.length > 0) {
+    detailsHTML += '<div class="upload-duplicates mb-2">';
+    detailsHTML += '<h6 class="text-info">档案已存在:</h6>';
+    detailsHTML += '<ul class="list-group">';
+
+    duplicates.forEach((duplicate) => {
+      const filename = escapeHtml(duplicate.filename);
+      const talentName =
+        duplicate.existing_talent && duplicate.existing_talent.name
+          ? escapeHtml(duplicate.existing_talent.name)
+          : "未知姓名";
+
+      detailsHTML += `<li class="list-group-item list-group-item-info">
+        <small>${filename}</small>
+        <div><strong>${talentName}</strong> 档案已在系统中存在</div>
+        <div><button class="btn btn-sm btn-outline-primary mt-1 view-duplicate-details"
+          data-phone="${duplicate.existing_talent ? duplicate.existing_talent.phone : ""}">
+          查看已存在档案</button></div>
       </li>`;
     });
 
@@ -596,6 +679,26 @@ function showBatchUploadResults(data, container) {
 
   // Append to container after the alert
   container.appendChild(resultsElement);
+
+  // Add event listeners to view duplicate details buttons
+  const viewDuplicateButtons = resultsElement.querySelectorAll(
+    ".view-duplicate-details",
+  );
+  viewDuplicateButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const phone = this.getAttribute("data-phone");
+      if (phone) {
+        // Find the talent in the current data
+        const duplicate = duplicates.find(
+          (d) => d.existing_talent && d.existing_talent.phone == phone,
+        );
+
+        if (duplicate && duplicate.existing_talent) {
+          showTalentDetails(duplicate.existing_talent);
+        }
+      }
+    });
+  });
 }
 
 // Show alert message

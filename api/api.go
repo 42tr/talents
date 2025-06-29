@@ -1,8 +1,10 @@
 package api
 
 import (
+	"embed"
 	"fmt"
 	"io"
+	"io/fs"
 	"mime/multipart"
 	"net/http"
 	"os"
@@ -20,6 +22,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//go:embed static/index.html static/css/* static/js/*
+var staticFiles embed.FS
+
 func Router() *gin.Engine {
 	r := gin.Default()
 	r.Use(cors.Default())
@@ -33,15 +38,33 @@ func Router() *gin.Engine {
 	r.POST("/talent/upload-resume", uploadResumeAndCreateTalent)
 	r.POST("/talent/upload-resumes", uploadMultipleResumesAndCreateTalents)
 	r.POST("/talents/recalculate-scores", recalculateScores)
+	r.POST("/talent/:id/interview-record", updateInterviewRecord)
 	r.Static("/resumes", "./resumes")
 	r.GET("/resume/:phone", getResumeByPhone)
 
-	// Serve static files for the frontend
-	r.Static("/static", "./static")
+	// Serve static files for the frontend from embedded filesystem
+	staticFS, err := fs.Sub(staticFiles, "static")
+	if err != nil {
+		panic(err)
+	}
+	r.StaticFS("/static", http.FS(staticFS))
 
-	// Serve the main index.html
+	// Serve the main index.html from embedded filesystem
 	r.GET("/", func(c *gin.Context) {
-		c.File("./static/index.html")
+		file, err := staticFS.Open("index.html")
+		if err != nil {
+			c.String(http.StatusInternalServerError, "Could not open index.html")
+			return
+		}
+		defer file.Close()
+
+		fileInfo, err := file.Stat()
+		if err != nil {
+			c.String(http.StatusInternalServerError, "Could not get file info")
+			return
+		}
+
+		c.DataFromReader(http.StatusOK, fileInfo.Size(), "text/html", file, nil)
 	})
 
 	return r
@@ -423,5 +446,59 @@ func recalculateScores(c *gin.Context) {
 		"maximum_change":  result.MaximumChange,
 		"score_changes":   result.ScoreChanges,
 		"maximum_talent":  result.MaximumTalent,
+	})
+}
+
+// updateInterviewRecord handles updating a talent's interview record
+func updateInterviewRecord(c *gin.Context) {
+	id := c.Param("id")
+	fmt.Printf("Updating interview record for talent ID: %s\n", id)
+
+	// Get the talent first
+	talent, err := db.GetTalent(id)
+	if err != nil {
+		fmt.Printf("Error retrieving talent: %v\n", err)
+		c.JSON(http.StatusNotFound, gin.H{"error": "人才信息未找到", "details": err.Error()})
+		return
+	}
+
+	// Parse request body
+	var requestBody struct {
+		InterviewRecord string `json:"interviewRecord"`
+	}
+
+	if err := c.ShouldBindJSON(&requestBody); err != nil {
+		fmt.Printf("Error parsing request body: %v\n", err)
+		c.JSON(http.StatusBadRequest, gin.H{"error": "无效的请求数据", "details": err.Error()})
+		return
+	}
+
+	// Validate the input
+	if len(requestBody.InterviewRecord) > 10000 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "面试记录内容过长，请保持在10000字以内"})
+		return
+	}
+
+	// Update only the interview record field
+	talent.InterviewRecord = requestBody.InterviewRecord
+
+	// Try direct SQL update if GORM model update fails
+	if err := db.UpdateTalent(id, talent); err != nil {
+		fmt.Printf("Error updating talent with GORM: %v\n", err)
+
+		// Try direct SQL as fallback (useful if column was just added)
+		if err := db.UpdateTalentInterviewRecord(id, requestBody.InterviewRecord); err != nil {
+			fmt.Printf("Error updating with direct SQL: %v\n", err)
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"error":   "更新面试记录失败",
+				"details": "请确保数据库已更新，包含interview_record字段: " + err.Error(),
+			})
+			return
+		}
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "面试记录已更新",
+		"talent":  talent,
 	})
 }

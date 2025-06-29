@@ -53,6 +53,7 @@ type Talent struct {
 	AverageScore    float32     `json:"averageScore"`
 	ResumePath      string      `json:"resumePath"` // 简历文件路径
 	Hash            string      `json:"hash"`
+	InterviewRecord string      `json:"interviewRecord"` // 面试记录
 }
 
 func (this *Talent) CalcScore() {
@@ -283,6 +284,11 @@ func GetTalent(id string) (*Talent, error) {
 
 func UpdateTalent(id string, t *Talent) error {
 	return db.Model(&Talent{}).Where("phone = ?", id).Updates(t).Error
+}
+
+// UpdateTalentInterviewRecord updates only the interview_record field using direct SQL
+func UpdateTalentInterviewRecord(id string, interviewRecord string) error {
+	return db.Exec("UPDATE talents SET interview_record = ? WHERE phone = ?", interviewRecord, id).Error
 }
 
 func DeleteTalent(id string) error {

@@ -1,0 +1,5686 @@
+[
+  {
+    "univUp": "tsinghua-university",
+    "univLogo": "logo\u002F27532357.png",
+    "univNameCn": "清华大学",
+    "univNameEn": "Tsinghua University",
+    "score": 1076.1
+  },
+  {
+    "univUp": "peking-university",
+    "univLogo": "logo\u002F86350223.png",
+    "univNameCn": "北京大学",
+    "univNameEn": "Peking University",
+    "score": 1027.7
+  },
+  {
+    "univUp": "zhejiang-university",
+    "univLogo": "logo\u002F88311656.png",
+    "univNameCn": "浙江大学",
+    "univNameEn": "Zhejiang University",
+    "score": 868.9
+  },
+  {
+    "univUp": "shanghai-jiao-tong-university",
+    "univLogo": "logo\u002F27403919.png",
+    "univNameCn": "上海交通大学",
+    "univNameEn": "Shanghai Jiao Tong University",
+    "score": 851.7
+  },
+  {
+    "univUp": "fudan-university",
+    "univLogo": "logo\u002F28312850.png",
+    "univNameCn": "复旦大学",
+    "univNameEn": "Fudan University",
+    "score": 788.4
+  },
+  {
+    "univUp": "nanjing-university",
+    "univLogo": "logo\u002F44696062.png",
+    "univNameCn": "南京大学",
+    "univNameEn": "Nanjing University",
+    "score": 707.8
+  },
+  {
+    "univUp": "university-of-science-and-technology-of-china",
+    "univLogo": "logo\u002F50132214.png",
+    "univNameCn": "中国科学技术大学",
+    "univNameEn": "University of Science and Technology of China",
+    "score": 637
+  },
+  {
+    "univUp": "wuhan-university",
+    "univLogo": "logo\u002F46182017.png",
+    "univNameCn": "武汉大学",
+    "univNameEn": "Wuhan University",
+    "score": 629.2
+  },
+  {
+    "univUp": "huazhong-university-of-science-and-technology",
+    "univLogo": "logo\u002F69664504.png",
+    "univNameCn": "华中科技大学",
+    "univNameEn": "Huazhong University of Science and Technology",
+    "score": 628.9
+  },
+  {
+    "univUp": "xian-jiaotong-university",
+    "univLogo": "logo\u002F77584005.png",
+    "univNameCn": "西安交通大学",
+    "univNameEn": "Xi'an Jiaotong University",
+    "score": 598.5
+  },
+  {
+    "univUp": "beihang-university",
+    "univLogo": "logo\u002F22403670.png",
+    "univNameCn": "北京航空航天大学",
+    "univNameEn": "Beihang University",
+    "score": 585.4
+  },
+  {
+    "univUp": "sun-yat-sen-university",
+    "univLogo": "logo\u002F46293852.png",
+    "univNameCn": "中山大学",
+    "univNameEn": "Sun Yat-sen University",
+    "score": 585.2
+  },
+  {
+    "univUp": "beijing-institute-of-technology",
+    "univLogo": "logo\u002F85386135.png",
+    "univNameCn": "北京理工大学",
+    "univNameEn": "Beijing Institute of Technology",
+    "score": 582.4
+  },
+  {
+    "univUp": "peking-union-medical-college",
+    "univLogo": "logo\u002F81176996.png",
+    "univNameCn": "北京协和医学院",
+    "univNameEn": "Peking Union Medical College",
+    "score": 579.4
+  },
+  {
+    "univUp": "harbin-institute-of-technology",
+    "univLogo": "logo\u002F88331082.png",
+    "univNameCn": "哈尔滨工业大学",
+    "univNameEn": "Harbin Institute of Technology",
+    "score": 576.4
+  },
+  {
+    "univUp": "sichuan-university",
+    "univLogo": "logo\u002F75651370.png",
+    "univNameCn": "四川大学",
+    "univNameEn": "Sichuan University",
+    "score": 576.3
+  },
+  {
+    "univUp": "southeast-university",
+    "univLogo": "logo\u002F82819451.png",
+    "univNameCn": "东南大学",
+    "univNameEn": "Southeast University",
+    "score": 575
+  },
+  {
+    "univUp": "renmin-university-of-china",
+    "univLogo": "logo\u002F88617939.png",
+    "univNameCn": "中国人民大学",
+    "univNameEn": "Renmin University of China",
+    "score": 558
+  },
+  {
+    "univUp": "tongji-university",
+    "univLogo": "logo\u002F39174907.png",
+    "univNameCn": "同济大学",
+    "univNameEn": "Tongji University",
+    "score": 547.7
+  },
+  {
+    "univUp": "beijing-normal-university",
+    "univLogo": "logo\u002F38816505.png",
+    "univNameCn": "北京师范大学",
+    "univNameEn": "Beijing Normal University",
+    "score": 543.8
+  },
+  {
+    "univUp": "tianjin-university",
+    "univLogo": "logo\u002F74813674.png",
+    "univNameCn": "天津大学",
+    "univNameEn": "Tianjin University",
+    "score": 528.5
+  },
+  {
+    "univUp": "northwestern-polytechnical-university",
+    "univLogo": "logo\u002F20384817.png",
+    "univNameCn": "西北工业大学",
+    "univNameEn": "Northwestern Polytechnical University",
+    "score": 513.7
+  },
+  {
+    "univUp": "shandong-university",
+    "univLogo": "logo\u002F97189370.png",
+    "univNameCn": "山东大学",
+    "univNameEn": "Shandong University",
+    "score": 513.4
+  },
+  {
+    "univUp": "nankai-university",
+    "univLogo": "logo\u002F44629152.png",
+    "univNameCn": "南开大学",
+    "univNameEn": "Nankai University",
+    "score": 512.2
+  },
+  {
+    "univUp": "xiamen-university",
+    "univLogo": "logo\u002F14008229.png",
+    "univNameCn": "厦门大学",
+    "univNameEn": "Xiamen University",
+    "score": 504.8
+  },
+  {
+    "univUp": "china-agricultural-university",
+    "univLogo": "logo\u002F48410070.png",
+    "univNameCn": "中国农业大学",
+    "univNameEn": "China Agricultural University",
+    "score": 499.2
+  },
+  {
+    "univUp": "jilin-university",
+    "univLogo": "logo\u002F76557044.png",
+    "univNameCn": "吉林大学",
+    "univNameEn": "Jilin University",
+    "score": 486
+  },
+  {
+    "univUp": "central-south-university",
+    "univLogo": "logo\u002F65984093.png",
+    "univNameCn": "中南大学",
+    "univNameEn": "Central South University",
+    "score": 485.3
+  },
+  {
+    "univUp": "dalian-university-of-technology",
+    "univLogo": "logo\u002F54289554.png",
+    "univNameCn": "大连理工大学",
+    "univNameEn": "Dalian University of Technology",
+    "score": 469.5
+  },
+  {
+    "univUp": "hunan-university",
+    "univLogo": "logo\u002F79015808.png",
+    "univNameCn": "湖南大学",
+    "univNameEn": "Hunan University",
+    "score": 466.4
+  },
+  {
+    "univUp": "east-china-normal-university",
+    "univLogo": "logo\u002F47430452.png",
+    "univNameCn": "华东师范大学",
+    "univNameEn": "East China Normal University",
+    "score": 460.1
+  },
+  {
+    "univUp": "south-china-university-of-technology",
+    "univLogo": "logo\u002F69348939.png",
+    "univNameCn": "华南理工大学",
+    "univNameEn": "South China University of Technology",
+    "score": 458.7
+  },
+  {
+    "univUp": "southern-university-of-science-and-technology",
+    "univLogo": "logo\u002F22950445.png",
+    "univNameCn": "南方科技大学",
+    "univNameEn": "Southern University of Science and Technology",
+    "score": 457.1
+  },
+  {
+    "univUp": "university-of-electronic-science-and-technology-of-china",
+    "univLogo": "logo\u002F55538407.png",
+    "univNameCn": "电子科技大学",
+    "univNameEn": "University of Electronic Science and Technology of China",
+    "score": 442.8
+  },
+  {
+    "univUp": "chongqing-university",
+    "univLogo": "logo\u002F79822387.png",
+    "univNameCn": "重庆大学",
+    "univNameEn": "Chongqing University",
+    "score": 425.7
+  },
+  {
+    "univUp": "university-of-science-and-technology-beijing",
+    "univLogo": "logo\u002F96310183.png",
+    "univNameCn": "北京科技大学",
+    "univNameEn": "University of Science and Technology Beijing",
+    "score": 418.9
+  },
+  {
+    "univUp": "shanghai-university-of-finance-and-economics",
+    "univLogo": "logo\u002F75328210.png",
+    "univNameCn": "上海财经大学",
+    "univNameEn": "Shanghai University of Finance and Economics",
+    "score": 411.95
+  },
+  {
+    "univUp": "capital-medical-university",
+    "univLogo": "logo\u002F63885672.png",
+    "univNameCn": "首都医科大学",
+    "univNameEn": "Capital Medical University",
+    "score": 411.95
+  },
+  {
+    "univUp": "nanjing-university-of-aeronautics-and-astronautics",
+    "univLogo": "logo-jpg\u002F4506696400.jpg",
+    "univNameCn": "南京航空航天大学",
+    "univNameEn": "Nanjing University of Aeronautics and Astronautics",
+    "score": 405
+  },
+  {
+    "univUp": "northeastern-university",
+    "univLogo": "logo\u002F79513869.png",
+    "univNameCn": "东北大学",
+    "univNameEn": "Northeastern University",
+    "score": 404.5
+  },
+  {
+    "univUp": "nanjing-university-of-science-and-technology",
+    "univLogo": "logo\u002F38974419.png",
+    "univNameCn": "南京理工大学",
+    "univNameEn": "Nanjing University of Science and Technology",
+    "score": 401.5
+  },
+  {
+    "univUp": "lanzhou-university",
+    "univLogo": "logo\u002F84317715.png",
+    "univNameCn": "兰州大学",
+    "univNameEn": "Lanzhou University",
+    "score": 385.7
+  },
+  {
+    "univUp": "southern-medical-university",
+    "univLogo": "logo\u002F17740872.png",
+    "univNameCn": "南方医科大学",
+    "univNameEn": "Southern Medical University",
+    "score": 381.5
+  },
+  {
+    "univUp": "xidian-university",
+    "univLogo": "logo\u002F88267454.png",
+    "univNameCn": "西安电子科技大学",
+    "univNameEn": "Xidian University",
+    "score": 377.3
+  },
+  {
+    "univUp": "shanghaitech-university",
+    "univLogo": "logo\u002F46886554.png",
+    "univNameCn": "上海科技大学",
+    "univNameEn": "ShanghaiTech University",
+    "score": 374.8
+  },
+  {
+    "univUp": "beijing-jiaotong-university",
+    "univLogo": "logo\u002F60987143.png",
+    "univNameCn": "北京交通大学",
+    "univNameEn": "Beijing Jiaotong University",
+    "score": 372.4
+  },
+  {
+    "univUp": "harbin-engineering-university",
+    "univLogo": "logo\u002F86980791.png",
+    "univNameCn": "哈尔滨工程大学",
+    "univNameEn": "Harbin Engineering University",
+    "score": 371.6
+  },
+  {
+    "univUp": "east-china-university-of-science-and-technology",
+    "univLogo": "logo\u002F93042584.png",
+    "univNameCn": "华东理工大学",
+    "univNameEn": "East China University of Science and Technology",
+    "score": 371.5
+  },
+  {
+    "univUp": "northeast-normal-university",
+    "univLogo": "logo\u002F12611652.png",
+    "univNameCn": "东北师范大学",
+    "univNameEn": "Northeast Normal University",
+    "score": 368.8
+  },
+  {
+    "univUp": "the-chinese-university-of-hong-kong-shenzhen",
+    "univLogo": "logo\u002F79683590.png",
+    "univNameCn": "香港中文大学（深圳）",
+    "univNameEn": "The Chinese University of Hong Kong, Shenzhen",
+    "score": 367.8
+  },
+  {
+    "univUp": "central-university-of-finance-and-economics",
+    "univLogo": "logo\u002F83886858.png",
+    "univNameCn": "中央财经大学",
+    "univNameEn": "Central University of Finance and Economics",
+    "score": 367.8
+  },
+  {
+    "univUp": "soochow-university-china",
+    "univLogo": "logo\u002F44374737.png",
+    "univNameCn": "苏州大学",
+    "univNameEn": "Soochow University",
+    "score": 366.8
+  },
+  {
+    "univUp": "huazhong-agricultural-university",
+    "univLogo": "logo\u002F20950268.png",
+    "univNameCn": "华中农业大学",
+    "univNameEn": "Huazhong Agricultural University",
+    "score": 365.5
+  },
+  {
+    "univUp": "wuhan-university-of-technology",
+    "univLogo": "logo\u002F16563358.png",
+    "univNameCn": "武汉理工大学",
+    "univNameEn": "Wuhan University of Technology",
+    "score": 359.3
+  },
+  {
+    "univUp": "china-university-of-petroleum-beijing",
+    "univLogo": "logo-jpg\u002F6662428200.jpg",
+    "univNameCn": "中国石油大学（北京）",
+    "univNameEn": "China University of Petroleum, Beijing",
+    "score": 359.3
+  },
+  {
+    "univUp": "zhengzhou-university",
+    "univLogo": "logo\u002F68963418.png",
+    "univNameCn": "郑州大学",
+    "univNameEn": "Zhengzhou University",
+    "score": 353.1
+  },
+  {
+    "univUp": "jiangnan-university",
+    "univLogo": "logo\u002F92884896.png",
+    "univNameCn": "江南大学",
+    "univNameEn": "Jiangnan University",
+    "score": 349.7
+  },
+  {
+    "univUp": "southwest-jiaotong-university",
+    "univLogo": "logo\u002F29218271.png",
+    "univNameCn": "西南交通大学",
+    "univNameEn": "Southwest Jiaotong University",
+    "score": 342.9
+  },
+  {
+    "univUp": "nanjing-medical-university",
+    "univLogo": "logo\u002F76762015.png",
+    "univNameCn": "南京医科大学",
+    "univNameEn": "Nanjing Medical University",
+    "score": 342.7
+  },
+  {
+    "univUp": "nanjing-agricultural-university",
+    "univLogo": "logo\u002F43891811.png",
+    "univNameCn": "南京农业大学",
+    "univNameEn": "Nanjing Agricultural University",
+    "score": 342.4
+  },
+  {
+    "univUp": "china-university-of-geosciences-wuhan",
+    "univLogo": "logo\u002F25952542.png",
+    "univNameCn": "中国地质大学（武汉）",
+    "univNameEn": "China University of Geosciences",
+    "score": 337.7
+  },
+  {
+    "univUp": "university-of-international-business-and-economics",
+    "univLogo": "logo\u002F49600493.png",
+    "univNameCn": "对外经济贸易大学",
+    "univNameEn": "University of International Business and Economics",
+    "score": 337.4
+  },
+  {
+    "univUp": "jinan-university",
+    "univLogo": "logo\u002F78175531.png",
+    "univNameCn": "暨南大学",
+    "univNameEn": "Jinan University",
+    "score": 337.1
+  },
+  {
+    "univUp": "central-china-normal-university",
+    "univLogo": "logo\u002F58510682.png",
+    "univNameCn": "华中师范大学",
+    "univNameEn": "Central China Normal University",
+    "score": 336.1
+  },
+  {
+    "univUp": "ocean-university-of-china",
+    "univLogo": "logo\u002F53553512.png",
+    "univNameCn": "中国海洋大学",
+    "univNameEn": "Ocean University of China",
+    "score": 336.1
+  },
+  {
+    "univUp": "china-university-of-political-science-and-law",
+    "univLogo": "logo\u002F73768663.png",
+    "univNameCn": "中国政法大学",
+    "univNameEn": "China University of Political Science and Law",
+    "score": 335.2
+  },
+  {
+    "univUp": "nanjing-normal-university",
+    "univLogo": "logo\u002F27072054.png",
+    "univNameCn": "南京师范大学",
+    "univNameEn": "Nanjing Normal University",
+    "score": 334.2
+  },
+  {
+    "univUp": "china-university-of-mining-and-technology-xuzhou",
+    "univLogo": "logo\u002F15914272.png",
+    "univNameCn": "中国矿业大学",
+    "univNameEn": "China University of Mining and Technology",
+    "score": 332.7
+  },
+  {
+    "univUp": "tianjin-medical-university",
+    "univLogo": "logo\u002F48683228.png",
+    "univNameCn": "天津医科大学",
+    "univNameEn": "Tianjin Medical University",
+    "score": 332.6
+  },
+  {
+    "univUp": "china-medical-university-shenyang",
+    "univLogo": "logo\u002F87682693.png",
+    "univNameCn": "中国医科大学",
+    "univNameEn": "China Medical University (Shenyang)",
+    "score": 332.6
+  },
+  {
+    "univUp": "beijing-university-of-posts-and-telecommunications",
+    "univLogo": "logo\u002F15344334.png",
+    "univNameCn": "北京邮电大学",
+    "univNameEn": "Beijing University of Posts and Telecommunications",
+    "score": 332.5
+  },
+  {
+    "univUp": "shanghai-university",
+    "univLogo": "logo\u002F94139385.png",
+    "univNameCn": "上海大学",
+    "univNameEn": "Shanghai University",
+    "score": 331.9
+  },
+  {
+    "univUp": "beijing-university-of-chinese-medicine",
+    "univLogo": "logo\u002F51325583.png",
+    "univNameCn": "北京中医药大学",
+    "univNameEn": "Beijing University of Chinese Medicine",
+    "score": 331.75
+  },
+  {
+    "univUp": "zhejiang-university-of-technology",
+    "univLogo": "logo\u002F19897860.png",
+    "univNameCn": "浙江工业大学",
+    "univNameEn": "Zhejiang University of Technology",
+    "score": 331.6
+  },
+  {
+    "univUp": "zhongnan-university-of-economics-and-law",
+    "univLogo": "logo\u002F93162582.png",
+    "univNameCn": "中南财经政法大学",
+    "univNameEn": "Zhongnan University of Economics and Law",
+    "score": 331.5
+  },
+  {
+    "univUp": "beijing-university-of-chemical-technology",
+    "univLogo": "logo\u002F46052210.png",
+    "univNameCn": "北京化工大学",
+    "univNameEn": "Beijing University of Chemical Technology",
+    "score": 331.4
+  },
+  {
+    "univUp": "hohai-university",
+    "univLogo": "logo\u002F76817036.png",
+    "univNameCn": "河海大学",
+    "univNameEn": "Hohai University",
+    "score": 330.2
+  },
+  {
+    "univUp": "shaanxi-normal-university",
+    "univLogo": "logo\u002F22611416.png",
+    "univNameCn": "陕西师范大学",
+    "univNameEn": "Shaanxi Normal University",
+    "score": 329.4
+  },
+  {
+    "univUp": "southwestern-university-of-finance-and-economics",
+    "univLogo": "logo\u002F84100177.png",
+    "univNameCn": "西南财经大学",
+    "univNameEn": "Southwestern University of Finance and Economics",
+    "score": 327.25
+  },
+  {
+    "univUp": "southwest-university",
+    "univLogo": "logo\u002F68012227.png",
+    "univNameCn": "西南大学",
+    "univNameEn": "Southwest University",
+    "score": 325.1
+  },
+  {
+    "univUp": "china-university-of-petroleum-huadong",
+    "univLogo": "logo\u002F92620812.png",
+    "univNameCn": "中国石油大学（华东）",
+    "univNameEn": "China University of Petroleum (East China)",
+    "score": 324.7
+  },
+  {
+    "univUp": "shenzhen-university",
+    "univLogo": "logo\u002F88823168.png",
+    "univNameCn": "深圳大学",
+    "univNameEn": "Shenzhen University",
+    "score": 323.7
+  },
+  {
+    "univUp": "shanghai-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F51954222.png",
+    "univNameCn": "上海中医药大学",
+    "univNameEn": "Shanghai University of Traditional Chinese Medicine",
+    "score": 322.2
+  },
+  {
+    "univUp": "yunnan-university",
+    "univLogo": "logo\u002F31586909.png",
+    "univNameCn": "云南大学",
+    "univNameEn": "Yunnan University",
+    "score": 320.7
+  },
+  {
+    "univUp": "northwest-university",
+    "univLogo": "logo\u002F15797720.png",
+    "univNameCn": "西北大学",
+    "univNameEn": "Northwest University",
+    "score": 319.3
+  },
+  {
+    "univUp": "northwest-a-f-university",
+    "univLogo": "logo\u002F25536937.png",
+    "univNameCn": "西北农林科技大学",
+    "univNameEn": "Northwest A&F University",
+    "score": 319.1
+  },
+  {
+    "univUp": "beijing-university-of-technology",
+    "univLogo": "logo\u002F10211810.png",
+    "univNameCn": "北京工业大学",
+    "univNameEn": "Beijing University of Technology",
+    "score": 318.9
+  },
+  {
+    "univUp": "nanchang-university",
+    "univLogo": "logo\u002F25119833.png",
+    "univNameCn": "南昌大学",
+    "univNameEn": "Nanchang University",
+    "score": 313
+  },
+  {
+    "univUp": "new-york-university-shanghai",
+    "univLogo": "logo\u002F34624419.png",
+    "univNameCn": "上海纽约大学",
+    "univNameEn": "NYU Shanghai",
+    "score": 310.45
+  },
+  {
+    "univUp": "donghua-university",
+    "univLogo": "logo\u002F41255312.png",
+    "univNameCn": "东华大学",
+    "univNameEn": "Donghua University",
+    "score": 307.9
+  },
+  {
+    "univUp": "china-university-of-geosciences-beijing",
+    "univLogo": "logo\u002F21004246.png",
+    "univNameCn": "中国地质大学（北京）",
+    "univNameEn": "China University of Geosciences Beijing",
+    "score": 306.6
+  },
+  {
+    "univUp": "china-university-of-mining-and-technology-beijing",
+    "univLogo": "logo\u002F61910568.png",
+    "univNameCn": "中国矿业大学（北京）",
+    "univNameEn": "China University of Mining & Technology-Beijing",
+    "score": 304.9
+  },
+  {
+    "univUp": "guangzhou-medical-university",
+    "univLogo": "logo\u002F60473289.png",
+    "univNameCn": "广州医科大学",
+    "univNameEn": "Guangzhou Medical University",
+    "score": 304.5
+  },
+  {
+    "univUp": "harbin-medical-university",
+    "univLogo": "logo\u002F97930562.png",
+    "univNameCn": "哈尔滨医科大学",
+    "univNameEn": "Harbin Medical University",
+    "score": 304.5
+  },
+  {
+    "univUp": "university-of-nottingham-ningbo-china",
+    "univLogo": "logo\u002F71732411.png",
+    "univNameCn": "宁波诺丁汉大学",
+    "univNameEn": "University of Nottingham Ningbo China",
+    "score": 304.5
+  },
+  {
+    "univUp": "fuzhou-university",
+    "univLogo": "logo\u002F77372849.png",
+    "univNameCn": "福州大学",
+    "univNameEn": "Fuzhou University",
+    "score": 304.1
+  },
+  {
+    "univUp": "ningbo-university",
+    "univLogo": "logo\u002F83052172.png",
+    "univNameCn": "宁波大学",
+    "univNameEn": "Ningbo University",
+    "score": 300.7
+  },
+  {
+    "univUp": "hefei-university-of-technology",
+    "univLogo": "logo\u002F55155531.png",
+    "univNameCn": "合肥工业大学",
+    "univNameEn": "Hefei University of Technology",
+    "score": 297.6
+  },
+  {
+    "univUp": "south-china-normal-university",
+    "univLogo": "logo\u002F47317168.png",
+    "univNameCn": "华南师范大学",
+    "univNameEn": "South China Normal University",
+    "score": 295.9
+  },
+  {
+    "univUp": "wenzhou-medical-university",
+    "univLogo": "logo\u002F83187141.png",
+    "univNameCn": "温州医科大学",
+    "univNameEn": "Wenzhou Medical University",
+    "score": 291.7
+  },
+  {
+    "univUp": "minzu-university-of-china",
+    "univLogo": "logo\u002F56223112.png",
+    "univNameCn": "中央民族大学",
+    "univNameEn": "Minzu University of China",
+    "score": 291.7
+  },
+  {
+    "univUp": "nanjing-university-of-posts-and-telecommunications",
+    "univLogo": "logo\u002F19754745.png",
+    "univNameCn": "南京邮电大学",
+    "univNameEn": "Nanjing University of Posts and Telecommunications",
+    "score": 287.5
+  },
+  {
+    "univUp": "dongbei-university-of-finance-and-economics",
+    "univLogo": "logo\u002F89755844.png",
+    "univNameCn": "东北财经大学",
+    "univNameEn": "Dongbei University of Finance and Economics",
+    "score": 287.1
+  },
+  {
+    "univUp": "jiangsu-university",
+    "univLogo": "logo\u002F28154997.png",
+    "univNameCn": "江苏大学",
+    "univNameEn": "Jiangsu University",
+    "score": 286.7
+  },
+  {
+    "univUp": "beijing-foreign-studies-university",
+    "univLogo": "logo\u002F86246894.png",
+    "univNameCn": "北京外国语大学",
+    "univNameEn": "Beijing Foreign Studies University",
+    "score": 284.9
+  },
+  {
+    "univUp": "shanghai-international-studies-university",
+    "univLogo": "logo\u002F28569987.png",
+    "univNameCn": "上海外国语大学",
+    "univNameEn": "Shanghai International Studies University",
+    "score": 284.9
+  },
+  {
+    "univUp": "north-china-electric-power-university",
+    "univLogo": "logo\u002F13312897.png",
+    "univNameCn": "华北电力大学",
+    "univNameEn": "North China Electric Power University",
+    "score": 283.1
+  },
+  {
+    "univUp": "communication-university-of-china",
+    "univLogo": "logo\u002F45063898.png",
+    "univNameCn": "中国传媒大学",
+    "univNameEn": "Communication University of China",
+    "score": 282.1
+  },
+  {
+    "univUp": "changan-university",
+    "univLogo": "logo\u002F22876250.png",
+    "univNameCn": "长安大学",
+    "univNameEn": "Chang'an University",
+    "score": 281.1
+  },
+  {
+    "univUp": "beijing-forestry-university",
+    "univLogo": "logo\u002F43861010.png",
+    "univNameCn": "北京林业大学",
+    "univNameEn": "Beijing Forestry University",
+    "score": 279.4
+  },
+  {
+    "univUp": "guizhou-university",
+    "univLogo": "logo\u002F47002167.png",
+    "univNameCn": "贵州大学",
+    "univNameEn": "Guizhou University",
+    "score": 277.7
+  },
+  {
+    "univUp": "chongqing-medical-university",
+    "univLogo": "logo\u002F81855043.png",
+    "univNameCn": "重庆医科大学",
+    "univNameEn": "Chongqing Medical University",
+    "score": 277.55
+  },
+  {
+    "univUp": "china-pharmaceutical-university",
+    "univLogo": "logo\u002F95091776.png",
+    "univNameCn": "中国药科大学",
+    "univNameEn": "China Pharmaceutical University",
+    "score": 277.55
+  },
+  {
+    "univUp": "fujian-normal-university",
+    "univLogo": "logo\u002F63841113.png",
+    "univNameCn": "福建师范大学",
+    "univNameEn": "Fujian Normal University",
+    "score": 277.4
+  },
+  {
+    "univUp": "hunan-normal-university",
+    "univLogo": "logo\u002F60718001.png",
+    "univNameCn": "湖南师范大学",
+    "univNameEn": "Hunan Normal University",
+    "score": 276.6
+  },
+  {
+    "univUp": "guangxi-university",
+    "univLogo": "logo\u002F22864185.png",
+    "univNameCn": "广西大学",
+    "univNameEn": "Guangxi University",
+    "score": 276.4
+  },
+  {
+    "univUp": "nanjing-forestry-university",
+    "univLogo": "logo\u002F34561912.png",
+    "univNameCn": "南京林业大学",
+    "univNameEn": "Nanjing Forestry University",
+    "score": 275.1
+  },
+  {
+    "univUp": "yangzhou-university",
+    "univLogo": "logo\u002F61656418.png",
+    "univNameCn": "扬州大学",
+    "univNameEn": "Yangzhou University",
+    "score": 274.7
+  },
+  {
+    "univUp": "zhejiang-normal-university",
+    "univLogo": "logo\u002F34648327.png",
+    "univNameCn": "浙江师范大学",
+    "univNameEn": "Zhejiang Normal University",
+    "score": 273.5
+  },
+  {
+    "univUp": "hainan-university",
+    "univLogo": "logo\u002F32937649.png",
+    "univNameCn": "海南大学",
+    "univNameEn": "Hainan University",
+    "score": 272.2
+  },
+  {
+    "univUp": "nanjing-tech-university",
+    "univLogo": "logo\u002F18208126.png",
+    "univNameCn": "南京工业大学",
+    "univNameEn": "Nanjing Tech University",
+    "score": 271.2
+  },
+  {
+    "univUp": "nanjing-university-of-chinese-medicine",
+    "univLogo": "logo\u002F52052341.png",
+    "univNameCn": "南京中医药大学",
+    "univNameEn": "Nanjing University of Chinese Medicine",
+    "score": 270.75
+  },
+  {
+    "univUp": "nanjing-university-of-information-science-technology",
+    "univLogo": "logo\u002F59759082.png",
+    "univNameCn": "南京信息工程大学",
+    "univNameEn": "Nanjing University of Information Science & Technology",
+    "score": 270.3
+  },
+  {
+    "univUp": "guangdong-university-of-technology",
+    "univLogo": "logo\u002F47705257.png",
+    "univNameCn": "广东工业大学",
+    "univNameEn": "Guangdong University of Technology",
+    "score": 269.8
+  },
+  {
+    "univUp": "hangzhou-dianzi-university",
+    "univLogo": "logo\u002F47982726.png",
+    "univNameCn": "杭州电子科技大学",
+    "univNameEn": "Hangzhou Dianzi University",
+    "score": 268.7
+  },
+  {
+    "univUp": "china-foreign-affairs-university",
+    "univLogo": "logo\u002F82019494.png",
+    "univNameCn": "外交学院",
+    "univNameEn": "China Foreign Affairs University",
+    "score": 267.3
+  },
+  {
+    "univUp": "anhui-university",
+    "univLogo": "logo\u002F13378567.png",
+    "univNameCn": "安徽大学",
+    "univNameEn": "Anhui University",
+    "score": 265.9
+  },
+  {
+    "univUp": "capital-normal-university",
+    "univLogo": "logo\u002F66860048.png",
+    "univNameCn": "首都师范大学",
+    "univNameEn": "Capital Normal University",
+    "score": 265.6
+  },
+  {
+    "univUp": "south-china-agricultural-university",
+    "univLogo": "logo\u002F90236014.png",
+    "univNameCn": "华南农业大学",
+    "univNameEn": "South China Agricultural University",
+    "score": 264.8
+  },
+  {
+    "univUp": "guangzhou-university-of-chinese-medicine",
+    "univLogo": "logo\u002F22449906.png",
+    "univNameCn": "广州中医药大学",
+    "univNameEn": "Guangzhou University of Chinese Medicine",
+    "score": 264.3
+  },
+  {
+    "univUp": "shanxi-university",
+    "univLogo": "logo\u002F45548865.png",
+    "univNameCn": "山西大学",
+    "univNameEn": "Shanxi University",
+    "score": 263.8
+  },
+  {
+    "univUp": "jiangxi-university-of-finance-economics",
+    "univLogo": "logo\u002F63707108.png",
+    "univNameCn": "江西财经大学",
+    "univNameEn": "Jiangxi University of Finance & Economics",
+    "score": 263.05
+  },
+  {
+    "univUp": "zhejiang-gongshang-university",
+    "univLogo": "logo\u002F73839925.png",
+    "univNameCn": "浙江工商大学",
+    "univNameEn": "Zhejiang Gongshang University",
+    "score": 263.05
+  },
+  {
+    "univUp": "henan-university",
+    "univLogo": "logo\u002F80055117.png",
+    "univNameCn": "河南大学",
+    "univNameEn": "Henan University",
+    "score": 262.3
+  },
+  {
+    "univUp": "taiyuan-university-of-technology",
+    "univLogo": "logo\u002F32584796.png",
+    "univNameCn": "太原理工大学",
+    "univNameEn": "Taiyuan University of Technology",
+    "score": 259.8
+  },
+  {
+    "univUp": "duke-kunshan-university",
+    "univLogo": "logo-jpg\u002F2595128800.jpg",
+    "univNameCn": "昆山杜克大学",
+    "univNameEn": "Duke Kunshan University",
+    "score": 259.6
+  },
+  {
+    "univUp": "xian-jiaotong-liverpool-university",
+    "univLogo": "logo\u002F37930547.png",
+    "univNameCn": "西交利物浦大学",
+    "univNameEn": "Xi'an Jiaotong-Liverpool University",
+    "score": 259.6
+  },
+  {
+    "univUp": "shandong-normal-university",
+    "univLogo": "logo\u002F91702072.png",
+    "univNameCn": "山东师范大学",
+    "univNameEn": "Shandong Normal University",
+    "score": 259.4
+  },
+  {
+    "univUp": "dalian-medical-university",
+    "univLogo": "logo\u002F43266277.png",
+    "univNameCn": "大连医科大学",
+    "univNameEn": "Dalian Medical University",
+    "score": 259.2
+  },
+  {
+    "univUp": "hebei-medical-university",
+    "univLogo": "logo\u002F28892538.png",
+    "univNameCn": "河北医科大学",
+    "univNameEn": "Hebei Medical University",
+    "score": 259.2
+  },
+  {
+    "univUp": "guangzhou-university",
+    "univLogo": "logo\u002F65301006.png",
+    "univNameCn": "广州大学",
+    "univNameEn": "Guangzhou University",
+    "score": 259
+  },
+  {
+    "univUp": "zhejiang-sci-tech-university",
+    "univLogo": "logo\u002F16934191.png",
+    "univNameCn": "浙江理工大学",
+    "univNameEn": "Zhejiang Sci-Tech University",
+    "score": 258.8
+  },
+  {
+    "univUp": "shenzhen-msu-bit-university",
+    "univLogo": "logo-jpg\u002F9233897300.jpg",
+    "univNameCn": "深圳北理莫斯科大学",
+    "univNameEn": "Shenzhen MSU-BIT University",
+    "score": 258.4
+  },
+  {
+    "univUp": "xiangtan-university",
+    "univLogo": "logo\u002F94973363.png",
+    "univNameCn": "湘潭大学",
+    "univNameEn": "Xiangtan University",
+    "score": 258
+  },
+  {
+    "univUp": "university-of-shanghai-for-science-and-technology",
+    "univLogo": "logo\u002F13304999.png",
+    "univNameCn": "上海理工大学",
+    "univNameEn": "University of Shanghai for Science and Technology",
+    "score": 257.4
+  },
+  {
+    "univUp": "hebei-university-of-technology",
+    "univLogo": "logo\u002F23684464.png",
+    "univNameCn": "河北工业大学",
+    "univNameEn": "Hebei University of Technology",
+    "score": 255.5
+  },
+  {
+    "univUp": "dalian-maritime-university",
+    "univLogo": "logo\u002F30113036.png",
+    "univNameCn": "大连海事大学",
+    "univNameEn": "Dalian Maritime University",
+    "score": 255.3
+  },
+  {
+    "univUp": "qingdao-university",
+    "univLogo": "logo\u002F17947921.png",
+    "univNameCn": "青岛大学",
+    "univNameEn": "Qingdao University",
+    "score": 255
+  },
+  {
+    "univUp": "yanshan-university",
+    "univLogo": "logo\u002F79375733.png",
+    "univNameCn": "燕山大学",
+    "univNameEn": "Yanshan University",
+    "score": 251.5
+  },
+  {
+    "univUp": "northeast-forestry-university-china",
+    "univLogo": "logo\u002F23921267.png",
+    "univNameCn": "东北林业大学",
+    "univNameEn": "Northeast Forestry University",
+    "score": 248.6
+  },
+  {
+    "univUp": "hangzhou-normal-university",
+    "univLogo": "logo\u002F19604361.png",
+    "univNameCn": "杭州师范大学",
+    "univNameEn": "Hangzhou Normal University",
+    "score": 248.5
+  },
+  {
+    "univUp": "xian-university-of-architecture-and-technology",
+    "univLogo": "logo\u002F16154228.png",
+    "univNameCn": "西安建筑科技大学",
+    "univNameEn": "Xi'an University of Architecture and Technology",
+    "score": 245.3
+  },
+  {
+    "univUp": "hubei-university",
+    "univLogo": "logo\u002F88139185.png",
+    "univNameCn": "湖北大学",
+    "univNameEn": "Hubei University",
+    "score": 245.1
+  },
+  {
+    "univUp": "fujian-medical-university",
+    "univLogo": "logo\u002F25946848.png",
+    "univNameCn": "福建医科大学",
+    "univNameEn": "Fujian Medical University",
+    "score": 244.95
+  },
+  {
+    "univUp": "kunming-university-of-science-and-technology",
+    "univLogo": "logo\u002F50829319.png",
+    "univNameCn": "昆明理工大学",
+    "univNameEn": "Kunming University of Science and Technology",
+    "score": 244.8
+  },
+  {
+    "univUp": "east-china-university-of-political-science-and-law",
+    "univLogo": "logo\u002F78173084.png",
+    "univNameCn": "华东政法大学",
+    "univNameEn": "East China University of Political Science and Law",
+    "score": 244.5
+  },
+  {
+    "univUp": "capital-university-of-economics-business",
+    "univLogo": "logo\u002F16136282.png",
+    "univNameCn": "首都经济贸易大学",
+    "univNameEn": "Capital University of Economics & Business",
+    "score": 244.5
+  },
+  {
+    "univUp": "southwest-university-of-political-science-and-law",
+    "univLogo": "logo\u002F96363396.png",
+    "univNameCn": "西南政法大学",
+    "univNameEn": "Southwest University of Political Science and Law",
+    "score": 244.5
+  },
+  {
+    "univUp": "inner-mongolia-university",
+    "univLogo": "logo\u002F53570063.png",
+    "univNameCn": "内蒙古大学",
+    "univNameEn": "Inner Mongolia University",
+    "score": 244.2
+  },
+  {
+    "univUp": "xian-university-of-technology",
+    "univLogo": "logo\u002F41922592.png",
+    "univNameCn": "西安理工大学",
+    "univNameEn": "Xi'an University of Technology",
+    "score": 243.3
+  },
+  {
+    "univUp": "beijing-language-and-culture-university",
+    "univLogo": "logo\u002F31767309.png",
+    "univNameCn": "北京语言大学",
+    "univNameEn": "Beijing Language and Culture University",
+    "score": 242.4
+  },
+  {
+    "univUp": "zhejiang-chinese-medical-university",
+    "univLogo": "logo\u002F35945029.png",
+    "univNameCn": "浙江中医药大学",
+    "univNameEn": "Zhejiang Chinese Medical University",
+    "score": 242.4
+  },
+  {
+    "univUp": "wuhan-university-of-science-and-technology",
+    "univLogo": "logo\u002F80614446.png",
+    "univNameCn": "武汉科技大学",
+    "univNameEn": "Wuhan University of Science and Technology",
+    "score": 241.5
+  },
+  {
+    "univUp": "tianjin-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F99755997.png",
+    "univNameCn": "天津中医药大学",
+    "univNameEn": "Tianjin University of Traditional Chinese Medicine",
+    "score": 240.6
+  },
+  {
+    "univUp": "jiangxi-normal-university",
+    "univLogo": "logo\u002F81455706.png",
+    "univNameCn": "江西师范大学",
+    "univNameEn": "Jiangxi Normal University",
+    "score": 239.7
+  },
+  {
+    "univUp": "chengdu-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F71956917.png",
+    "univNameCn": "成都中医药大学",
+    "univNameEn": "Chengdu University of Traditional Chinese Medicine",
+    "score": 238.7
+  },
+  {
+    "univUp": "northeast-agricultural-university-china",
+    "univLogo": "logo\u002F52533406.png",
+    "univNameCn": "东北农业大学",
+    "univNameEn": "Northeast Agricultural University",
+    "score": 237.6
+  },
+  {
+    "univUp": "southwest-petroleum-university",
+    "univLogo": "logo\u002F43387859.png",
+    "univNameCn": "西南石油大学",
+    "univNameEn": "Southwest Petroleum University",
+    "score": 237.6
+  },
+  {
+    "univUp": "shanghai-normal-university",
+    "univLogo": "logo\u002F69056215.png",
+    "univNameCn": "上海师范大学",
+    "univNameEn": "Shanghai Normal University",
+    "score": 236.6
+  },
+  {
+    "univUp": "beijing-normal-university-hong-kong-baptist-university-united-international-college",
+    "univLogo": "logo-jpg\u002F4701412400.jpg",
+    "univNameCn": "北京师范大学-香港浸会大学联合国际学院",
+    "univNameEn": "Beijing Normal University-Hong Kong Baptist University United International College",
+    "score": 236.2
+  },
+  {
+    "univUp": "fujian-agriculture-and-forestry-university",
+    "univLogo": "logo\u002F45877801.png",
+    "univNameCn": "福建农林大学",
+    "univNameEn": "Fujian Agriculture and Forestry University",
+    "score": 235.8
+  },
+  {
+    "univUp": "wenzhou-university",
+    "univLogo": "logo\u002F87896146.png",
+    "univNameCn": "温州大学",
+    "univNameEn": "Wenzhou University",
+    "score": 233.1
+  },
+  {
+    "univUp": "changsha-university-of-science-and-technology",
+    "univLogo": "logo\u002F12224674.png",
+    "univNameCn": "长沙理工大学",
+    "univNameEn": "Changsha University of Science and Technology",
+    "score": 232.4
+  },
+  {
+    "univUp": "xinjiang-university",
+    "univLogo": "logo\u002F17029370.png",
+    "univNameCn": "新疆大学",
+    "univNameEn": "Xinjiang University",
+    "score": 232.4
+  },
+  {
+    "univUp": "guangdong-university-of-foreign-studies",
+    "univLogo": "logo\u002F56969885.png",
+    "univNameCn": "广东外语外贸大学",
+    "univNameEn": "Guangdong University of Foreign Studies",
+    "score": 231.6
+  },
+  {
+    "univUp": "nanjing-university-of-finance-economics",
+    "univLogo": "logo\u002F94245096.png",
+    "univNameCn": "南京财经大学",
+    "univNameEn": "Nanjing University of Finance & Economics",
+    "score": 231.6
+  },
+  {
+    "univUp": "hebei-university",
+    "univLogo": "logo\u002F93335325.png",
+    "univNameCn": "河北大学",
+    "univNameEn": "Hebei University",
+    "score": 230.9
+  },
+  {
+    "univUp": "beijing-technology-and-business-university",
+    "univLogo": "logo\u002F42416281.png",
+    "univNameCn": "北京工商大学",
+    "univNameEn": "Beijing Technology and Business University",
+    "score": 230.4
+  },
+  {
+    "univUp": "shandong-university-of-science-and-technology",
+    "univLogo": "logo\u002F69243726.png",
+    "univNameCn": "山东科技大学",
+    "univNameEn": "Shandong University of Science and Technology",
+    "score": 229.9
+  },
+  {
+    "univUp": "liaoning-university",
+    "univLogo": "logo\u002F38214321.png",
+    "univNameCn": "辽宁大学",
+    "univNameEn": "Liaoning University",
+    "score": 228.3
+  },
+  {
+    "univUp": "chengdu-university-of-technology",
+    "univLogo": "logo\u002F46566063.png",
+    "univNameCn": "成都理工大学",
+    "univNameEn": "Chengdu University of Technology",
+    "score": 228.1
+  },
+  {
+    "univUp": "shanghai-university-of-sport",
+    "univLogo": "logo-jpg\u002F2271496700.jpg",
+    "univNameCn": "上海体育大学",
+    "univNameEn": "Shanghai University of Sport",
+    "score": 227.65
+  },
+  {
+    "univUp": "zhejiang-university-of-finance-and-economics",
+    "univLogo": "logo\u002F55127298.png",
+    "univNameCn": "浙江财经大学",
+    "univNameEn": "Zhejiang University of Finance and Economics",
+    "score": 227.65
+  },
+  {
+    "univUp": "shandong-agricultural-university",
+    "univLogo": "logo\u002F29659511.png",
+    "univNameCn": "山东农业大学",
+    "univNameEn": "Shandong Agricultural University",
+    "score": 227.2
+  },
+  {
+    "univUp": "ningxia-university",
+    "univLogo": "logo\u002F26171919.png",
+    "univNameCn": "宁夏大学",
+    "univNameEn": "Ningxia University",
+    "score": 222.8
+  },
+  {
+    "univUp": "huaqiao-university",
+    "univLogo": "logo\u002F22700357.png",
+    "univNameCn": "华侨大学",
+    "univNameEn": "Huaqiao University",
+    "score": 222.6
+  },
+  {
+    "univUp": "shaanxi-university-of-science-and-technology",
+    "univLogo": "logo\u002F10933822.png",
+    "univNameCn": "陕西科技大学",
+    "univNameEn": "Shaanxi University of Science and Technology",
+    "score": 222.6
+  },
+  {
+    "univUp": "anhui-medical-university",
+    "univLogo": "logo\u002F55688137.png",
+    "univNameCn": "安徽医科大学",
+    "univNameEn": "Anhui Medical University",
+    "score": 222.3
+  },
+  {
+    "univUp": "shanxi-medical-university",
+    "univLogo": "logo\u002F12891468.png",
+    "univNameCn": "山西医科大学",
+    "univNameEn": "Shanxi Medical University",
+    "score": 222.3
+  },
+  {
+    "univUp": "tiangong-university",
+    "univLogo": "logo\u002F66317793.png",
+    "univNameCn": "天津工业大学",
+    "univNameEn": "Tiangong University",
+    "score": 222.1
+  },
+  {
+    "univUp": "changchun-university-of-science-and-technology",
+    "univLogo": "logo\u002F89241049.png",
+    "univNameCn": "长春理工大学",
+    "univNameEn": "Changchun University of Science and Technology",
+    "score": 221.6
+  },
+  {
+    "univUp": "anhui-normal-university",
+    "univLogo": "logo\u002F34817561.png",
+    "univNameCn": "安徽师范大学",
+    "univNameEn": "Anhui Normal University",
+    "score": 219.7
+  },
+  {
+    "univUp": "peoples-public-security-university-of-china",
+    "univLogo": "logo\u002F10262077.png",
+    "univNameCn": "中国人民公安大学",
+    "univNameEn": "People's Public Security University of China",
+    "score": 219.25
+  },
+  {
+    "univUp": "shihezi-university",
+    "univLogo": "logo\u002F87170098.png",
+    "univNameCn": "石河子大学",
+    "univNameEn": "Shihezi University",
+    "score": 218.8
+  },
+  {
+    "univUp": "shandong-university-of-finance-and-economics",
+    "univLogo": "logo\u002F96562721.png",
+    "univNameCn": "山东财经大学",
+    "univNameEn": "Shandong University of Finance and Economics",
+    "score": 218.6
+  },
+  {
+    "univUp": "sichuan-agricultural-university",
+    "univLogo": "logo\u002F22750663.png",
+    "univNameCn": "四川农业大学",
+    "univNameEn": "Sichuan Agricultural University",
+    "score": 218.4
+  },
+  {
+    "univUp": "tianjin-normal-university",
+    "univLogo": "logo\u002F97894665.png",
+    "univNameCn": "天津师范大学",
+    "univNameEn": "Tianjin Normal University",
+    "score": 216.7
+  },
+  {
+    "univUp": "nanjing-audit-university",
+    "univLogo": "logo\u002F69593019.png",
+    "univNameCn": "南京审计大学",
+    "univNameEn": "Nanjing Audit University",
+    "score": 216.45
+  },
+  {
+    "univUp": "shanghai-ocean-university",
+    "univLogo": "logo\u002F47534017.png",
+    "univNameCn": "上海海洋大学",
+    "univNameEn": "Shanghai Ocean University",
+    "score": 216.2
+  },
+  {
+    "univUp": "jiangsu-university-of-science-and-technology",
+    "univLogo": "logo\u002F20300251.png",
+    "univNameCn": "江苏科技大学",
+    "univNameEn": "Jiangsu University of Science and Technology",
+    "score": 215.7
+  },
+  {
+    "univUp": "qilu-university-of-technology",
+    "univLogo": "logo\u002F90803100.png",
+    "univNameCn": "齐鲁工业大学",
+    "univNameEn": "Qilu University of Technology",
+    "score": 215.2
+  },
+  {
+    "univUp": "shanghai-university-of-international-business-and-economics",
+    "univLogo": "logo\u002F48883318.png",
+    "univNameCn": "上海对外经贸大学",
+    "univNameEn": "Shanghai University of International Business and Economics",
+    "score": 214.65
+  },
+  {
+    "univUp": "china-jiliang-university",
+    "univLogo": "logo\u002F30667767.png",
+    "univNameCn": "中国计量大学",
+    "univNameEn": "China Jiliang University",
+    "score": 214.1
+  },
+  {
+    "univUp": "heilongjiang-university",
+    "univLogo": "logo\u002F73169357.png",
+    "univNameCn": "黑龙江大学",
+    "univNameEn": "Heilongjiang University",
+    "score": 213.9
+  },
+  {
+    "univUp": "guangxi-medical-university",
+    "univLogo": "logo\u002F98869789.png",
+    "univNameCn": "广西医科大学",
+    "univNameEn": "Guangxi Medical University",
+    "score": 213.6
+  },
+  {
+    "univUp": "anhui-agricultural-university",
+    "univLogo": "logo\u002F63075474.png",
+    "univNameCn": "安徽农业大学",
+    "univNameEn": "Anhui Agricultural University",
+    "score": 213.6
+  },
+  {
+    "univUp": "hubei-university-of-technology",
+    "univLogo": "logo\u002F28021393.png",
+    "univNameCn": "湖北工业大学",
+    "univNameEn": "Hubei University of Technology",
+    "score": 213.6
+  },
+  {
+    "univUp": "south-central-university-for-nationalities",
+    "univLogo": "logo\u002F89677525.png",
+    "univNameCn": "中南民族大学",
+    "univNameEn": "South-Central Minzu University",
+    "score": 213.6
+  },
+  {
+    "univUp": "zhejiang-a-f-university",
+    "univLogo": "logo\u002F72636185.png",
+    "univNameCn": "浙江农林大学",
+    "univNameEn": "Zhejiang A&F University",
+    "score": 213.3
+  },
+  {
+    "univUp": "nantong-university",
+    "univLogo": "logo\u002F39196558.png",
+    "univNameCn": "南通大学",
+    "univNameEn": "Nantong University",
+    "score": 212.7
+  },
+  {
+    "univUp": "wenzhou-kean-university",
+    "univLogo": "logo-jpg\u002F4012157100.jpg",
+    "univNameCn": "温州肯恩大学",
+    "univNameEn": "Wenzhou-Kean University",
+    "score": 211.85
+  },
+  {
+    "univUp": "henan-agricultural-university",
+    "univLogo": "logo\u002F20942432.png",
+    "univNameCn": "河南农业大学",
+    "univNameEn": "Henan Agricultural University",
+    "score": 211
+  },
+  {
+    "univUp": "chongqing-university-of-posts-and-telecommunications",
+    "univLogo": "logo\u002F60895367.png",
+    "univNameCn": "重庆邮电大学",
+    "univNameEn": "Chongqing University of Posts and Telecommunications",
+    "score": 210.2
+  },
+  {
+    "univUp": "changzhou-university",
+    "univLogo": "logo\u002F80008528.png",
+    "univNameCn": "常州大学",
+    "univNameEn": "Changzhou University",
+    "score": 209.2
+  },
+  {
+    "univUp": "guangxi-normal-university",
+    "univLogo": "logo\u002F54671948.png",
+    "univNameCn": "广西师范大学",
+    "univNameEn": "Guangxi Normal University",
+    "score": 208.3
+  },
+  {
+    "univUp": "hunan-agricultural-university",
+    "univLogo": "logo\u002F66911347.png",
+    "univNameCn": "湖南农业大学",
+    "univNameEn": "Hunan Agricultural University",
+    "score": 208
+  },
+  {
+    "univUp": "qufu-normal-university",
+    "univLogo": "logo\u002F69697043.png",
+    "univNameCn": "曲阜师范大学",
+    "univNameEn": "Qufu Normal University",
+    "score": 207.2
+  },
+  {
+    "univUp": "jilin-agricultural-university",
+    "univLogo": "logo\u002F12157432.png",
+    "univNameCn": "吉林农业大学",
+    "univNameEn": "Jilin Agricultural University",
+    "score": 206.8
+  },
+  {
+    "univUp": "xuzhou-medical-college",
+    "univLogo": "logo\u002F57626416.png",
+    "univNameCn": "徐州医科大学",
+    "univNameEn": "Xuzhou Medical University",
+    "score": 206.75
+  },
+  {
+    "univUp": "wuhan-textile-university",
+    "univLogo": "logo\u002F90958165.png",
+    "univNameCn": "武汉纺织大学",
+    "univNameEn": "Wuhan Textile University",
+    "score": 206.7
+  },
+  {
+    "univUp": "wuhan-institute-of-technology",
+    "univLogo": "logo\u002F44707995.png",
+    "univNameCn": "武汉工程大学",
+    "univNameEn": "Wuhan Institute of Technology",
+    "score": 206.2
+  },
+  {
+    "univUp": "henan-normal-university",
+    "univLogo": "logo\u002F83132958.png",
+    "univNameCn": "河南师范大学",
+    "univNameEn": "Henan Normal University",
+    "score": 205.7
+  },
+  {
+    "univUp": "tianjin-university-of-science-and-technology",
+    "univLogo": "logo\u002F19351758.png",
+    "univNameCn": "天津科技大学",
+    "univNameEn": "Tianjin University of Science and Technology",
+    "score": 205.5
+  },
+  {
+    "univUp": "liaoning-normal-university",
+    "univLogo": "logo\u002F95713009.png",
+    "univNameCn": "辽宁师范大学",
+    "univNameEn": "Liaoning Normal University",
+    "score": 205.2
+  },
+  {
+    "univUp": "shandong-first-medical-university",
+    "univLogo": "logo\u002F50428150.png",
+    "univNameCn": "山东第一医科大学",
+    "univNameEn": "Shandong First Medical University",
+    "score": 205.05
+  },
+  {
+    "univUp": "jiangsu-normal-university",
+    "univLogo": "logo\u002F43285571.png",
+    "univNameCn": "江苏师范大学",
+    "univNameEn": "Jiangsu Normal University",
+    "score": 204.9
+  },
+  {
+    "univUp": "hunan-university-of-chinese-medicine",
+    "univLogo": "logo\u002F23627066.png",
+    "univNameCn": "湖南中医药大学",
+    "univNameEn": "Hunan University of Chinese Medicine",
+    "score": 204.8
+  },
+  {
+    "univUp": "beijing-university-of-civil-engineering-and-architecture",
+    "univLogo": "logo\u002F88552972.png",
+    "univNameCn": "北京建筑大学",
+    "univNameEn": "Beijing University of Civil Engineering and Architecture",
+    "score": 204.7
+  },
+  {
+    "univUp": "shantou-university",
+    "univLogo": "logo\u002F34125242.png",
+    "univNameCn": "汕头大学",
+    "univNameEn": "Shantou University",
+    "score": 204.6
+  },
+  {
+    "univUp": "jimei-university",
+    "univLogo": "logo\u002F50079480.png",
+    "univNameCn": "集美大学",
+    "univNameEn": "Jimei University",
+    "score": 204.4
+  },
+  {
+    "univUp": "qingdao-university-of-science-and-technology",
+    "univLogo": "logo\u002F56581722.png",
+    "univNameCn": "青岛科技大学",
+    "univNameEn": "Qingdao University of Science and Technology",
+    "score": 204.2
+  },
+  {
+    "univUp": "china-three-gorges-university",
+    "univLogo": "logo\u002F50293135.png",
+    "univNameCn": "三峡大学",
+    "univNameEn": "China Three Gorges University",
+    "score": 204.2
+  },
+  {
+    "univUp": "yanbian-university",
+    "univLogo": "logo\u002F80498016.png",
+    "univNameCn": "延边大学",
+    "univNameEn": "Yanbian University",
+    "score": 204.2
+  },
+  {
+    "univUp": "shandong-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F19570180.png",
+    "univNameCn": "山东中医药大学",
+    "univNameEn": "Shandong University of Traditional Chinese Medicine",
+    "score": 204.2
+  },
+  {
+    "univUp": "shenyang-pharmaceutical-university",
+    "univLogo": "logo\u002F89965333.png",
+    "univNameCn": "沈阳药科大学",
+    "univNameEn": "Shenyang Pharmaceutical University",
+    "score": 204.2
+  },
+  {
+    "univUp": "shenyang-agricultural-university",
+    "univLogo": "logo\u002F71980553.png",
+    "univNameCn": "沈阳农业大学",
+    "univNameEn": "Shenyang Agricultural University",
+    "score": 204
+  },
+  {
+    "univUp": "henan-university-of-science-and-technology",
+    "univLogo": "logo\u002F15231544.png",
+    "univNameCn": "河南科技大学",
+    "univNameEn": "Henan University of Science and Technology",
+    "score": 203.8
+  },
+  {
+    "univUp": "tianjin-university-of-finance-economics",
+    "univLogo": "logo\u002F76871121.png",
+    "univNameCn": "天津财经大学",
+    "univNameEn": "Tianjin University of Finance & Economics",
+    "score": 202.95
+  },
+  {
+    "univUp": "north-university-of-china",
+    "univLogo": "logo\u002F11211551.png",
+    "univNameCn": "中北大学",
+    "univNameEn": "North University of China",
+    "score": 202.1
+  },
+  {
+    "univUp": "university-of-jinan",
+    "univLogo": "logo\u002F68479674.png",
+    "univNameCn": "济南大学",
+    "univNameEn": "University of Jinan",
+    "score": 201.4
+  },
+  {
+    "univUp": "east-china-jiaotong-university",
+    "univLogo": "logo\u002F87418361.png",
+    "univNameCn": "华东交通大学",
+    "univNameEn": "East China Jiaotong University",
+    "score": 200.5
+  },
+  {
+    "univUp": "shanghai-maritime-university",
+    "univLogo": "logo\u002F27308396.png",
+    "univNameCn": "上海海事大学",
+    "univNameEn": "Shanghai Maritime University",
+    "score": 200.4
+  },
+  {
+    "univUp": "liaoning-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F29879673.png",
+    "univNameCn": "辽宁中医药大学",
+    "univNameEn": "Liaoning University of Traditional Chinese Medicine",
+    "score": 200.3
+  },
+  {
+    "univUp": "nanchang-hangkong-university",
+    "univLogo": "logo\u002F58177572.png",
+    "univNameCn": "南昌航空大学",
+    "univNameEn": "Nanchang Hangkong University",
+    "score": 200.2
+  },
+  {
+    "univUp": "hebei-normal-university",
+    "univLogo": "logo\u002F91541508.png",
+    "univNameCn": "河北师范大学",
+    "univNameEn": "Hebei Normal University",
+    "score": 198.5
+  },
+  {
+    "univUp": "northwest-normal-university-china",
+    "univLogo": "logo\u002F37657107.png",
+    "univNameCn": "西北师范大学",
+    "univNameEn": "Northwest Normal University",
+    "score": 197.6
+  },
+  {
+    "univUp": "changchun-university-of-chinese-medicine",
+    "univLogo": "logo\u002F49046864.png",
+    "univNameCn": "长春中医药大学",
+    "univNameEn": "Changchun University of Chinese Medicine",
+    "score": 196.7
+  },
+  {
+    "univUp": "henan-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F16101587.png",
+    "univNameCn": "河南中医药大学",
+    "univNameEn": "Henan University of Chinese Medicine",
+    "score": 196.7
+  },
+  {
+    "univUp": "tianjin-university-of-technology",
+    "univLogo": "logo\u002F41797414.png",
+    "univNameCn": "天津理工大学",
+    "univNameEn": "Tianjin University of Technology",
+    "score": 195.8
+  },
+  {
+    "univUp": "beijing-sport-university",
+    "univLogo": "logo\u002F60097173.png",
+    "univNameCn": "北京体育大学",
+    "univNameEn": "Beijing Sport University",
+    "score": 195.25
+  },
+  {
+    "univUp": "ningxia-medical-university",
+    "univLogo": "logo\u002F51413820.png",
+    "univNameCn": "宁夏医科大学",
+    "univNameEn": "Ningxia Medical University",
+    "score": 195.25
+  },
+  {
+    "univUp": "northwest-university-of-political-science-and-law",
+    "univLogo": "logo\u002F69761836.png",
+    "univNameCn": "西北政法大学",
+    "univNameEn": "Northwest University of Political Science and Law",
+    "score": 195.25
+  },
+  {
+    "univUp": "hunan-university-of-science-and-technology",
+    "univLogo": "logo\u002F66401420.png",
+    "univNameCn": "湖南科技大学",
+    "univNameEn": "Hunan University of Science and Technology",
+    "score": 194.7
+  },
+  {
+    "univUp": "university-of-international-relations",
+    "univLogo": "logo-jpg\u002F3679975000.jpg",
+    "univNameCn": "国际关系学院",
+    "univNameEn": "University of International Relations",
+    "score": 193.9
+  },
+  {
+    "univUp": "shenyang-aerospace-university",
+    "univLogo": "logo\u002F95837223.png",
+    "univNameCn": "沈阳航空航天大学",
+    "univNameEn": "Shenyang Aerospace University",
+    "score": 193.7
+  },
+  {
+    "univUp": "henan-polytechnic-university",
+    "univLogo": "logo\u002F73183299.png",
+    "univNameCn": "河南理工大学",
+    "univNameEn": "Henan Polytechnic University",
+    "score": 192.7
+  },
+  {
+    "univUp": "yangtze-university",
+    "univLogo": "logo\u002F50201974.png",
+    "univNameCn": "长江大学",
+    "univNameEn": "Yangtze University",
+    "score": 191.8
+  },
+  {
+    "univUp": "shanghai-university-of-electric-power",
+    "univLogo": "logo\u002F10117000.png",
+    "univNameCn": "上海电力大学",
+    "univNameEn": "Shanghai University of Electric Power",
+    "score": 190.6
+  },
+  {
+    "univUp": "university-of-south-china",
+    "univLogo": "logo\u002F37506435.png",
+    "univNameCn": "南华大学",
+    "univNameEn": "University of South China",
+    "score": 190.3
+  },
+  {
+    "univUp": "shenyang-university-of-technology",
+    "univLogo": "logo\u002F88323331.png",
+    "univNameCn": "沈阳工业大学",
+    "univNameEn": "Shenyang University of Technology",
+    "score": 190.3
+  },
+  {
+    "univUp": "chongqing-jiaotong-university",
+    "univLogo": "logo\u002F71040976.png",
+    "univNameCn": "重庆交通大学",
+    "univNameEn": "Chongqing Jiaotong University",
+    "score": 190
+  },
+  {
+    "univUp": "anhui-university-of-technology",
+    "univLogo": "logo\u002F48772206.png",
+    "univNameCn": "安徽工业大学",
+    "univNameEn": "Anhui University of Technology",
+    "score": 189.6
+  },
+  {
+    "univUp": "jiangxi-university-of-science-and-technology",
+    "univLogo": "logo\u002F17877939.png",
+    "univNameCn": "江西理工大学",
+    "univNameEn": "Jiangxi University of Science and Technology",
+    "score": 189.6
+  },
+  {
+    "univUp": "southwest-medical-university",
+    "univLogo": "logo\u002F70891196.png",
+    "univNameCn": "西南医科大学",
+    "univNameEn": "Southwest Medical University",
+    "score": 189.6
+  },
+  {
+    "univUp": "xian-university-of-science-and-technology",
+    "univLogo": "logo\u002F98750379.png",
+    "univNameCn": "西安科技大学",
+    "univNameEn": "Xi'an University of Science and Technology",
+    "score": 189.2
+  },
+  {
+    "univUp": "anhui-university-of-science-and-technology",
+    "univLogo": "logo\u002F42528928.png",
+    "univNameCn": "安徽理工大学",
+    "univNameEn": "Anhui University of Science and Technology",
+    "score": 188.8
+  },
+  {
+    "univUp": "shandong-university-of-technology",
+    "univLogo": "logo\u002F36456722.png",
+    "univNameCn": "山东理工大学",
+    "univNameEn": "Shandong University of Technology",
+    "score": 188.6
+  },
+  {
+    "univUp": "tibet-university",
+    "univLogo": "logo\u002F71112798.png",
+    "univNameCn": "西藏大学",
+    "univNameEn": "Tibet University",
+    "score": 188.1
+  },
+  {
+    "univUp": "jiangxi-agricultural-university",
+    "univLogo": "logo\u002F90588785.png",
+    "univNameCn": "江西农业大学",
+    "univNameEn": "Jiangxi Agricultural University",
+    "score": 187.8
+  },
+  {
+    "univUp": "hebei-agricultural-university",
+    "univLogo": "logo\u002F80338654.png",
+    "univNameCn": "河北农业大学",
+    "univNameEn": "Hebei Agricultural University",
+    "score": 187.3
+  },
+  {
+    "univUp": "anhui-university-of-finance-and-economics",
+    "univLogo": "logo\u002F54853132.png",
+    "univNameCn": "安徽财经大学",
+    "univNameEn": "Anhui University of Finance and Economics",
+    "score": 187.05
+  },
+  {
+    "univUp": "qinghai-university",
+    "univLogo": "logo\u002F68094541.png",
+    "univNameCn": "青海大学",
+    "univNameEn": "Qinghai University",
+    "score": 186.8
+  },
+  {
+    "univUp": "lanzhou-university-of-technology",
+    "univLogo": "logo\u002F67319577.png",
+    "univNameCn": "兰州理工大学",
+    "univNameEn": "Lanzhou University of Technology",
+    "score": 186.5
+  },
+  {
+    "univUp": "xian-university-of-posts-and-telecommunications",
+    "univLogo": "logo\u002F14415798.png",
+    "univNameCn": "西安邮电大学",
+    "univNameEn": "Xi'an University of Posts and Telecommunications",
+    "score": 185.4
+  },
+  {
+    "univUp": "anhui-university-of-chinese-medicine",
+    "univLogo": "logo\u002F19613875.png",
+    "univNameCn": "安徽中医药大学",
+    "univNameEn": "Anhui University of Chinese Medicine",
+    "score": 184.8
+  },
+  {
+    "univUp": "xinxiang-medical-university",
+    "univLogo": "logo\u002F84894098.png",
+    "univNameCn": "新乡医学院",
+    "univNameEn": "Xinxiang Medical University",
+    "score": 184.8
+  },
+  {
+    "univUp": "guilin-university-of-electronic-technology",
+    "univLogo": "logo\u002F13097274.png",
+    "univNameCn": "桂林电子科技大学",
+    "univNameEn": "Guilin University of Electronic Technology",
+    "score": 184.2
+  },
+  {
+    "univUp": "sichuan-normal-university",
+    "univLogo": "logo\u002F20160347.png",
+    "univNameCn": "四川师范大学",
+    "univNameEn": "Sichuan Normal University",
+    "score": 184.2
+  },
+  {
+    "univUp": "yunnan-normal-university",
+    "univLogo": "logo\u002F33806915.png",
+    "univNameCn": "云南师范大学",
+    "univNameEn": "Yunnan Normal University",
+    "score": 183.6
+  },
+  {
+    "univUp": "beijing-international-studies-university",
+    "univLogo": "logo\u002F36231211.png",
+    "univNameCn": "北京第二外国语学院",
+    "univNameEn": "Beijing International Studies University",
+    "score": 183.4
+  },
+  {
+    "univUp": "beijing-information-science-technology-university",
+    "univLogo": "logo\u002F34773687.png",
+    "univNameCn": "北京信息科技大学",
+    "univNameEn": "Beijing Information Science & Technology University",
+    "score": 183.2
+  },
+  {
+    "univUp": "heilongjiang-university-of-chinese-medicine",
+    "univLogo": "logo\u002F27607221.png",
+    "univNameCn": "黑龙江中医药大学",
+    "univNameEn": "Heilongjiang University of Chinese Medicine",
+    "score": 183.15
+  },
+  {
+    "univUp": "yantai-university",
+    "univLogo": "logo\u002F78347320.png",
+    "univNameCn": "烟台大学",
+    "univNameEn": "Yantai University",
+    "score": 183.1
+  },
+  {
+    "univUp": "kunming-medical-university",
+    "univLogo": "logo\u002F82002416.png",
+    "univNameCn": "昆明医科大学",
+    "univNameEn": "Kunming Medical University",
+    "score": 182.95
+  },
+  {
+    "univUp": "suzhou-university-of-science-and-technology",
+    "univLogo": "logo\u002F14409136.png",
+    "univNameCn": "苏州科技大学",
+    "univNameEn": "Suzhou University of Science and Technology",
+    "score": 182.8
+  },
+  {
+    "univUp": "central-south-university-of-forestry-technology",
+    "univLogo": "logo\u002F51346265.png",
+    "univNameCn": "中南林业科技大学",
+    "univNameEn": "Central South University of Forestry & Technology",
+    "score": 182.4
+  },
+  {
+    "univUp": "southwest-university-of-science-and-technology",
+    "univLogo": "logo\u002F36892794.png",
+    "univNameCn": "西南科技大学",
+    "univNameEn": "Southwest University of Science and Technology",
+    "score": 181.4
+  },
+  {
+    "univUp": "xinjiang-medical-university",
+    "univLogo": "logo\u002F89931922.png",
+    "univNameCn": "新疆医科大学",
+    "univNameEn": "Xinjiang Medical University",
+    "score": 181.35
+  },
+  {
+    "univUp": "lanzhou-jiaotong-university",
+    "univLogo": "logo\u002F43772124.png",
+    "univNameCn": "兰州交通大学",
+    "univNameEn": "Lanzhou Jiaotong University",
+    "score": 181.3
+  },
+  {
+    "univUp": "qingdao-university-of-technology",
+    "univLogo": "logo\u002F11244718.png",
+    "univNameCn": "青岛理工大学",
+    "univNameEn": "Qingdao University of Technology",
+    "score": 181.1
+  },
+  {
+    "univUp": "binzhou-medical-university",
+    "univLogo": "logo\u002F69659775.png",
+    "univNameCn": "滨州医学院",
+    "univNameEn": "Binzhou Medical University",
+    "score": 180.9
+  },
+  {
+    "univUp": "jiangxi-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F42725781.png",
+    "univNameCn": "江西中医药大学",
+    "univNameEn": "Jiangxi University of Chinese Medicine",
+    "score": 180.9
+  },
+  {
+    "univUp": "huzhou-university",
+    "univLogo": "logo\u002F61175754.png",
+    "univNameCn": "湖州师范学院",
+    "univNameEn": "Huzhou University",
+    "score": 180.7
+  },
+  {
+    "univUp": "southwest-minzu-university",
+    "univLogo": "logo\u002F36633895.png",
+    "univNameCn": "西南民族大学",
+    "univNameEn": "Southwest Minzu University",
+    "score": 179.7
+  },
+  {
+    "univUp": "xian-technological-university",
+    "univLogo": "logo\u002F88779109.png",
+    "univNameCn": "西安工业大学",
+    "univNameEn": "Xi'an Technological University",
+    "score": 178.7
+  },
+  {
+    "univUp": "shanghai-university-of-political-science-and-law",
+    "univLogo": "logo\u002F67866160.png",
+    "univNameCn": "上海政法学院",
+    "univNameEn": "Shanghai University of Political Science and Law",
+    "score": 178.2
+  },
+  {
+    "univUp": "harbin-normal-university",
+    "univLogo": "logo-jpg\u002F2156094100.jpg",
+    "univNameCn": "哈尔滨师范大学",
+    "univNameEn": "Harbin Normal University",
+    "score": 177.7
+  },
+  {
+    "univUp": "east-china-university-of-technology",
+    "univLogo": "logo\u002F80888604.png",
+    "univNameCn": "东华理工大学",
+    "univNameEn": "East China University of Technology",
+    "score": 177.4
+  },
+  {
+    "univUp": "north-china-university-of-technology",
+    "univLogo": "logo\u002F83653605.png",
+    "univNameCn": "北方工业大学",
+    "univNameEn": "North China University of Technology",
+    "score": 177.3
+  },
+  {
+    "univUp": "beijing-electronic-science-and-technology-institute",
+    "univLogo": "logo-jpg\u002F9246225400.jpg",
+    "univNameCn": "北京电子科技学院",
+    "univNameEn": "Beijing Electronic Science and Technology Institute",
+    "score": 176.7
+  },
+  {
+    "univUp": "hubei-university-of-chinese-medicine",
+    "univLogo": "logo\u002F44602592.png",
+    "univNameCn": "湖北中医药大学",
+    "univNameEn": "Hubei University of Chinese Medicine",
+    "score": 176.6
+  },
+  {
+    "univUp": "northeast-petroleum-university",
+    "univLogo": "logo\u002F74529408.png",
+    "univNameCn": "东北石油大学",
+    "univNameEn": "Northeast Petroleum University",
+    "score": 176.5
+  },
+  {
+    "univUp": "chongqing-normal-university",
+    "univLogo": "logo\u002F84729350.png",
+    "univNameCn": "重庆师范大学",
+    "univNameEn": "Chongqing Normal University",
+    "score": 176
+  },
+  {
+    "univUp": "shanxi-university-of-finance-and-economics",
+    "univLogo": "logo\u002F20819042.png",
+    "univNameCn": "山西财经大学",
+    "univNameEn": "Shanxi University of Finance and Economics",
+    "score": 175.85
+  },
+  {
+    "univUp": "shenyang-jianzhu-university",
+    "univLogo": "logo\u002F83840131.png",
+    "univNameCn": "沈阳建筑大学",
+    "univNameEn": "Shenyang Jianzhu University",
+    "score": 175.7
+  },
+  {
+    "univUp": "weifang-medical-university",
+    "univLogo": "logo\u002F88450159.png",
+    "univNameCn": "山东第二医科大学",
+    "univNameEn": "Shandong Second Medical University",
+    "score": 175.6
+  },
+  {
+    "univUp": "zunyi-medical-university",
+    "univLogo": "logo\u002F28937713.png",
+    "univNameCn": "遵义医科大学",
+    "univNameEn": "Zunyi Medical University",
+    "score": 175.6
+  },
+  {
+    "univUp": "inner-mongolia-agricultural-university",
+    "univLogo": "logo\u002F21981730.png",
+    "univNameCn": "内蒙古农业大学",
+    "univNameEn": "Inner Mongolia Agricultural University",
+    "score": 175.5
+  },
+  {
+    "univUp": "inner-mongolia-normal-university",
+    "univLogo": "logo\u002F65057276.png",
+    "univNameCn": "内蒙古师范大学",
+    "univNameEn": "Inner Mongolia Normal University",
+    "score": 175.2
+  },
+  {
+    "univUp": "dalian-polytechnic-university",
+    "univLogo": "logo\u002F56717207.png",
+    "univNameCn": "大连工业大学",
+    "univNameEn": "Dalian Polytechnic University",
+    "score": 175
+  },
+  {
+    "univUp": "guangxi-university-of-chinese-medicine",
+    "univLogo": "logo\u002F96434593.png",
+    "univNameCn": "广西中医药大学",
+    "univNameEn": "Guangxi University of Chinese Medicine",
+    "score": 174.85
+  },
+  {
+    "univUp": "shijiazhuang-tiedao-university",
+    "univLogo": "logo\u002F56126922.png",
+    "univNameCn": "石家庄铁道大学",
+    "univNameEn": "Shijiazhuang Tiedao University",
+    "score": 174.7
+  },
+  {
+    "univUp": "henan-university-of-technology",
+    "univLogo": "logo\u002F30747881.png",
+    "univNameCn": "河南工业大学",
+    "univNameEn": "Henan University of Technology",
+    "score": 174.5
+  },
+  {
+    "univUp": "hubei-university-of-medicine",
+    "univLogo": "logo\u002F21028339.png",
+    "univNameCn": "湖北医药学院",
+    "univNameEn": "Hubei University of Medicine",
+    "score": 174.2
+  },
+  {
+    "univUp": "jiaxing-university",
+    "univLogo": "logo\u002F41788600.png",
+    "univNameCn": "嘉兴大学",
+    "univNameEn": "Jiaxing University",
+    "score": 173.9
+  },
+  {
+    "univUp": "hainan-normal-university",
+    "univLogo": "logo\u002F94936624.png",
+    "univNameCn": "海南师范大学",
+    "univNameEn": "Hainan Normal University",
+    "score": 173.6
+  },
+  {
+    "univUp": "shanxi-agricultural-university",
+    "univLogo": "logo\u002F79434268.png",
+    "univNameCn": "山西农业大学",
+    "univNameEn": "Shanxi Agricultural University",
+    "score": 173.3
+  },
+  {
+    "univUp": "qingdao-agricultural-university",
+    "univLogo": "logo\u002F23730927.png",
+    "univNameCn": "青岛农业大学",
+    "univNameEn": "Qingdao Agricultural University",
+    "score": 173
+  },
+  {
+    "univUp": "fujian-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F31367475.png",
+    "univNameCn": "福建中医药大学",
+    "univNameEn": "Fujian University of Traditional Chinese Medicine",
+    "score": 172.8
+  },
+  {
+    "univUp": "northeast-electric-power-university",
+    "univLogo": "logo\u002F67384709.png",
+    "univNameCn": "东北电力大学",
+    "univNameEn": "Northeast Electric Power University",
+    "score": 172.8
+  },
+  {
+    "univUp": "zhejiang-ocean-university",
+    "univLogo": "logo\u002F75085847.png",
+    "univNameCn": "浙江海洋大学",
+    "univNameEn": "Zhejiang Ocean University",
+    "score": 172.8
+  },
+  {
+    "univUp": "inner-mongolia-medical-university",
+    "univLogo": "logo\u002F74436014.png",
+    "univNameCn": "内蒙古医科大学",
+    "univNameEn": "Inner Mongolia Medical University",
+    "score": 172.8
+  },
+  {
+    "univUp": "guizhou-medical-university",
+    "univLogo": "logo\u002F43468218.png",
+    "univNameCn": "贵州医科大学",
+    "univNameEn": "Guizhou Medical University",
+    "score": 172.8
+  },
+  {
+    "univUp": "zhejiang-university-of-science-and-technology",
+    "univLogo": "logo\u002F91133655.png",
+    "univNameCn": "浙江科技大学",
+    "univNameEn": "Zhejiang University of Science and Technology",
+    "score": 172.6
+  },
+  {
+    "univUp": "chengdu-university",
+    "univLogo": "logo\u002F69265723.png",
+    "univNameCn": "成都大学",
+    "univNameEn": "Chengdu University",
+    "score": 172.2
+  },
+  {
+    "univUp": "harbin-university-of-science-and-technology",
+    "univLogo": "logo\u002F37722595.png",
+    "univNameCn": "哈尔滨理工大学",
+    "univNameEn": "Harbin University of Science and Technology",
+    "score": 172
+  },
+  {
+    "univUp": "shanghai-university-of-engineering-science",
+    "univLogo": "logo\u002F45746621.png",
+    "univNameCn": "上海工程技术大学",
+    "univNameEn": "Shanghai University of Engineering Science",
+    "score": 171.3
+  },
+  {
+    "univUp": "jilin-university-of-finance-and-economics",
+    "univLogo": "logo\u002F21766443.png",
+    "univNameCn": "吉林财经大学",
+    "univNameEn": "Jilin University of Finance and Economics",
+    "score": 171
+  },
+  {
+    "univUp": "xian-shiyou-university",
+    "univLogo": "logo\u002F37520130.png",
+    "univNameCn": "西安石油大学",
+    "univNameEn": "Xi'an Shiyou University",
+    "score": 170.7
+  },
+  {
+    "univUp": "shanghai-institute-of-technology",
+    "univLogo": "logo\u002F11765823.png",
+    "univNameCn": "上海应用技术大学",
+    "univNameEn": "Shanghai Institute of Technology",
+    "score": 170.1
+  },
+  {
+    "univUp": "chongqing-technology-and-business-university",
+    "univLogo": "logo\u002F79799951.png",
+    "univNameCn": "重庆工商大学",
+    "univNameEn": "Chongqing Technology and Business University",
+    "score": 169.9
+  },
+  {
+    "univUp": "guangdong-university-of-finance-and-economics",
+    "univLogo": "logo\u002F92505046.png",
+    "univNameCn": "广东财经大学",
+    "univNameEn": "Guangdong University of Finance and Economics",
+    "score": 169.9
+  },
+  {
+    "univUp": "xian-international-studies-university",
+    "univLogo": "logo\u002F28256034.png",
+    "univNameCn": "西安外国语大学",
+    "univNameEn": "Xi'an International Studies University",
+    "score": 169.9
+  },
+  {
+    "univUp": "guizhou-normal-university",
+    "univLogo": "logo\u002F82418408.png",
+    "univNameCn": "贵州师范大学",
+    "univNameEn": "Guizhou Normal University",
+    "score": 169.7
+  },
+  {
+    "univUp": "hebei-university-of-science-and-technology",
+    "univLogo": "logo\u002F87539958.png",
+    "univNameCn": "河北科技大学",
+    "univNameEn": "Hebei University of Science and Technology",
+    "score": 169.3
+  },
+  {
+    "univUp": "foshan-university",
+    "univLogo": "logo\u002F52972913.png",
+    "univNameCn": "佛山大学",
+    "univNameEn": "Foshan University",
+    "score": 169
+  },
+  {
+    "univUp": "qinghai-normal-university",
+    "univLogo": "logo\u002F39086444.png",
+    "univNameCn": "青海师范大学",
+    "univNameEn": "Qinghai Normal University",
+    "score": 168.8
+  },
+  {
+    "univUp": "gansu-agricultural-university",
+    "univLogo": "logo\u002F73822591.png",
+    "univNameCn": "甘肃农业大学",
+    "univNameEn": "Gansu Agricultural University",
+    "score": 168.4
+  },
+  {
+    "univUp": "sichuan-international-studies-university",
+    "univLogo": "logo\u002F96600682.png",
+    "univNameCn": "四川外国语大学",
+    "univNameEn": "Sichuan International Studies University",
+    "score": 168.35
+  },
+  {
+    "univUp": "dongguan-university-of-technology",
+    "univLogo": "logo\u002F69487690.png",
+    "univNameCn": "东莞理工学院",
+    "univNameEn": "Dongguan University of Technology",
+    "score": 168.3
+  },
+  {
+    "univUp": "civil-aviation-university-of-china",
+    "univLogo": "logo\u002F32878207.png",
+    "univNameCn": "中国民航大学",
+    "univNameEn": "Civil Aviation University of China",
+    "score": 167.6
+  },
+  {
+    "univUp": "chongqing-university-of-technology",
+    "univLogo": "logo\u002F14275328.png",
+    "univNameCn": "重庆理工大学",
+    "univNameEn": "Chongqing University of Technology",
+    "score": 167.3
+  },
+  {
+    "univUp": "beijing-wuzi-university",
+    "univLogo": "logo\u002F79912786.png",
+    "univNameCn": "北京物资学院",
+    "univNameEn": "Beijing Wuzi University",
+    "score": 167.25
+  },
+  {
+    "univUp": "capital-university-of-physical-education-and-sports",
+    "univLogo": "logo-jpg\u002F1260794700.jpg",
+    "univNameCn": "首都体育学院",
+    "univNameEn": "Capital University of Physical Education and Sports",
+    "score": 167.25
+  },
+  {
+    "univUp": "north-china-university-of-water-resources-and-electric-power",
+    "univLogo": "logo\u002F87920384.png",
+    "univNameCn": "华北水利水电大学",
+    "univNameEn": "North China University of Water Resources and Electric Power",
+    "score": 167.2
+  },
+  {
+    "univUp": "criminal-investigation-police-university-of-china",
+    "univLogo": "logo-jpg\u002F1499148100.jpg",
+    "univNameCn": "中国刑事警察学院",
+    "univNameEn": "Criminal Investigation Police University of China",
+    "score": 167.05
+  },
+  {
+    "univUp": "wuhan-polytechnic-university",
+    "univLogo": "logo\u002F45183909.png",
+    "univNameCn": "武汉轻工大学",
+    "univNameEn": "Wuhan Polytechnic University",
+    "score": 166.9
+  },
+  {
+    "univUp": "henan-university-of-economics-and-law",
+    "univLogo": "logo\u002F67388652.png",
+    "univNameCn": "河南财经政法大学",
+    "univNameEn": "Henan University of Economics and Law",
+    "score": 166.85
+  },
+  {
+    "univUp": "ludong-university",
+    "univLogo": "logo\u002F27442378.png",
+    "univNameCn": "鲁东大学",
+    "univNameEn": "Ludong University",
+    "score": 166.8
+  },
+  {
+    "univUp": "dalian-university-of-foreign-languages",
+    "univLogo": "logo\u002F74195790.png",
+    "univNameCn": "大连外国语大学",
+    "univNameEn": "Dalian University of Foreign Languages",
+    "score": 166.4
+  },
+  {
+    "univUp": "gannan-normal-university",
+    "univLogo": "logo\u002F10016344.png",
+    "univNameCn": "赣南师范大学",
+    "univNameEn": "Gannan Normal University",
+    "score": 166
+  },
+  {
+    "univUp": "hainan-medical-university",
+    "univLogo": "logo\u002F41737887.png",
+    "univNameCn": "海南医科大学",
+    "univNameEn": "Hainan Medical University",
+    "score": 165.55
+  },
+  {
+    "univUp": "shaanxi-university-of-chinese-medicine",
+    "univLogo": "logo\u002F10151157.png",
+    "univNameCn": "陕西中医药大学",
+    "univNameEn": "Shaanxi University of Chinese Medicine",
+    "score": 165.55
+  },
+  {
+    "univUp": "shandong-jianzhu-university",
+    "univLogo": "logo\u002F30745802.png",
+    "univNameCn": "山东建筑大学",
+    "univNameEn": "Shandong Jianzhu University",
+    "score": 165.1
+  },
+  {
+    "univUp": "jianghan-university",
+    "univLogo": "logo\u002F43420140.png",
+    "univNameCn": "江汉大学",
+    "univNameEn": "Jianghan University",
+    "score": 164.8
+  },
+  {
+    "univUp": "zhejiang-university-city-college",
+    "univLogo": "logo\u002F46612256.png",
+    "univNameCn": "浙大城市学院",
+    "univNameEn": "Hangzhou City University",
+    "score": 164.7
+  },
+  {
+    "univUp": "hebei-university-of-economics-and-business",
+    "univLogo": "logo\u002F55966273.png",
+    "univNameCn": "河北经贸大学",
+    "univNameEn": "Hebei University of Economics and Business",
+    "score": 164.45
+  },
+  {
+    "univUp": "jiangsu-police-institute",
+    "univLogo": "logo-jpg\u002F9588745000.jpg",
+    "univNameCn": "江苏警官学院",
+    "univNameEn": "Jiangsu Police Institute",
+    "score": 164.45
+  },
+  {
+    "univUp": "liaocheng-university",
+    "univLogo": "logo\u002F34048509.png",
+    "univNameCn": "聊城大学",
+    "univNameEn": "Liaocheng University",
+    "score": 164.2
+  },
+  {
+    "univUp": "guangxi-university-for-nationalities",
+    "univLogo": "logo\u002F68001167.png",
+    "univNameCn": "广西民族大学",
+    "univNameEn": "Guangxi University for Nationalities",
+    "score": 164
+  },
+  {
+    "univUp": "hunan-university-of-commerce",
+    "univLogo": "logo\u002F33067635.png",
+    "univNameCn": "湖南工商大学",
+    "univNameEn": "Hunan University of Technology and Business",
+    "score": 164
+  },
+  {
+    "univUp": "shenyang-university-of-chemical-technology",
+    "univLogo": "logo\u002F57609876.png",
+    "univNameCn": "沈阳化工大学",
+    "univNameEn": "Shenyang University of Chemical Technology",
+    "score": 163.8
+  },
+  {
+    "univUp": "guilin-university-of-technology",
+    "univLogo": "logo\u002F10181164.png",
+    "univNameCn": "桂林理工大学",
+    "univNameEn": "Guilin University of Technology",
+    "score": 163.1
+  },
+  {
+    "univUp": "chengdu-university-of-information-technology",
+    "univLogo": "logo\u002F51862705.png",
+    "univNameCn": "成都信息工程大学",
+    "univNameEn": "Chengdu University of Information Technology",
+    "score": 162.9
+  },
+  {
+    "univUp": "xian-polytechnic-university",
+    "univLogo": "logo\u002F23494932.png",
+    "univNameCn": "西安工程大学",
+    "univNameEn": "Xi'an Polytechnic University",
+    "score": 162.55
+  },
+  {
+    "univUp": "zhengzhou-university-of-light-industry",
+    "univLogo": "logo\u002F34928000.png",
+    "univNameCn": "郑州轻工业大学",
+    "univNameEn": "Zhengzhou University of Light Industry",
+    "score": 162.55
+  },
+  {
+    "univUp": "guangdong-medical-university",
+    "univLogo": "logo\u002F53989761.png",
+    "univNameCn": "广东医科大学",
+    "univNameEn": "Guangdong Medical University",
+    "score": 162.55
+  },
+  {
+    "univUp": "shanghai-lixin-university-of-accounting-and-finance",
+    "univLogo": "logo\u002F46056210.png",
+    "univNameCn": "上海立信会计金融学院",
+    "univNameEn": "Shanghai Lixin University of Accounting and Finance",
+    "score": 162.55
+  },
+  {
+    "univUp": "anhui-polytechnic-university",
+    "univLogo": "logo\u002F58244413.png",
+    "univNameCn": "安徽工程大学",
+    "univNameEn": "Anhui Polytechnic University",
+    "score": 162.55
+  },
+  {
+    "univUp": "china-west-normal-university",
+    "univLogo": "logo\u002F26457756.png",
+    "univNameCn": "西华师范大学",
+    "univNameEn": "China West Normal University",
+    "score": 162.55
+  },
+  {
+    "univUp": "jinzhou-medical-university",
+    "univLogo": "logo\u002F39513021.png",
+    "univNameCn": "锦州医科大学",
+    "univNameEn": "Jinzhou Medical University",
+    "score": 162.55
+  },
+  {
+    "univUp": "dalian-jiaotong-university",
+    "univLogo": "logo\u002F50496475.png",
+    "univNameCn": "大连交通大学",
+    "univNameEn": "Dalian Jiaotong University",
+    "score": 162
+  },
+  {
+    "univUp": "nanjing-institute-of-technology",
+    "univLogo": "logo\u002F53286556.png",
+    "univNameCn": "南京工程学院",
+    "univNameEn": "Nanjing Institute of Technology",
+    "score": 161.9
+  },
+  {
+    "univUp": "shanghai-customs-college",
+    "univLogo": "logo\u002F36783364.png",
+    "univNameCn": "上海海关学院",
+    "univNameEn": "Shanghai Customs College",
+    "score": 161.2
+  },
+  {
+    "univUp": "liaoning-shihua-university",
+    "univLogo": "logo\u002F96685089.png",
+    "univNameCn": "辽宁石油化工大学",
+    "univNameEn": "Liaoning Petrochemical University",
+    "score": 160.1
+  },
+  {
+    "univUp": "shenyang-ligong-university",
+    "univLogo": "logo\u002F61862540.png",
+    "univNameCn": "沈阳理工大学",
+    "univNameEn": "Shenyang Ligong University",
+    "score": 159.8
+  },
+  {
+    "univUp": "shaoxing-university",
+    "univLogo": "logo\u002F52850359.png",
+    "univNameCn": "绍兴文理学院",
+    "univNameEn": "Shaoxing University",
+    "score": 158.6
+  },
+  {
+    "univUp": "yanan-university",
+    "univLogo": "logo\u002F39856591.png",
+    "univNameCn": "延安大学",
+    "univNameEn": "Yan'an University",
+    "score": 158.5
+  },
+  {
+    "univUp": "hebei-university-of-chinese-medicine",
+    "univLogo": "logo\u002F88753023.png",
+    "univNameCn": "河北中医药大学",
+    "univNameEn": "Hebei University of Chinese Medicine",
+    "score": 157.95
+  },
+  {
+    "univUp": "inner-mongolia-university-of-technology",
+    "univLogo": "logo\u002F41582349.png",
+    "univNameCn": "内蒙古工业大学",
+    "univNameEn": "Inner Mongolia University of Technology",
+    "score": 157.95
+  },
+  {
+    "univUp": "shenyang-university",
+    "univLogo": "logo\u002F64518610.png",
+    "univNameCn": "沈阳大学",
+    "univNameEn": "Shenyang University",
+    "score": 157.95
+  },
+  {
+    "univUp": "bengbu-medical-college",
+    "univLogo": "logo\u002F78907448.png",
+    "univNameCn": "蚌埠医科大学",
+    "univNameEn": "Bengbu Medical University",
+    "score": 157.95
+  },
+  {
+    "univUp": "dalian-minzu-university",
+    "univLogo": "logo\u002F51432598.png",
+    "univNameCn": "大连民族大学",
+    "univNameEn": "Dalian Minzu University",
+    "score": 157.95
+  },
+  {
+    "univUp": "communication-university-of-zhejiang",
+    "univLogo": "logo\u002F57773344.png",
+    "univNameCn": "浙江传媒学院",
+    "univNameEn": "Communication University of Zhejiang",
+    "score": 157.95
+  },
+  {
+    "univUp": "xiamen-university-of-technology",
+    "univLogo": "logo\u002F19033285.png",
+    "univNameCn": "厦门理工学院",
+    "univNameEn": "Xiamen University of Technology",
+    "score": 157.4
+  },
+  {
+    "univUp": "xihua-university",
+    "univLogo": "logo\u002F93995661.png",
+    "univNameCn": "西华大学",
+    "univNameEn": "Xihua University",
+    "score": 157.3
+  },
+  {
+    "univUp": "changchun-university-of-technology",
+    "univLogo": "logo\u002F73521245.png",
+    "univNameCn": "长春工业大学",
+    "univNameEn": "Changchun University of Technology",
+    "score": 157.2
+  },
+  {
+    "univUp": "tianjin-university-of-commerce",
+    "univLogo": "logo\u002F86010594.png",
+    "univNameCn": "天津商业大学",
+    "univNameEn": "Tianjin University of Commerce",
+    "score": 156.3
+  },
+  {
+    "univUp": "zhengzhou-university-of-aeronautics",
+    "univLogo": "logo\u002F14076623.png",
+    "univNameCn": "郑州航空工业管理学院",
+    "univNameEn": "Zhengzhou University of Aeronautics",
+    "score": 156.3
+  },
+  {
+    "univUp": "shenyang-normal-university",
+    "univLogo": "logo\u002F35037401.png",
+    "univNameCn": "沈阳师范大学",
+    "univNameEn": "Shenyang Normal University",
+    "score": 155.4
+  },
+  {
+    "univUp": "guizhou-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F15313794.png",
+    "univNameCn": "贵州中医药大学",
+    "univNameEn": "Guizhou University of Traditional Chinese Medicine",
+    "score": 155.1
+  },
+  {
+    "univUp": "dalian-university",
+    "univLogo": "logo\u002F60934075.png",
+    "univNameCn": "大连大学",
+    "univNameEn": "Dalian University",
+    "score": 155.1
+  },
+  {
+    "univUp": "north-china-university-of-science-and-technology",
+    "univLogo": "logo\u002F60206933.png",
+    "univNameCn": "华北理工大学",
+    "univNameEn": "North China University of Science and Technology",
+    "score": 155.1
+  },
+  {
+    "univUp": "north-sichuan-medical-college",
+    "univLogo": "logo\u002F65947088.png",
+    "univNameCn": "川北医学院",
+    "univNameEn": "North Sichuan Medical College",
+    "score": 155.1
+  },
+  {
+    "univUp": "shenyang-medical-college",
+    "univLogo": "logo\u002F22552987.png",
+    "univNameCn": "沈阳医学院",
+    "univNameEn": "Shenyang Medical College",
+    "score": 155.1
+  },
+  {
+    "univUp": "anhui-jianzhu-university",
+    "univLogo": "logo\u002F40890032.png",
+    "univNameCn": "安徽建筑大学",
+    "univNameEn": "Anhui Jianzhu University",
+    "score": 154.8
+  },
+  {
+    "univUp": "guangdong-pharmaceutical-university",
+    "univLogo": "logo\u002F48572095.png",
+    "univNameCn": "广东药科大学",
+    "univNameEn": "Guangdong Pharmaceutical University",
+    "score": 154.75
+  },
+  {
+    "univUp": "hubei-university-of-economics",
+    "univLogo": "logo\u002F16532057.png",
+    "univNameCn": "湖北经济学院",
+    "univNameEn": "Hubei University Of Economics",
+    "score": 154.75
+  },
+  {
+    "univUp": "hunan-university-of-technology",
+    "univLogo": "logo\u002F21950632.png",
+    "univNameCn": "湖南工业大学",
+    "univNameEn": "Hunan University of Technology",
+    "score": 154.7
+  },
+  {
+    "univUp": "guilin-medical-university",
+    "univLogo": "logo\u002F70277392.png",
+    "univNameCn": "桂林医学院",
+    "univNameEn": "Guilin Medical University",
+    "score": 154.35
+  },
+  {
+    "univUp": "chinese-peoples-armed-police-force-academy",
+    "univLogo": "logo\u002F45660732.png",
+    "univNameCn": "中国人民警察大学",
+    "univNameEn": "China People's Police University",
+    "score": 154.35
+  },
+  {
+    "univUp": "jinggangshan-university",
+    "univLogo": "logo\u002F50371015.png",
+    "univNameCn": "井冈山大学",
+    "univNameEn": "Jinggangshan University",
+    "score": 154
+  },
+  {
+    "univUp": "tibet-university-for-nationalities",
+    "univLogo": "logo\u002F54572957.png",
+    "univNameCn": "西藏民族大学",
+    "univNameEn": "Xizang Minzu University",
+    "score": 153.8
+  },
+  {
+    "univUp": "shanxi-normal-university",
+    "univLogo": "logo\u002F27091361.png",
+    "univNameCn": "山西师范大学",
+    "univNameEn": "Shanxi Normal University",
+    "score": 153.6
+  },
+  {
+    "univUp": "liaoning-technical-university",
+    "univLogo": "logo\u002F44745654.png",
+    "univNameCn": "辽宁工程技术大学",
+    "univNameEn": "Liaoning Technical University",
+    "score": 153.3
+  },
+  {
+    "univUp": "beijing-university-of-agriculture",
+    "univLogo": "logo\u002F37951247.png",
+    "univNameCn": "北京农学院",
+    "univNameEn": "Beijing University of Agriculture",
+    "score": 153.1
+  },
+  {
+    "univUp": "ningbotech-university",
+    "univLogo": "logo\u002F68131907.png",
+    "univNameCn": "浙大宁波理工学院",
+    "univNameEn": "NingboTech University",
+    "score": 152.8
+  },
+  {
+    "univUp": "guizhou-university-of-finance-and-economics",
+    "univLogo": "logo\u002F21113664.png",
+    "univNameCn": "贵州财经大学",
+    "univNameEn": "Guizhou University of Finance and Economics",
+    "score": 152.35
+  },
+  {
+    "univUp": "fujian-university-of-technology",
+    "univLogo": "logo\u002F77255531.png",
+    "univNameCn": "福建理工大学",
+    "univNameEn": "Fujian University of Technology",
+    "score": 151.9
+  },
+  {
+    "univUp": "zhejiang-international-studies-university",
+    "univLogo": "logo\u002F38125714.png",
+    "univNameCn": "浙江外国语学院",
+    "univNameEn": "Zhejiang International Studies University",
+    "score": 151.8
+  },
+  {
+    "univUp": "changshu-institute-of-technology",
+    "univLogo": "logo\u002F44425885.png",
+    "univNameCn": "常熟理工学院",
+    "univNameEn": "Changshu Institute of Technology",
+    "score": 151.7
+  },
+  {
+    "univUp": "zhongyuan-university-of-technology",
+    "univLogo": "logo\u002F84789296.png",
+    "univNameCn": "中原工学院",
+    "univNameEn": "Zhongyuan University of Technology",
+    "score": 151.6
+  },
+  {
+    "univUp": "shanxi-university-of-traditional-chinese-medicine",
+    "univLogo": "logo-jpg\u002F9473860700.jpg",
+    "univNameCn": "山西中医药大学",
+    "univNameEn": "Shanxi University of Chinese Medicine",
+    "score": 151.5
+  },
+  {
+    "univUp": "tianjin-foreign-studies-university",
+    "univLogo": "logo-jpg\u002F8633966700.jpg",
+    "univNameCn": "天津外国语大学",
+    "univNameEn": "Tianjin Foreign Studies University",
+    "score": 151.5
+  },
+  {
+    "univUp": "zhejiang-police-college",
+    "univLogo": "logo-jpg\u002F3070549900.jpg",
+    "univNameCn": "浙江警察学院",
+    "univNameEn": "Zhejiang Police College",
+    "score": 151.5
+  },
+  {
+    "univUp": "china-university-of-labor-relations",
+    "univLogo": "logo-jpg\u002F8497573500.jpg",
+    "univNameCn": "中国劳动关系学院",
+    "univNameEn": "China University of Labor Relations",
+    "score": 151.5
+  },
+  {
+    "univUp": "hefei-university",
+    "univLogo": "logo\u002F61834081.png",
+    "univNameCn": "合肥大学",
+    "univNameEn": "Hefei University",
+    "score": 151.4
+  },
+  {
+    "univUp": "sichuan-police-college",
+    "univLogo": "logo-jpg\u002F5965658000.jpg",
+    "univNameCn": "四川警察学院",
+    "univNameEn": "Sichuan Police College",
+    "score": 151.2
+  },
+  {
+    "univUp": "chongqing-university-of-science-and-technology",
+    "univLogo": "logo\u002F92174588.png",
+    "univNameCn": "重庆科技大学",
+    "univNameEn": "Chongqing University of Science and Technology",
+    "score": 151
+  },
+  {
+    "univUp": "bohai-university",
+    "univLogo": "logo\u002F41274490.png",
+    "univNameCn": "渤海大学",
+    "univNameEn": "Bohai University",
+    "score": 150.8
+  },
+  {
+    "univUp": "yunnan-agricultural-university",
+    "univLogo": "logo\u002F17581582.png",
+    "univNameCn": "云南农业大学",
+    "univNameEn": "Yunnan Agricultural University",
+    "score": 150.5
+  },
+  {
+    "univUp": "taizhou-university-tzc",
+    "univLogo": "logo-jpg\u002F8551212700.jpg",
+    "univNameCn": "台州学院",
+    "univNameEn": "Taizhou University",
+    "score": 150.4
+  },
+  {
+    "univUp": "dali-university",
+    "univLogo": "logo\u002F75994663.png",
+    "univNameCn": "大理大学",
+    "univNameEn": "Dali University",
+    "score": 150.3
+  },
+  {
+    "univUp": "taiyuan-university-of-science-and-technology",
+    "univLogo": "logo\u002F22418234.png",
+    "univNameCn": "太原科技大学",
+    "univNameEn": "Taiyuan University of Science and Technology",
+    "score": 150
+  },
+  {
+    "univUp": "heilongjiang-bayi-agricultural-university",
+    "univLogo": "logo\u002F10913514.png",
+    "univNameCn": "黑龙江八一农垦大学",
+    "univNameEn": "Heilongjiang Bayi Agricultural University",
+    "score": 149.8
+  },
+  {
+    "univUp": "wuhan-sports-university",
+    "univLogo": "logo\u002F31481833.png",
+    "univNameCn": "武汉体育学院",
+    "univNameEn": "Wuhan Sports University",
+    "score": 149.55
+  },
+  {
+    "univUp": "ningbo-university-of-technology",
+    "univLogo": "logo\u002F40131695.png",
+    "univNameCn": "宁波工程学院",
+    "univNameEn": "Ningbo University of Technology",
+    "score": 149.3
+  },
+  {
+    "univUp": "tibetan-traditional-medical-college",
+    "univLogo": "logo-jpg\u002F9847001700.jpg",
+    "univNameCn": "西藏藏医药大学",
+    "univNameEn": "Xizang University of Tibetan Medicine",
+    "score": 149.25
+  },
+  {
+    "univUp": "yunnan-university-of-chinese-medicine",
+    "univLogo": "logo\u002F73470477.png",
+    "univNameCn": "云南中医药大学",
+    "univNameEn": "Yunnan University of Chinese Medicine",
+    "score": 149.25
+  },
+  {
+    "univUp": "shenzhen-technology-university",
+    "univLogo": "logo-jpg\u002F7196901700.jpg",
+    "univNameCn": "深圳技术大学",
+    "univNameEn": "Shenzhen Technology University",
+    "score": 149.2
+  },
+  {
+    "univUp": "nanjing-police-university",
+    "univLogo": "logo-jpg\u002F7300134000.jpg",
+    "univNameCn": "南京警察学院",
+    "univNameEn": "Nanjing Police University",
+    "score": 148.9
+  },
+  {
+    "univUp": "xian-university-of-finance-and-economics",
+    "univLogo": "logo\u002F94423444.png",
+    "univNameCn": "西安财经大学",
+    "univNameEn": "Xi'an University of Finance and Economics",
+    "score": 148.9
+  },
+  {
+    "univUp": "yunnan-university-of-finance-and-economics",
+    "univLogo": "logo\u002F35226612.png",
+    "univNameCn": "云南财经大学",
+    "univNameEn": "Yunnan University of Finance and Economics",
+    "score": 148.9
+  },
+  {
+    "univUp": "hebei-university-of-engineering",
+    "univLogo": "logo\u002F89281811.png",
+    "univNameCn": "河北工程大学",
+    "univNameEn": "Hebei University of Engineering",
+    "score": 148.6
+  },
+  {
+    "univUp": "university-of-science-and-technology-liaoning",
+    "univLogo": "logo\u002F62832363.png",
+    "univNameCn": "辽宁科技大学",
+    "univNameEn": "University of Science and Technology Liaoning",
+    "score": 148.4
+  },
+  {
+    "univUp": "beijing-union-university",
+    "univLogo": "logo\u002F38515710.png",
+    "univNameCn": "北京联合大学",
+    "univNameEn": "Beijing Union University",
+    "score": 148.2
+  },
+  {
+    "univUp": "beijing-institute-of-petrochemical-technology",
+    "univLogo": "logo\u002F47539221.png",
+    "univNameCn": "北京石油化工学院",
+    "univNameEn": "Beijing Institute of Petrochemical Technology",
+    "score": 148.2
+  },
+  {
+    "univUp": "north-minzu-university",
+    "univLogo": "logo\u002F18649267.png",
+    "univNameCn": "北方民族大学",
+    "univNameEn": "North Minzu University",
+    "score": 148.2
+  },
+  {
+    "univUp": "hangzhou-medical-college",
+    "univLogo": "logo-jpg\u002F1688864700.jpg",
+    "univNameCn": "杭州医学院",
+    "univNameEn": "Hangzhou Medical College",
+    "score": 148.2
+  },
+  {
+    "univUp": "northwest-minzu-university",
+    "univLogo": "logo\u002F24025736.png",
+    "univNameCn": "西北民族大学",
+    "univNameEn": "Northwest Minzu University",
+    "score": 148.2
+  },
+  {
+    "univUp": "xinjiang-agricultural-university",
+    "univLogo": "logo\u002F86159068.png",
+    "univNameCn": "新疆农业大学",
+    "univNameEn": "Xinjiang Agricultural University",
+    "score": 148
+  },
+  {
+    "univUp": "guizhou-minzu-university",
+    "univLogo": "logo\u002F79909159.png",
+    "univNameCn": "贵州民族大学",
+    "univNameEn": "Guizhou Minzu University",
+    "score": 147.85
+  },
+  {
+    "univUp": "wannan-medical-college",
+    "univLogo": "logo\u002F55726214.png",
+    "univNameCn": "皖南医学院",
+    "univNameEn": "Wannan Medical College",
+    "score": 147.85
+  },
+  {
+    "univUp": "jishou-university",
+    "univLogo": "logo\u002F24710054.png",
+    "univNameCn": "吉首大学",
+    "univNameEn": "Jishou University",
+    "score": 147.85
+  },
+  {
+    "univUp": "liaoning-university-of-technology",
+    "univLogo": "logo\u002F98866857.png",
+    "univNameCn": "辽宁工业大学",
+    "univNameEn": "Liaoning University of Technology",
+    "score": 147.85
+  },
+  {
+    "univUp": "yunnan-minzu-university",
+    "univLogo": "logo\u002F53058835.png",
+    "univNameCn": "云南民族大学",
+    "univNameEn": "Yunnan Minzu University",
+    "score": 147.85
+  },
+  {
+    "univUp": "beijing-institute-of-graphic-communication",
+    "univLogo": "logo\u002F19759004.png",
+    "univNameCn": "北京印刷学院",
+    "univNameEn": "Beijing Institute of Graphic Communication",
+    "score": 147.7
+  },
+  {
+    "univUp": "minnan-normal-university",
+    "univLogo": "logo\u002F54713686.png",
+    "univNameCn": "闽南师范大学",
+    "univNameEn": "Minnan Normal University",
+    "score": 147.5
+  },
+  {
+    "univUp": "shenyang-sport-university",
+    "univLogo": "logo\u002F18417528.png",
+    "univNameCn": "沈阳体育学院",
+    "univNameEn": "Shenyang Sport University",
+    "score": 147
+  },
+  {
+    "univUp": "huaiyin-institute-of-technology",
+    "univLogo": "logo\u002F43135857.png",
+    "univNameCn": "淮阴工学院",
+    "univNameEn": "Huaiyin Institute of Technology",
+    "score": 146.5
+  },
+  {
+    "univUp": "chengde-medical-college",
+    "univLogo": "logo\u002F21241391.png",
+    "univNameCn": "承德医学院",
+    "univNameEn": "Chengde Medical University",
+    "score": 146.45
+  },
+  {
+    "univUp": "minjiang-university",
+    "univLogo": "logo\u002F95059485.png",
+    "univNameCn": "闽江学院",
+    "univNameEn": "Minjiang University",
+    "score": 146.4
+  },
+  {
+    "univUp": "guangdong-ocean-university",
+    "univLogo": "logo\u002F71593833.png",
+    "univNameCn": "广东海洋大学",
+    "univNameEn": "Guangdong Ocean University",
+    "score": 145.7
+  },
+  {
+    "univUp": "harbin-university-of-commerce",
+    "univLogo": "logo\u002F99118956.png",
+    "univNameCn": "哈尔滨商业大学",
+    "univNameEn": "Harbin University of Commerce",
+    "score": 145.65
+  },
+  {
+    "univUp": "xinyang-normal-university",
+    "univLogo": "logo\u002F20481613.png",
+    "univNameCn": "信阳师范大学",
+    "univNameEn": "Xinyang Normal University",
+    "score": 145.6
+  },
+  {
+    "univUp": "hebei-geo-university",
+    "univLogo": "logo\u002F95683822.png",
+    "univNameCn": "河北地质大学",
+    "univNameEn": "Hebei GEO University",
+    "score": 145.5
+  },
+  {
+    "univUp": "beihua-university",
+    "univLogo": "logo\u002F70718646.png",
+    "univNameCn": "北华大学",
+    "univNameEn": "Beihua University",
+    "score": 144.9
+  },
+  {
+    "univUp": "jilin-normal-university",
+    "univLogo": "logo\u002F23887678.png",
+    "univNameCn": "吉林师范大学",
+    "univNameEn": "Jilin Normal University",
+    "score": 144.2
+  },
+  {
+    "univUp": "gansu-university-of-chinese-medicine",
+    "univLogo": "logo\u002F27813330.png",
+    "univNameCn": "甘肃中医药大学",
+    "univNameEn": "Gansu University of Chinese Medicine",
+    "score": 144.05
+  },
+  {
+    "univUp": "linyi-university",
+    "univLogo": "logo\u002F85449690.png",
+    "univNameCn": "临沂大学",
+    "univNameEn": "Linyi University",
+    "score": 143.9
+  },
+  {
+    "univUp": "huaibei-normal-university",
+    "univLogo": "logo\u002F42492973.png",
+    "univNameCn": "淮北师范大学",
+    "univNameEn": "Huaibei Normal University",
+    "score": 143.7
+  },
+  {
+    "univUp": "dalian-ocean-university",
+    "univLogo": "logo\u002F31946724.png",
+    "univNameCn": "大连海洋大学",
+    "univNameEn": "Dalian Ocean University",
+    "score": 143.6
+  },
+  {
+    "univUp": "guangxi-teachers-education-university",
+    "univLogo": "logo\u002F93746377.png",
+    "univNameCn": "南宁师范大学",
+    "univNameEn": "Nanning Normal University",
+    "score": 143.5
+  },
+  {
+    "univUp": "yancheng-institute-of-technology",
+    "univLogo": "logo\u002F98593672.png",
+    "univNameCn": "盐城工学院",
+    "univNameEn": "Yancheng Institute of Technology",
+    "score": 143.4
+  },
+  {
+    "univUp": "jilin-jianzhu-university",
+    "univLogo": "logo\u002F67832474.png",
+    "univNameCn": "吉林建筑大学",
+    "univNameEn": "Jilin Jianzhu University",
+    "score": 143.3
+  },
+  {
+    "univUp": "nanjing-university-of-information-science-and-technology-binjiang-college",
+    "univLogo": "logo-jpg\u002F7955219400.jpg",
+    "univNameCn": "无锡学院",
+    "univNameEn": "Wuxi University",
+    "score": 142.7
+  },
+  {
+    "univUp": "tarim-university",
+    "univLogo": "logo\u002F99603674.png",
+    "univNameCn": "塔里木大学",
+    "univNameEn": "Tarim University",
+    "score": 142.6
+  },
+  {
+    "univUp": "guangdong-polytechnic-normal-university",
+    "univLogo": "logo\u002F76957155.png",
+    "univNameCn": "广东技术师范大学",
+    "univNameEn": "Guangdong Polytechnic Normal University",
+    "score": 142.5
+  },
+  {
+    "univUp": "changsha-university",
+    "univLogo": "logo\u002F54067016.png",
+    "univNameCn": "长沙学院",
+    "univNameEn": "Changsha University",
+    "score": 142.2
+  },
+  {
+    "univUp": "jingdezhen-ceramic-institute",
+    "univLogo": "logo\u002F97993379.png",
+    "univNameCn": "景德镇陶瓷大学",
+    "univNameEn": "Jingdezhen Ceramic University",
+    "score": 142
+  },
+  {
+    "univUp": "henan-institute-of-science-and-technology",
+    "univLogo": "logo\u002F45836143.png",
+    "univNameCn": "河南科技学院",
+    "univNameEn": "Henan Institute of Science and Technology",
+    "score": 141.75
+  },
+  {
+    "univUp": "huaihai-institute-of-technology",
+    "univLogo": "logo\u002F24296488.png",
+    "univNameCn": "江苏海洋大学",
+    "univNameEn": "Jiangsu Ocean University",
+    "score": 141.75
+  },
+  {
+    "univUp": "qinghai-nationalities-university",
+    "univLogo": "logo\u002F55196493.png",
+    "univNameCn": "青海民族大学",
+    "univNameEn": "Qinghai Nationalities University",
+    "score": 141.75
+  },
+  {
+    "univUp": "shandong-technology-and-business-university",
+    "univLogo": "logo\u002F74482934.png",
+    "univNameCn": "山东工商学院",
+    "univNameEn": "Shandong Technology and Business University",
+    "score": 141.75
+  },
+  {
+    "univUp": "tianjin-chengjian-university",
+    "univLogo": "logo\u002F46314554.png",
+    "univNameCn": "天津城建大学",
+    "univNameEn": "Tianjin Chengjian University",
+    "score": 141.5
+  },
+  {
+    "univUp": "hubei-normal-university",
+    "univLogo": "logo\u002F40458904.png",
+    "univNameCn": "湖北师范大学",
+    "univNameEn": "Hubei Normal University",
+    "score": 141.3
+  },
+  {
+    "univUp": "guizhou-normal-college",
+    "univLogo": "logo\u002F12076666.png",
+    "univNameCn": "贵州师范学院",
+    "univNameEn": "Guizhou Education University",
+    "score": 141.2
+  },
+  {
+    "univUp": "gannan-medical-university",
+    "univLogo": "logo\u002F74718101.png",
+    "univNameCn": "赣南医科大学",
+    "univNameEn": "Gannan Medical University",
+    "score": 141.1
+  },
+  {
+    "univUp": "shanghai-university-of-medicine-and-health-sciences",
+    "univLogo": "logo-jpg\u002F7163314700.jpg",
+    "univNameCn": "上海健康医学院",
+    "univNameEn": "Shanghai University of Medicine and Health Sciences",
+    "score": 141.1
+  },
+  {
+    "univUp": "jiangxi-science-and-technology-normal-university",
+    "univLogo": "logo\u002F63137261.png",
+    "univNameCn": "江西科技师范大学",
+    "univNameEn": "Jiangxi Science and Technology Normal University",
+    "score": 141
+  },
+  {
+    "univUp": "gansu-university-of-political-science-and-law",
+    "univLogo": "logo\u002F64653419.png",
+    "univNameCn": "甘肃政法大学",
+    "univNameEn": "Gansu University of Political Science and Law",
+    "score": 140.95
+  },
+  {
+    "univUp": "southwest-forestry-university",
+    "univLogo": "logo\u002F53403086.png",
+    "univNameCn": "西南林业大学",
+    "univNameEn": "Southwest Forestry University",
+    "score": 140.9
+  },
+  {
+    "univUp": "wuyi-university-wyu",
+    "univLogo": "logo\u002F80058564.png",
+    "univNameCn": "五邑大学",
+    "univNameEn": "Wuyi University",
+    "score": 140.8
+  },
+  {
+    "univUp": "jining-medical-university",
+    "univLogo": "logo\u002F23711330.png",
+    "univNameCn": "济宁医学院",
+    "univNameEn": "Jining Medical University",
+    "score": 140.4
+  },
+  {
+    "univUp": "inner-mongolia-university-of-science-technology",
+    "univLogo": "logo\u002F98701978.png",
+    "univNameCn": "内蒙古科技大学",
+    "univNameEn": "Inner Mongolia University of Science & Technology",
+    "score": 140
+  },
+  {
+    "univUp": "nanjing-xiaozhuang-university",
+    "univLogo": "logo\u002F17661336.png",
+    "univNameCn": "南京晓庄学院",
+    "univNameEn": "Nanjing XiaoZhuang University",
+    "score": 139.9
+  },
+  {
+    "univUp": "changchun-normal-university",
+    "univLogo": "logo\u002F82800037.png",
+    "univNameCn": "长春师范大学",
+    "univNameEn": "Changchun Normal University",
+    "score": 139.8
+  },
+  {
+    "univUp": "yangtze-normal-university",
+    "univLogo": "logo\u002F86035678.png",
+    "univNameCn": "长江师范学院",
+    "univNameEn": "Yangtze Normal University",
+    "score": 139.6
+  },
+  {
+    "univUp": "chongqing-university-of-arts-and-science",
+    "univLogo": "logo\u002F30413024.png",
+    "univNameCn": "重庆文理学院",
+    "univNameEn": "Chongqing University of Arts and Sciences",
+    "score": 139.6
+  },
+  {
+    "univUp": "china-womens-university",
+    "univLogo": "logo-jpg\u002F1689798000.jpg",
+    "univNameCn": "中华女子学院",
+    "univNameEn": "China Women's University",
+    "score": 139.3
+  },
+  {
+    "univUp": "inner-mongolia-university-of-finance-and-economics",
+    "univLogo": "logo\u002F64931698.png",
+    "univNameCn": "内蒙古财经大学",
+    "univNameEn": "Inner Mongolia University of Finance and Economics",
+    "score": 139.3
+  },
+  {
+    "univUp": "xinjiang-normal-university",
+    "univLogo": "logo\u002F91394778.png",
+    "univNameCn": "新疆师范大学",
+    "univNameEn": "Xinjiang Normal University",
+    "score": 139.1
+  },
+  {
+    "univUp": "anqing-normal-university",
+    "univLogo": "logo\u002F66650184.png",
+    "univNameCn": "安庆师范大学",
+    "univNameEn": "Anqing Normal University",
+    "score": 139
+  },
+  {
+    "univUp": "huaiyin-normal-university",
+    "univLogo": "logo\u002F72353527.png",
+    "univNameCn": "淮阴师范学院",
+    "univNameEn": "Huaiyin Normal University",
+    "score": 139
+  },
+  {
+    "univUp": "tianjin-university-of-sport",
+    "univLogo": "logo\u002F52094817.png",
+    "univNameCn": "天津体育学院",
+    "univNameEn": "Tianjin University of Sport",
+    "score": 138.9
+  },
+  {
+    "univUp": "zhejiang-wanli-university",
+    "univLogo": "logo\u002F32947352.png",
+    "univNameCn": "浙江万里学院",
+    "univNameEn": "Zhejiang Wanli University",
+    "score": 138.8
+  },
+  {
+    "univUp": "jiangsu-university-of-technology",
+    "univLogo": "logo\u002F18087642.png",
+    "univNameCn": "江苏理工学院",
+    "univNameEn": "Jiangsu University of Technology",
+    "score": 138.6
+  },
+  {
+    "univUp": "shanghai-dianji-university",
+    "univLogo": "logo\u002F14374343.png",
+    "univNameCn": "上海电机学院",
+    "univNameEn": "Shanghai Dianji University",
+    "score": 138.4
+  },
+  {
+    "univUp": "shanghai-second-polytechnic-university",
+    "univLogo": "logo\u002F70585176.png",
+    "univNameCn": "上海第二工业大学",
+    "univNameEn": "Shanghai Polytechnic University",
+    "score": 137.7
+  },
+  {
+    "univUp": "sichuan-university-of-science-and-engineering",
+    "univLogo": "logo\u002F68372773.png",
+    "univNameCn": "四川轻化工大学",
+    "univNameEn": "Sichuan University of Science and Engineering",
+    "score": 137.5
+  },
+  {
+    "univUp": "beijing-police-college",
+    "univLogo": "logo-jpg\u002F3199170300.jpg",
+    "univNameCn": "北京警察学院",
+    "univNameEn": "Beijing Police College",
+    "score": 137.4
+  },
+  {
+    "univUp": "changzhou-institute-of-technology",
+    "univLogo": "logo\u002F21237870.png",
+    "univNameCn": "常州工学院",
+    "univNameEn": "Changzhou Institute of Technology",
+    "score": 137.3
+  },
+  {
+    "univUp": "chengdu-sport-university",
+    "univLogo": "logo\u002F41287635.png",
+    "univNameCn": "成都体育学院",
+    "univNameEn": "Chengdu Sport University",
+    "score": 137
+  },
+  {
+    "univUp": "shanghai-business-school",
+    "univLogo": "logo\u002F42301988.png",
+    "univNameCn": "上海商学院",
+    "univNameEn": "Shanghai Business School",
+    "score": 137
+  },
+  {
+    "univUp": "hunan-institute-of-science-and-technology",
+    "univLogo": "logo\u002F43186940.png",
+    "univNameCn": "湖南理工学院",
+    "univNameEn": "Hunan Institute of Science and Technology",
+    "score": 136.7
+  },
+  {
+    "univUp": "chengdu-medical-college",
+    "univLogo": "logo\u002F27386234.png",
+    "univNameCn": "成都医学院",
+    "univNameEn": "Chengdu Medical College",
+    "score": 136.6
+  },
+  {
+    "univUp": "yancheng-teachers-university",
+    "univLogo": "logo\u002F87686237.png",
+    "univNameCn": "盐城师范学院",
+    "univNameEn": "Yancheng Teachers University",
+    "score": 136.5
+  },
+  {
+    "univUp": "hubei-minzu-university",
+    "univLogo": "logo-jpg\u002F6478530900.jpg",
+    "univNameCn": "湖北民族大学",
+    "univNameEn": "Hubei Minzu University",
+    "score": 136.4
+  },
+  {
+    "univUp": "zhongkai-university-of-agriculture-and-engineering",
+    "univLogo": "logo\u002F27048883.png",
+    "univNameCn": "仲恺农业工程学院",
+    "univNameEn": "Zhongkai University of Agriculture and Engineering",
+    "score": 136.3
+  },
+  {
+    "univUp": "hubei-university-of-automotive-technology",
+    "univLogo": "logo\u002F90773167.png",
+    "univNameCn": "湖北汽车工业学院",
+    "univNameEn": "Hubei University of Automotive Technology",
+    "score": 135.3
+  },
+  {
+    "univUp": "guangxi-university-of-science-and-technology",
+    "univLogo": "logo\u002F70589857.png",
+    "univNameCn": "广西科技大学",
+    "univNameEn": "Guangxi University of Science and Technology",
+    "score": 135.15
+  },
+  {
+    "univUp": "huanggang-normal-university",
+    "univLogo": "logo\u002F63694810.png",
+    "univNameCn": "黄冈师范学院",
+    "univNameEn": "Huanggang Normal University",
+    "score": 135.15
+  },
+  {
+    "univUp": "nanchang-institute-of-technology-nit",
+    "univLogo": "logo\u002F88433724.png",
+    "univNameCn": "南昌工程学院",
+    "univNameEn": "Nanchang Institute of Technology",
+    "score": 135
+  },
+  {
+    "univUp": "the-national-police-university-for-criminal-justice",
+    "univLogo": "logo-jpg\u002F7501363800.jpg",
+    "univNameCn": "中央司法警官学院",
+    "univNameEn": "The National Police University for Criminal Justice",
+    "score": 134.65
+  },
+  {
+    "univUp": "yulin-university",
+    "univLogo": "logo\u002F85924739.png",
+    "univNameCn": "榆林学院",
+    "univNameEn": "Yulin University",
+    "score": 134.3
+  },
+  {
+    "univUp": "xinjiang-university-of-finance-and-economics",
+    "univLogo": "logo\u002F75817348.png",
+    "univNameCn": "新疆财经大学",
+    "univNameEn": "Xinjiang University of finance and economics",
+    "score": 134
+  },
+  {
+    "univUp": "jinling-institute-of-technology",
+    "univLogo": "logo\u002F85525495.png",
+    "univNameCn": "金陵科技学院",
+    "univNameEn": "Jinling Institute of Technology",
+    "score": 134
+  },
+  {
+    "univUp": "shandong-jiaotong-university",
+    "univLogo": "logo\u002F72327141.png",
+    "univNameCn": "山东交通学院",
+    "univNameEn": "Shandong Jiaotong University",
+    "score": 134
+  },
+  {
+    "univUp": "nanjing-sport-institute",
+    "univLogo": "logo-jpg\u002F8395354300.jpg",
+    "univNameCn": "南京体育学院",
+    "univNameEn": "Nanjing Sport Institute",
+    "score": 134
+  },
+  {
+    "univUp": "hubei-university-of-education",
+    "univLogo": "logo\u002F71638925.png",
+    "univNameCn": "湖北第二师范学院",
+    "univNameEn": "Hubei University of Education",
+    "score": 133.7
+  },
+  {
+    "univUp": "guangdong-police-college",
+    "univLogo": "logo-jpg\u002F4772850600.jpg",
+    "univNameCn": "广东警官学院",
+    "univNameEn": "Guangdong Police College",
+    "score": 133.65
+  },
+  {
+    "univUp": "xuzhou-institute-of-technology",
+    "univLogo": "logo\u002F15209078.png",
+    "univNameCn": "徐州工程学院",
+    "univNameEn": "Xuzhou University of Technology",
+    "score": 133.6
+  },
+  {
+    "univUp": "tianjin-agricultural-university",
+    "univLogo": "logo\u002F45293117.png",
+    "univNameCn": "天津农学院",
+    "univNameEn": "Tianjin Agricultural University",
+    "score": 132
+  },
+  {
+    "univUp": "quanzhou-normal-university",
+    "univLogo": "logo\u002F43122253.png",
+    "univNameCn": "泉州师范学院",
+    "univNameEn": "Quanzhou Normal University",
+    "score": 131.8
+  },
+  {
+    "univUp": "mudanjiang-medical-university",
+    "univLogo": "logo\u002F52707522.png",
+    "univNameCn": "牡丹江医科大学",
+    "univNameEn": "Mudanjiang Medical University",
+    "score": 131.6
+  },
+  {
+    "univUp": "hubei-university-of-arts-and-science",
+    "univLogo": "logo\u002F54746261.png",
+    "univNameCn": "湖北文理学院",
+    "univNameEn": "Hubei University of Arts and Science",
+    "score": 131.4
+  },
+  {
+    "univUp": "luoyang-normal-university",
+    "univLogo": "logo\u002F60927754.png",
+    "univNameCn": "洛阳师范学院",
+    "univNameEn": "Luoyang Normal University",
+    "score": 131
+  },
+  {
+    "univUp": "tianjin-university-of-technology-and-education",
+    "univLogo": "logo\u002F38391685.png",
+    "univNameCn": "天津职业技术师范大学",
+    "univNameEn": "TianJin University of Technology and Education",
+    "score": 130.8
+  },
+  {
+    "univUp": "chongqing-police-college",
+    "univLogo": "logo-jpg\u002F2133448700.jpg",
+    "univNameCn": "重庆警察学院",
+    "univNameEn": "Chongqing Police College",
+    "score": 130.7
+  },
+  {
+    "univUp": "qiqihar-medical-university",
+    "univLogo": "logo\u002F52685915.png",
+    "univNameCn": "齐齐哈尔医学院",
+    "univNameEn": "Qiqihar Medical University",
+    "score": 130.7
+  },
+  {
+    "univUp": "youjiang-medical-university-for-nationalites",
+    "univLogo": "logo\u002F31095838.png",
+    "univNameCn": "右江民族医学院",
+    "univNameEn": "Youjiang Medical University for Nationalities",
+    "score": 130.7
+  },
+  {
+    "univUp": "shaanxi-university-of-technology",
+    "univLogo": "logo\u002F18739697.png",
+    "univNameCn": "陕西理工大学",
+    "univNameEn": "Shaanxi University of Technology",
+    "score": 130.6
+  },
+  {
+    "univUp": "hunan-first-normal-university",
+    "univLogo": "logo\u002F20498995.png",
+    "univNameCn": "湖南第一师范学院",
+    "univNameEn": "Hunan First Normal University",
+    "score": 130
+  },
+  {
+    "univUp": "guangzhou-sport-university",
+    "univLogo": "logo-jpg\u002F6812956100.jpg",
+    "univNameCn": "广州体育学院",
+    "univNameEn": "Guangzhou Sport University",
+    "score": 129.9
+  },
+  {
+    "univUp": "inner-mongolia-university-for-nationalities",
+    "univLogo": "logo\u002F87679328.png",
+    "univNameCn": "内蒙古民族大学",
+    "univNameEn": "Inner Mongolia Minzu University",
+    "score": 129.9
+  },
+  {
+    "univUp": "hefei-normal-university",
+    "univLogo": "logo\u002F15187571.png",
+    "univNameCn": "合肥师范学院",
+    "univNameEn": "Hefei Normal University",
+    "score": 129.8
+  },
+  {
+    "univUp": "guangdong-university-of-petrochemical-technology",
+    "univLogo": "logo\u002F35196660.png",
+    "univNameCn": "广东石油化工学院",
+    "univNameEn": "Guangdong University of Petrochemical Technology",
+    "score": 129.6
+  },
+  {
+    "univUp": "anhui-science-and-technology-university",
+    "univLogo": "logo\u002F87128194.png",
+    "univNameCn": "安徽科技学院",
+    "univNameEn": "Anhui Science and Technology University",
+    "score": 129.2
+  },
+  {
+    "univUp": "mianyang-teachers-college",
+    "univLogo": "logo\u002F85507824.png",
+    "univNameCn": "绵阳师范学院",
+    "univNameEn": "Mianyang Teachers' College",
+    "score": 129.2
+  },
+  {
+    "univUp": "quzhou-university",
+    "univLogo": "logo\u002F72411383.png",
+    "univNameCn": "衢州学院",
+    "univNameEn": "Quzhou University",
+    "score": 128.8
+  },
+  {
+    "univUp": "guangdong-university-of-finance",
+    "univLogo": "logo\u002F17033642.png",
+    "univNameCn": "广东金融学院",
+    "univNameEn": "Guangdong University of Finance",
+    "score": 128.7
+  },
+  {
+    "univUp": "xian-medical-university",
+    "univLogo": "logo\u002F64969959.png",
+    "univNameCn": "西安医学院",
+    "univNameEn": "Xi'an Medical University",
+    "score": 128.7
+  },
+  {
+    "univUp": "guiyang-university",
+    "univLogo": "logo\u002F66279213.png",
+    "univNameCn": "贵阳学院",
+    "univNameEn": "Guiyang University",
+    "score": 128.6
+  },
+  {
+    "univUp": "huizhou-university",
+    "univLogo": "logo\u002F84940619.png",
+    "univNameCn": "惠州学院",
+    "univNameEn": "Huizhou University",
+    "score": 128.5
+  },
+  {
+    "univUp": "sanming-university",
+    "univLogo": "logo-jpg\u002F8062462800.jpg",
+    "univNameCn": "三明学院",
+    "univNameEn": "Sanming University",
+    "score": 128.4
+  },
+  {
+    "univUp": "qiqihar-university",
+    "univLogo": "logo\u002F19030311.png",
+    "univNameCn": "齐齐哈尔大学",
+    "univNameEn": "Qiqihar University",
+    "score": 128
+  },
+  {
+    "univUp": "hebei-north-university",
+    "univLogo": "logo\u002F66112517.png",
+    "univNameCn": "河北北方学院",
+    "univNameEn": "Hebei North University",
+    "score": 127.95
+  },
+  {
+    "univUp": "chongqing-three-gorges-university",
+    "univLogo": "logo\u002F16478778.png",
+    "univNameCn": "重庆三峡学院",
+    "univNameEn": "Chongqing Three Gorges University",
+    "score": 127.9
+  },
+  {
+    "univUp": "henan-police-college",
+    "univLogo": "logo-jpg\u002F9262848200.jpg",
+    "univNameCn": "河南警察学院",
+    "univNameEn": "Henan Police College",
+    "score": 127.7
+  },
+  {
+    "univUp": "changchun-institute-of-technology",
+    "univLogo": "logo\u002F68422924.png",
+    "univNameCn": "长春工程学院",
+    "univNameEn": "Changchun Institute of Technology",
+    "score": 127.7
+  },
+  {
+    "univUp": "lishui-university",
+    "univLogo": "logo\u002F40081109.png",
+    "univNameCn": "丽水学院",
+    "univNameEn": "Lishui University",
+    "score": 127.7
+  },
+  {
+    "univUp": "hengyang-normal-university",
+    "univLogo": "logo\u002F34272930.png",
+    "univNameCn": "衡阳师范学院",
+    "univNameEn": "Hengyang Normal University",
+    "score": 127.5
+  },
+  {
+    "univUp": "tibet-agriculture-and-animal-husbandry-university",
+    "univLogo": "logo\u002F15190480.png",
+    "univNameCn": "西藏农牧学院",
+    "univNameEn": "Xizang Agricultural and Animal Husbandry University",
+    "score": 127.4
+  },
+  {
+    "univUp": "lanzhou-university-of-finance-and-economics",
+    "univLogo": "logo\u002F18944347.png",
+    "univNameCn": "兰州财经大学",
+    "univNameEn": "Lanzhou University of Finance and Economics",
+    "score": 127.3
+  },
+  {
+    "univUp": "baotou-medical-college",
+    "univLogo": "logo-jpg\u002F7435345500.jpg",
+    "univNameCn": "内蒙古科技大学包头医学院",
+    "univNameEn": "Baotou Medical College",
+    "score": 127.3
+  },
+  {
+    "univUp": "xiamen-medical-college",
+    "univLogo": "logo-jpg\u002F5583537200.jpg",
+    "univNameCn": "厦门医学院",
+    "univNameEn": "Xiamen Medical College",
+    "score": 127.3
+  },
+  {
+    "univUp": "panzhihua-university",
+    "univLogo": "logo\u002F39118190.png",
+    "univNameCn": "攀枝花学院",
+    "univNameEn": "Panzhihua University",
+    "score": 127.2
+  },
+  {
+    "univUp": "xiangnan-university",
+    "univLogo": "logo\u002F21632133.png",
+    "univNameCn": "湘南学院",
+    "univNameEn": "Xiangnan University",
+    "score": 127.1
+  },
+  {
+    "univUp": "changchun-university",
+    "univLogo": "logo\u002F29057599.png",
+    "univNameCn": "长春大学",
+    "univNameEn": "Changchun University",
+    "score": 126.8
+  },
+  {
+    "univUp": "tongren-university",
+    "univLogo": "logo\u002F70662162.png",
+    "univNameCn": "铜仁学院",
+    "univNameEn": "Tongren University",
+    "score": 126.8
+  },
+  {
+    "univUp": "hubei-university-of-science-and-technology",
+    "univLogo": "logo\u002F48475987.png",
+    "univNameCn": "湖北科技学院",
+    "univNameEn": "Hubei University of Science and Technology",
+    "score": 126.8
+  },
+  {
+    "univUp": "luoyang-institute-of-science-and-technology",
+    "univLogo": "logo\u002F48021129.png",
+    "univNameCn": "洛阳理工学院",
+    "univNameEn": "Luoyang Institute of Science and Technology",
+    "score": 126.8
+  },
+  {
+    "univUp": "civil-aviation-flight-university-of-china",
+    "univLogo": "logo\u002F49642757.png",
+    "univNameCn": "中国民用航空飞行学院",
+    "univNameEn": "Civil Aviation Flight University of China",
+    "score": 126.5
+  },
+  {
+    "univUp": "lingnan-normal-university",
+    "univLogo": "logo\u002F81393131.png",
+    "univNameCn": "岭南师范学院",
+    "univNameEn": "Lingnan Normal University",
+    "score": 125.7
+  },
+  {
+    "univUp": "zhengzhou-police-university",
+    "univLogo": "logo-jpg\u002F2113260100.jpg",
+    "univNameCn": "郑州警察学院",
+    "univNameEn": "Zhengzhou Police University",
+    "score": 125.6
+  },
+  {
+    "univUp": "fuyang-normal-university",
+    "univLogo": "logo\u002F54911354.png",
+    "univNameCn": "阜阳师范大学",
+    "univNameEn": "Fuyang Normal University",
+    "score": 125.6
+  },
+  {
+    "univUp": "jiamusi-university",
+    "univLogo": "logo\u002F39384948.png",
+    "univNameCn": "佳木斯大学",
+    "univNameEn": "Jiamusi University",
+    "score": 125.6
+  },
+  {
+    "univUp": "qiannan-normal-college-for-nationalities",
+    "univLogo": "logo\u002F22743614.png",
+    "univNameCn": "黔南民族师范学院",
+    "univNameEn": "Qiannan Normal College for Nationalities",
+    "score": 125.6
+  },
+  {
+    "univUp": "taishan-university",
+    "univLogo": "logo\u002F71264540.png",
+    "univNameCn": "泰山学院",
+    "univNameEn": "Taishan University",
+    "score": 125.6
+  },
+  {
+    "univUp": "shandong-sport-university",
+    "univLogo": "logo\u002F49545966.png",
+    "univNameCn": "山东体育学院",
+    "univNameEn": "Shandong Sport University",
+    "score": 125.6
+  },
+  {
+    "univUp": "heilongjiang-university-of-science-and-technology",
+    "univLogo": "logo\u002F65166425.png",
+    "univNameCn": "黑龙江科技大学",
+    "univNameEn": "Heilongjiang University of Science and Technology",
+    "score": 125.5
+  },
+  {
+    "univUp": "longyan-university",
+    "univLogo": "logo\u002F37500595.png",
+    "univNameCn": "龙岩学院",
+    "univNameEn": "Longyan University",
+    "score": 125
+  },
+  {
+    "univUp": "institute-of-disaster-prevention",
+    "univLogo": "logo\u002F20951986.png",
+    "univNameCn": "防灾科技学院",
+    "univNameEn": "Institute of Disaster Prevention",
+    "score": 124.8
+  },
+  {
+    "univUp": "chengdu-normal-university",
+    "univLogo": "logo-jpg\u002F4681771000.jpg",
+    "univNameCn": "成都师范学院",
+    "univNameEn": "Chengdu Normal University",
+    "score": 124.6
+  },
+  {
+    "univUp": "neijiang-normal-university",
+    "univLogo": "logo\u002F39821454.png",
+    "univNameCn": "内江师范学院",
+    "univNameEn": "Neijiang Normal University",
+    "score": 124.2
+  },
+  {
+    "univUp": "chuzhou-university",
+    "univLogo": "logo\u002F85371855.png",
+    "univNameCn": "滁州学院",
+    "univNameEn": "Chuzhou University",
+    "score": 123.9
+  },
+  {
+    "univUp": "hubei-polytechnic-university",
+    "univLogo": "logo\u002F43373392.png",
+    "univNameCn": "湖北理工学院",
+    "univNameEn": "Hubei Polytechnic University",
+    "score": 123.6
+  },
+  {
+    "univUp": "shandong-university-of-political-science-and-law",
+    "univLogo": "logo-jpg\u002F8190532300.jpg",
+    "univNameCn": "山东政法学院",
+    "univNameEn": "Shandong University of Political Science and Law",
+    "score": 123.45
+  },
+  {
+    "univUp": "zhoukou-normal-university",
+    "univLogo": "logo\u002F59515613.png",
+    "univNameCn": "周口师范学院",
+    "univNameEn": "Zhoukou Normal University",
+    "score": 123.3
+  },
+  {
+    "univUp": "hebei-normal-university-of-science-and-technology",
+    "univLogo": "logo\u002F54034662.png",
+    "univNameCn": "河北科技师范学院",
+    "univNameEn": "Hebei Normal University of Science and Technology",
+    "score": 123.2
+  },
+  {
+    "univUp": "jiangsu-second-normal-university",
+    "univLogo": "logo\u002F46841239.png",
+    "univNameCn": "江苏第二师范学院",
+    "univNameEn": "Jiangsu Second Normal University",
+    "score": 123.2
+  },
+  {
+    "univUp": "liaoning-police-college",
+    "univLogo": "logo-jpg\u002F7117714800.jpg",
+    "univNameCn": "辽宁警察学院",
+    "univNameEn": "Liaoning Police College",
+    "score": 123.2
+  },
+  {
+    "univUp": "heibei-finance-university",
+    "univLogo": "logo-jpg\u002F4212705800.jpg",
+    "univNameCn": "河北金融学院",
+    "univNameEn": "Hebei Finance University",
+    "score": 123.2
+  },
+  {
+    "univUp": "binzhou-university",
+    "univLogo": "logo\u002F52267041.png",
+    "univNameCn": "山东航空学院",
+    "univNameEn": "Shandong University of Aeronautics",
+    "score": 123.1
+  },
+  {
+    "univUp": "huaihua-university",
+    "univLogo": "logo\u002F97532390.png",
+    "univNameCn": "怀化学院",
+    "univNameEn": "Huaihua University",
+    "score": 122.8
+  },
+  {
+    "univUp": "yunnan-police-college",
+    "univLogo": "logo-jpg\u002F7558856400.jpg",
+    "univNameCn": "云南警官学院",
+    "univNameEn": "Yunnan Police College",
+    "score": 122.6
+  },
+  {
+    "univUp": "shenyang-institute-of-engineering",
+    "univLogo": "logo\u002F54369362.png",
+    "univNameCn": "沈阳工程学院",
+    "univNameEn": "Shenyang Institute of Engineering",
+    "score": 122.4
+  },
+  {
+    "univUp": "fujian-jiangxia-university",
+    "univLogo": "logo\u002F56965306.png",
+    "univNameCn": "福建江夏学院",
+    "univNameEn": "Fujian Jiangxia University",
+    "score": 122.35
+  },
+  {
+    "univUp": "putian-university",
+    "univLogo": "logo\u002F70611686.png",
+    "univNameCn": "莆田学院",
+    "univNameEn": "Putian University",
+    "score": 122.3
+  },
+  {
+    "univUp": "hunan-city-university",
+    "univLogo": "logo\u002F93210906.png",
+    "univNameCn": "湖南城市学院",
+    "univNameEn": "Hunan City University",
+    "score": 122.2
+  },
+  {
+    "univUp": "north-china-institute-of-aerospace-engineering",
+    "univLogo": "logo\u002F92801885.png",
+    "univNameCn": "北华航天工业学院",
+    "univNameEn": "North China Institute of Aerospace Engineering",
+    "score": 121.7
+  },
+  {
+    "univUp": "shaoguan-university",
+    "univLogo": "logo\u002F14887282.png",
+    "univNameCn": "韶关学院",
+    "univNameEn": "Shaoguan University",
+    "score": 121.6
+  },
+  {
+    "univUp": "hunan-institute-of-engineering",
+    "univLogo": "logo\u002F87270858.png",
+    "univNameCn": "湖南工程学院",
+    "univNameEn": "Hunan Institute of Engineering",
+    "score": 121.4
+  },
+  {
+    "univUp": "qujing-normal-university",
+    "univLogo": "logo\u002F38293178.png",
+    "univNameCn": "曲靖师范学院",
+    "univNameEn": "Qujing Normal University",
+    "score": 121.2
+  },
+  {
+    "univUp": "hunan-university-of-arts-and-science",
+    "univLogo": "logo\u002F18418928.png",
+    "univNameCn": "湖南文理学院",
+    "univNameEn": "Hunan University of Arts and Science",
+    "score": 121
+  },
+  {
+    "univUp": "zhejiang-university-of-water-resources-and-electric-power",
+    "univLogo": "logo\u002F56985389.png",
+    "univNameCn": "浙江水利水电学院",
+    "univNameEn": "Zhejiang University of Water Resources and Electric Power",
+    "score": 121
+  },
+  {
+    "univUp": "weifang-university",
+    "univLogo": "logo\u002F88223218.png",
+    "univNameCn": "潍坊学院",
+    "univNameEn": "Weifang University",
+    "score": 120.8
+  },
+  {
+    "univUp": "yibin-university",
+    "univLogo": "logo\u002F40775796.png",
+    "univNameCn": "宜宾学院",
+    "univNameEn": "Yibin University",
+    "score": 120.7
+  },
+  {
+    "univUp": "dezhou-university",
+    "univLogo": "logo\u002F14072746.png",
+    "univNameCn": "德州学院",
+    "univNameEn": "Dezhou University",
+    "score": 120.3
+  },
+  {
+    "univUp": "west-anhui-university",
+    "univLogo": "logo\u002F64462476.png",
+    "univNameCn": "皖西学院",
+    "univNameEn": "West Anhui University",
+    "score": 120.3
+  },
+  {
+    "univUp": "nanyang-normal-university",
+    "univLogo": "logo\u002F81579397.png",
+    "univNameCn": "南阳师范学院",
+    "univNameEn": "Nanyang Normal University",
+    "score": 119.9
+  },
+  {
+    "univUp": "beibu-gulf-university",
+    "univLogo": "logo\u002F99524990.png",
+    "univNameCn": "北部湾大学",
+    "univNameEn": "Beibu Gulf University",
+    "score": 119.8
+  },
+  {
+    "univUp": "guizhou-institute-of-technology",
+    "univLogo": "logo\u002F98035266.png",
+    "univNameCn": "贵州理工学院",
+    "univNameEn": "Guizhou Institute of Technology",
+    "score": 119.7
+  },
+  {
+    "univUp": "hunan-university-of-science-and-engineering",
+    "univLogo": "logo\u002F89586778.png",
+    "univNameCn": "湖南科技学院",
+    "univNameEn": "Hunan University of Science and Engineering",
+    "score": 119.7
+  },
+  {
+    "univUp": "zaozhuang-university",
+    "univLogo": "logo\u002F84643594.png",
+    "univNameCn": "枣庄学院",
+    "univNameEn": "Zaozhuang University",
+    "score": 119.6
+  },
+  {
+    "univUp": "fujian-police-college",
+    "univLogo": "logo-jpg\u002F9303297400.jpg",
+    "univNameCn": "福建警察学院",
+    "univNameEn": "Fujian Police College",
+    "score": 119.55
+  },
+  {
+    "univUp": "hunan-university-of-finance-and-economics",
+    "univLogo": "logo\u002F87839185.png",
+    "univNameCn": "湖南财政经济学院",
+    "univNameEn": "Hunan University of Finance and Economics",
+    "score": 119.55
+  },
+  {
+    "univUp": "jiaxing-university-nanhu-college",
+    "univLogo": "logo\u002F17018831.png",
+    "univNameCn": "嘉兴南湖学院",
+    "univNameEn": "Jiaxing Nanhu University",
+    "score": 119.55
+  },
+  {
+    "univUp": "mudanjiang-normal-university",
+    "univLogo": "logo\u002F39075056.png",
+    "univNameCn": "牡丹江师范学院",
+    "univNameEn": "Mudanjiang Normal University",
+    "score": 119.5
+  },
+  {
+    "univUp": "suqian-college",
+    "univLogo": "logo-jpg\u002F3157367300.jpg",
+    "univNameCn": "宿迁学院",
+    "univNameEn": "Suqian University",
+    "score": 119.4
+  },
+  {
+    "univUp": "taiyuan-normal-university",
+    "univLogo": "logo\u002F95911693.png",
+    "univNameCn": "太原师范学院",
+    "univNameEn": "Taiyuan Normal University",
+    "score": 119.2
+  },
+  {
+    "univUp": "shaoyang-university",
+    "univLogo": "logo\u002F89823044.png",
+    "univNameCn": "邵阳学院",
+    "univNameEn": "Shaoyang University",
+    "score": 119.1
+  },
+  {
+    "univUp": "guangdong-university-of-education",
+    "univLogo": "logo\u002F26260939.png",
+    "univNameCn": "广东第二师范学院",
+    "univNameEn": "Guangdong University of Education",
+    "score": 119
+  },
+  {
+    "univUp": "yulin-normal-university",
+    "univLogo": "logo\u002F23382976.png",
+    "univNameCn": "玉林师范学院",
+    "univNameEn": "Yulin Normal University",
+    "score": 119
+  },
+  {
+    "univUp": "shijiazhuang-university",
+    "univLogo": "logo\u002F40469773.png",
+    "univNameCn": "石家庄学院",
+    "univNameEn": "Shijiazhuang University",
+    "score": 118.9
+  },
+  {
+    "univUp": "guangxi-university-of-finance-and-economics",
+    "univLogo": "logo\u002F31583978.png",
+    "univNameCn": "广西财经学院",
+    "univNameEn": "Guangxi University of Finance and Economics",
+    "score": 118.3
+  },
+  {
+    "univUp": "tonghua-normal-university",
+    "univLogo": "logo\u002F59725851.png",
+    "univNameCn": "通化师范学院",
+    "univNameEn": "Tonghua Normal University",
+    "score": 118.3
+  },
+  {
+    "univUp": "xian-university",
+    "univLogo": "logo\u002F14139441.png",
+    "univNameCn": "西安文理学院",
+    "univNameEn": "Xi'an University",
+    "score": 118.3
+  },
+  {
+    "univUp": "henan-university-of-engineering",
+    "univLogo": "logo\u002F27407185.png",
+    "univNameCn": "河南工程学院",
+    "univNameEn": "Henan University Of Engineering",
+    "score": 118.3
+  },
+  {
+    "univUp": "zhaoqing-university",
+    "univLogo": "logo\u002F75909981.png",
+    "univNameCn": "肇庆学院",
+    "univNameEn": "Zhaoqing University",
+    "score": 118.3
+  },
+  {
+    "univUp": "zunyi-normal-university",
+    "univLogo": "logo-jpg\u002F7195928000.jpg",
+    "univNameCn": "遵义师范学院",
+    "univNameEn": "Zunyi Normal University",
+    "score": 118.3
+  },
+  {
+    "univUp": "jilin-police-college",
+    "univLogo": "logo-jpg\u002F7871866400.jpg",
+    "univNameCn": "吉林警察学院",
+    "univNameEn": "Jilin Police College",
+    "score": 118.3
+  },
+  {
+    "univUp": "xian-physical-education-university",
+    "univLogo": "logo-jpg\u002F8648926500.jpg",
+    "univNameCn": "西安体育学院",
+    "univNameEn": "Xi'an Physical Education University",
+    "score": 118.3
+  },
+  {
+    "univUp": "harbin-sport-university",
+    "univLogo": "logo\u002F74080103.png",
+    "univNameCn": "哈尔滨体育学院",
+    "univNameEn": "Harbin Sport University",
+    "score": 118.3
+  },
+  {
+    "univUp": "heilongjiang-institute-of-technology",
+    "univLogo": "logo\u002F12526638.png",
+    "univNameCn": "黑龙江工程学院",
+    "univNameEn": "Heilongjiang Institute of Technology",
+    "score": 118.3
+  },
+  {
+    "univUp": "kunming-university",
+    "univLogo": "logo\u002F12954554.png",
+    "univNameCn": "昆明学院",
+    "univNameEn": "Kunming University",
+    "score": 118.3
+  },
+  {
+    "univUp": "changzhi-medical-college",
+    "univLogo": "logo\u002F84922786.png",
+    "univNameCn": "长治医学院",
+    "univNameEn": "Changzhi Medical College",
+    "score": 118.3
+  },
+  {
+    "univUp": "ningde-normal-university",
+    "univLogo": "logo-jpg\u002F6036772300.jpg",
+    "univNameCn": "宁德师范学院",
+    "univNameEn": "Ningde Normal University",
+    "score": 117.7
+  },
+  {
+    "univUp": "hubei-university-of-police",
+    "univLogo": "logo-jpg\u002F4094886300.jpg",
+    "univNameCn": "湖北警官学院",
+    "univNameEn": "Hubei University of Police",
+    "score": 117.4
+  },
+  {
+    "univUp": "nanyang-institute-of-technology",
+    "univLogo": "logo\u002F83749369.png",
+    "univNameCn": "南阳理工学院",
+    "univNameEn": "Nanyang Institute Of Technology",
+    "score": 117.1
+  },
+  {
+    "univUp": "wuyi-university-wuyiu",
+    "univLogo": "logo-jpg\u002F6657725600.jpg",
+    "univNameCn": "武夷学院",
+    "univNameEn": "Wuyi University",
+    "score": 117.1
+  },
+  {
+    "univUp": "huanghuai-university",
+    "univLogo": "logo\u002F99125868.png",
+    "univNameCn": "黄淮学院",
+    "univNameEn": "Huanghuai University",
+    "score": 116.8
+  },
+  {
+    "univUp": "yichun-university",
+    "univLogo": "logo\u002F60393380.png",
+    "univNameCn": "宜春学院",
+    "univNameEn": "Yichun University",
+    "score": 116.6
+  },
+  {
+    "univUp": "jilin-institute-of-chemical-technology",
+    "univLogo": "logo\u002F38741664.png",
+    "univNameCn": "吉林化工学院",
+    "univNameEn": "Jilin Institute of Chemical Technology",
+    "score": 116.5
+  },
+  {
+    "univUp": "xuchang-university",
+    "univLogo": "logo\u002F12049720.png",
+    "univNameCn": "许昌学院",
+    "univNameEn": "Xuchang University",
+    "score": 116.2
+  },
+  {
+    "univUp": "jilin-medical-college",
+    "univLogo": "logo\u002F70018855.png",
+    "univNameCn": "吉林医药学院",
+    "univNameEn": "Jilin Medical University",
+    "score": 116
+  },
+  {
+    "univUp": "hanshan-normal-university",
+    "univLogo": "logo\u002F57927770.png",
+    "univNameCn": "韩山师范学院",
+    "univNameEn": "Hanshan Normal University",
+    "score": 116
+  },
+  {
+    "univUp": "shangrao-normal-university",
+    "univLogo": "logo-jpg\u002F7197432700.jpg",
+    "univNameCn": "上饶师范学院",
+    "univNameEn": "Shangrao Normal University",
+    "score": 116
+  },
+  {
+    "univUp": "hunan-police-academy",
+    "univLogo": "logo-jpg\u002F4368012800.jpg",
+    "univNameCn": "湖南警察学院",
+    "univNameEn": "Hunan Police Academy",
+    "score": 116
+  },
+  {
+    "univUp": "baoji-university-of-arts-and-sciences",
+    "univLogo": "logo\u002F99370840.png",
+    "univNameCn": "宝鸡文理学院",
+    "univNameEn": "Baoji University of Arts and Sciences",
+    "score": 116
+  },
+  {
+    "univUp": "chongqing-university-of-education",
+    "univLogo": "logo\u002F78569083.png",
+    "univNameCn": "重庆第二师范学院",
+    "univNameEn": "Chongqing University of Education",
+    "score": 116
+  },
+  {
+    "univUp": "leshan-normal-university",
+    "univLogo": "logo\u002F88627950.png",
+    "univNameCn": "乐山师范学院",
+    "univNameEn": "Leshan Normal University",
+    "score": 116
+  },
+  {
+    "univUp": "huainan-normal-university",
+    "univLogo": "logo\u002F56595333.png",
+    "univNameCn": "淮南师范学院",
+    "univNameEn": "Huainan Normal University",
+    "score": 116
+  },
+  {
+    "univUp": "wenzhou-university-oujiang-college",
+    "univLogo": "logo\u002F34293161.png",
+    "univNameCn": "温州理工学院",
+    "univNameEn": "Wenzhou University of Technology",
+    "score": 116
+  },
+  {
+    "univUp": "anyang-normal-university",
+    "univLogo": "logo\u002F54267189.png",
+    "univNameCn": "安阳师范学院",
+    "univNameEn": "Anyang Normal University",
+    "score": 115.7
+  },
+  {
+    "univUp": "xichang-college",
+    "univLogo": "logo-jpg\u002F8838763600.jpg",
+    "univNameCn": "西昌学院",
+    "univNameEn": "Xichang College",
+    "score": 115.5
+  },
+  {
+    "univUp": "guangzhou-maritime-university",
+    "univLogo": "logo-jpg\u002F8091211800.jpg",
+    "univNameCn": "广州航海学院",
+    "univNameEn": "Guangzhou Maritime University",
+    "score": 115.3
+  },
+  {
+    "univUp": "henan-university-of-urban-construction",
+    "univLogo": "logo\u002F98614127.png",
+    "univNameCn": "河南城建学院",
+    "univNameEn": "Henan University of Urban Construction",
+    "score": 115.1
+  },
+  {
+    "univUp": "qilu-normal-university",
+    "univLogo": "logo\u002F42027987.png",
+    "univNameCn": "齐鲁师范学院",
+    "univNameEn": "Qilu Normal University",
+    "score": 115
+  },
+  {
+    "univUp": "huzhou-university-qiuzhen-college",
+    "univLogo": "logo\u002F19332185.png",
+    "univNameCn": "湖州学院",
+    "univNameEn": "Huzhou College",
+    "score": 114.8
+  },
+  {
+    "univUp": "tianshui-normal-university",
+    "univLogo": "logo\u002F35438108.png",
+    "univNameCn": "天水师范学院",
+    "univNameEn": "Tianshui Normal University",
+    "score": 114.6
+  },
+  {
+    "univUp": "hunan-university-of-humanities-science-and-technology",
+    "univLogo": "logo-jpg\u002F4726142300.jpg",
+    "univNameCn": "湖南人文科技学院",
+    "univNameEn": "Hunan University of Humanities, Science and Technology",
+    "score": 114.45
+  },
+  {
+    "univUp": "tangshan-normal-university",
+    "univLogo": "logo\u002F65458418.png",
+    "univNameCn": "唐山师范学院",
+    "univNameEn": "Tangshan Normal University",
+    "score": 114.45
+  },
+  {
+    "univUp": "shangqiu-normal-university",
+    "univLogo": "logo\u002F54757149.png",
+    "univNameCn": "商丘师范学院",
+    "univNameEn": "Shangqiu Normal University",
+    "score": 114.3
+  },
+  {
+    "univUp": "chengdu-technological-university",
+    "univLogo": "logo\u002F83350978.png",
+    "univNameCn": "成都工业学院",
+    "univNameEn": "Chengdu Technological University",
+    "score": 114.2
+  },
+  {
+    "univUp": "liupanshui-normal-university",
+    "univLogo": "logo-jpg\u002F1719257800.jpg",
+    "univNameCn": "六盘水师范学院",
+    "univNameEn": "Liupanshui Normal University",
+    "score": 114.2
+  },
+  {
+    "univUp": "wuhan-business-university",
+    "univLogo": "logo-jpg\u002F9192807500.jpg",
+    "univNameCn": "武汉商学院",
+    "univNameEn": "Wuhan Business University",
+    "score": 114.1
+  },
+  {
+    "univUp": "chaohu-university",
+    "univLogo": "logo\u002F67944058.png",
+    "univNameCn": "巢湖学院",
+    "univNameEn": "Chaohu University",
+    "score": 114
+  },
+  {
+    "univUp": "hezhou-university",
+    "univLogo": "logo\u002F68638535.png",
+    "univNameCn": "贺州学院",
+    "univNameEn": "Hezhou University",
+    "score": 113.6
+  },
+  {
+    "univUp": "baotou-teachers-college",
+    "univLogo": "logo-jpg\u002F2887180000.jpg",
+    "univNameCn": "内蒙古科技大学包头师范学院",
+    "univNameEn": "Baotou Teachers' College",
+    "score": 113.6
+  },
+  {
+    "univUp": "pingdingshan-university",
+    "univLogo": "logo\u002F95443426.png",
+    "univNameCn": "平顶山学院",
+    "univNameEn": "Pingdingshan University",
+    "score": 113.6
+  },
+  {
+    "univUp": "nanchang-normal-university",
+    "univLogo": "logo-jpg\u002F9123847400.jpg",
+    "univNameCn": "南昌师范学院",
+    "univNameEn": "Nanchang Normal University",
+    "score": 113.6
+  },
+  {
+    "univUp": "weinan-normal-university",
+    "univLogo": "logo\u002F58053407.png",
+    "univNameCn": "渭南师范学院",
+    "univNameEn": "Weinan Normal University",
+    "score": 113.6
+  },
+  {
+    "univUp": "ningxia-normal-university",
+    "univLogo": "logo-jpg\u002F3211405500.jpg",
+    "univNameCn": "宁夏师范大学",
+    "univNameEn": "Ningxia Normal University",
+    "score": 113.2
+  },
+  {
+    "univUp": "jilin-institute-of-physical-education",
+    "univLogo": "logo\u002F68957737.png",
+    "univNameCn": "吉林体育学院",
+    "univNameEn": "Jilin Institute of Physical Education",
+    "score": 113.15
+  },
+  {
+    "univUp": "hunan-institute-of-technology",
+    "univLogo": "logo\u002F65480177.png",
+    "univNameCn": "湖南工学院",
+    "univNameEn": "Hunan Institute of Technology",
+    "score": 113.1
+  },
+  {
+    "univUp": "anshan-normal-university-liaoning-china",
+    "univLogo": "logo\u002F82317225.png",
+    "univNameCn": "鞍山师范学院",
+    "univNameEn": "Anshan Normal University",
+    "score": 112.8
+  },
+  {
+    "univUp": "harbin-university",
+    "univLogo": "logo\u002F71111811.png",
+    "univNameCn": "哈尔滨学院",
+    "univNameEn": "Harbin University",
+    "score": 112.7
+  },
+  {
+    "univUp": "hubei-engineering-university",
+    "univLogo": "logo\u002F93515588.png",
+    "univNameCn": "湖北工程学院",
+    "univNameEn": "Hubei Engineering University",
+    "score": 112.7
+  },
+  {
+    "univUp": "science-and-technology-college-of-jiangxi-university-of-traditional-chinese-medicine",
+    "univLogo": "logo\u002F37079956.png",
+    "univNameCn": "南昌医学院",
+    "univNameEn": "Science and Technology College of Jiangxi University of Traditional Chinese Medicine",
+    "score": 112.6
+  },
+  {
+    "univUp": "shandong-police-college",
+    "univLogo": "logo-jpg\u002F8348467900.jpg",
+    "univNameCn": "山东警察学院",
+    "univNameEn": "Shandong Police College",
+    "score": 112.6
+  },
+  {
+    "univUp": "shanghai-police-college",
+    "univLogo": "logo-jpg\u002F3136327300.jpg",
+    "univNameCn": "上海公安学院",
+    "univNameEn": "Shanghai Police College",
+    "score": 112.6
+  },
+  {
+    "univUp": "jilin-engineering-normal-university",
+    "univLogo": "logo-jpg\u002F9472304600.jpg",
+    "univNameCn": "吉林工程技术师范学院",
+    "univNameEn": "Jilin Engineering Normal University",
+    "score": 112.5
+  },
+  {
+    "univUp": "langfang-teachers-university",
+    "univLogo": "logo\u002F28138817.png",
+    "univNameCn": "廊坊师范学院",
+    "univNameEn": "Langfang Normal University",
+    "score": 112.3
+  },
+  {
+    "univUp": "xian-aeronautical-university",
+    "univLogo": "logo\u002F48156282.png",
+    "univNameCn": "西安航空学院",
+    "univNameEn": "Xi'an Aeronautical Institute",
+    "score": 112.2
+  },
+  {
+    "univUp": "xinyang-agriculture-and-forestry-university",
+    "univLogo": "logo-jpg\u002F8561928200.jpg",
+    "univNameCn": "信阳农林学院",
+    "univNameEn": "Xinyang Agriculture and Forestry University",
+    "score": 111.8
+  },
+  {
+    "univUp": "shanxi-datong-university",
+    "univLogo": "logo\u002F84783964.png",
+    "univNameCn": "山西大同大学",
+    "univNameEn": "Shanxi Datong University",
+    "score": 111.6
+  },
+  {
+    "univUp": "huangshan-university",
+    "univLogo": "logo\u002F56600197.png",
+    "univNameCn": "黄山学院",
+    "univNameEn": "Huangshan University",
+    "score": 111.4
+  },
+  {
+    "univUp": "jiaying-university",
+    "univLogo": "logo\u002F40007744.png",
+    "univNameCn": "嘉应学院",
+    "univNameEn": "Jiaying University",
+    "score": 111.4
+  },
+  {
+    "univUp": "jiangxi-police-institute",
+    "univLogo": "logo-jpg\u002F6865559400.jpg",
+    "univNameCn": "江西警察学院",
+    "univNameEn": "Jiangxi Police Institute",
+    "score": 111.3
+  },
+  {
+    "univUp": "fujian-polytechnic-normal-university",
+    "univLogo": "logo-jpg\u002F2006306400.jpg",
+    "univNameCn": "福建技术师范学院",
+    "univNameEn": "Fujian Polytechnic Normal University",
+    "score": 111.1
+  },
+  {
+    "univUp": "sichuan-tourism-university",
+    "univLogo": "logo-jpg\u002F1651148300.jpg",
+    "univNameCn": "四川旅游学院",
+    "univNameEn": "Sichuan Tourism University",
+    "score": 110.9
+  },
+  {
+    "univUp": "xianyang-normal-university",
+    "univLogo": "logo\u002F21589045.png",
+    "univNameCn": "咸阳师范学院",
+    "univNameEn": "Xianyang Normal University",
+    "score": 110.9
+  },
+  {
+    "univUp": "nanjing-normal-university-of-special-education",
+    "univLogo": "logo-jpg\u002F4784677600.jpg",
+    "univNameCn": "南京特殊教育师范学院",
+    "univNameEn": "Nanjing Normal University of Special Education",
+    "score": 110.7
+  },
+  {
+    "univUp": "suzhou-university",
+    "univLogo": "logo-jpg\u002F5126663700.jpg",
+    "univNameCn": "宿州学院",
+    "univNameEn": "Suzhou University",
+    "score": 110.7
+  },
+  {
+    "univUp": "kaili-university",
+    "univLogo": "logo-jpg\u002F8587602700.jpg",
+    "univNameCn": "凯里学院",
+    "univNameEn": "Kaili University",
+    "score": 110.5
+  },
+  {
+    "univUp": "hainan-tropical-ocean-university",
+    "univLogo": "logo\u002F40219438.png",
+    "univNameCn": "海南热带海洋学院",
+    "univNameEn": "Hainan Tropical Ocean University",
+    "score": 110.25
+  },
+  {
+    "univUp": "jiujiang-university",
+    "univLogo": "logo\u002F46532631.png",
+    "univNameCn": "九江学院",
+    "univNameEn": "Jiujiang University",
+    "score": 110.25
+  },
+  {
+    "univUp": "shandong-management-university",
+    "univLogo": "logo-jpg\u002F7097115800.jpg",
+    "univNameCn": "山东管理学院",
+    "univNameEn": "Shandong Management University",
+    "score": 110
+  },
+  {
+    "univUp": "yuxi-normal-university",
+    "univLogo": "logo\u002F22391217.png",
+    "univNameCn": "玉溪师范学院",
+    "univNameEn": "Yuxi Normal University",
+    "score": 109.8
+  },
+  {
+    "univUp": "anyang-institute-of-technology",
+    "univLogo": "logo\u002F16651461.png",
+    "univNameCn": "安阳工学院",
+    "univNameEn": "Anyang Institute of Technology",
+    "score": 109.7
+  },
+  {
+    "univUp": "xinxiang-university",
+    "univLogo": "logo\u002F36805815.png",
+    "univNameCn": "新乡学院",
+    "univNameEn": "Xinxiang University",
+    "score": 109.7
+  },
+  {
+    "univUp": "tongling-university",
+    "univLogo": "logo\u002F20593253.png",
+    "univNameCn": "铜陵学院",
+    "univNameEn": "Tongling University",
+    "score": 109.7
+  },
+  {
+    "univUp": "hexi-university",
+    "univLogo": "logo\u002F84218792.png",
+    "univNameCn": "河西学院",
+    "univNameEn": "HeXi University",
+    "score": 109.6
+  },
+  {
+    "univUp": "taiyuan-institute-of-technology",
+    "univLogo": "logo\u002F18568381.png",
+    "univNameCn": "太原工业学院",
+    "univNameEn": "Taiyuan Institute of Technology",
+    "score": 109.5
+  },
+  {
+    "univUp": "shandong-womens-university",
+    "univLogo": "logo-jpg\u002F6756319700.jpg",
+    "univNameCn": "山东女子学院",
+    "univNameEn": "Shandong Women's University",
+    "score": 109.1
+  },
+  {
+    "univUp": "yili-normal-university",
+    "univLogo": "logo\u002F88921235.png",
+    "univNameCn": "伊犁师范大学",
+    "univNameEn": "Yili Normal University",
+    "score": 109.1
+  },
+  {
+    "univUp": "hebei-university-of-architecture",
+    "univLogo": "logo\u002F67868196.png",
+    "univNameCn": "河北建筑工程学院",
+    "univNameEn": "Hebei University of Architecture",
+    "score": 108.7
+  },
+  {
+    "univUp": "chifeng-university",
+    "univLogo": "logo\u002F71637705.png",
+    "univNameCn": "赤峰学院",
+    "univNameEn": "Chifeng University",
+    "score": 108.1
+  },
+  {
+    "univUp": "qiongtai-normal-university",
+    "univLogo": "logo-jpg\u002F8817040400.jpg",
+    "univNameCn": "琼台师范学院",
+    "univNameEn": "Qiongtai Normal University",
+    "score": 107.8
+  },
+  {
+    "univUp": "long-dong-university",
+    "univLogo": "logo\u002F49553796.png",
+    "univNameCn": "陇东学院",
+    "univNameEn": "Longdong University",
+    "score": 107.7
+  },
+  {
+    "univUp": "wenzheng-college-of-soochow-university",
+    "univLogo": "logo-jpg\u002F7187173700.jpg",
+    "univNameCn": "苏州城市学院",
+    "univNameEn": "Suzhou City University",
+    "score": 107.7
+  },
+  {
+    "univUp": "guizhou-police-college",
+    "univLogo": "logo-jpg\u002F4104169400.jpg",
+    "univNameCn": "贵州警察学院",
+    "univNameEn": "Guizhou Police College",
+    "score": 107.7
+  },
+  {
+    "univUp": "yingkou-institute-of-technology",
+    "univLogo": "logo-jpg\u002F1906674600.jpg",
+    "univNameCn": "营口理工学院",
+    "univNameEn": "YingKou Institute of Technology",
+    "score": 107.6
+  },
+  {
+    "univUp": "daqing-normal-university",
+    "univLogo": "logo-jpg\u002F7194980800.jpg",
+    "univNameCn": "大庆师范学院",
+    "univNameEn": "Daqing Normal University",
+    "score": 107
+  },
+  {
+    "univUp": "north-china-institute-of-science-and-technology",
+    "univLogo": "logo\u002F94510632.png",
+    "univNameCn": "华北科技学院",
+    "univNameEn": "North China Institute of Science and Technology",
+    "score": 106.8
+  },
+  {
+    "univUp": "aba-teachers-university",
+    "univLogo": "logo-jpg\u002F7867310100.jpg",
+    "univNameCn": "阿坝师范学院",
+    "univNameEn": "ABA TEACHERS COLLEGE",
+    "score": 50
+  },
+  {
+    "univUp": "ankang-university",
+    "univLogo": "logo\u002F83476348.png",
+    "univNameCn": "安康学院",
+    "univNameEn": "Ankang University",
+    "score": 50
+  },
+  {
+    "univUp": "anshun-university",
+    "univLogo": "logo-jpg\u002F1559271700.jpg",
+    "univNameCn": "安顺学院",
+    "univNameEn": "Anshun University",
+    "score": 50
+  },
+  {
+    "univUp": "baicheng-normal-university",
+    "univLogo": "logo-jpg\u002F4750387800.jpg",
+    "univNameCn": "白城师范学院",
+    "univNameEn": "Baicheng Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "baise-university",
+    "univLogo": "logo-jpg\u002F5133582400.jpg",
+    "univNameCn": "百色学院",
+    "univNameEn": "Baise University",
+    "score": 50
+  },
+  {
+    "univUp": "baoding-university",
+    "univLogo": "logo-jpg\u002F8911327100.jpg",
+    "univNameCn": "保定学院",
+    "univNameEn": "Baoding University",
+    "score": 50
+  },
+  {
+    "univUp": "baoshan-university",
+    "univLogo": "logo-jpg\u002F3305498700.jpg",
+    "univNameCn": "保山学院",
+    "univNameEn": "Baoshan University",
+    "score": 50
+  },
+  {
+    "univUp": "bengbu-university",
+    "univLogo": "logo\u002F64894541.png",
+    "univNameCn": "蚌埠学院",
+    "univNameEn": "Bengbu University",
+    "score": 50
+  },
+  {
+    "univUp": "bozhou-university",
+    "univLogo": "logo\u002F46908529.png",
+    "univNameCn": "亳州学院",
+    "univNameEn": "Bozhou University",
+    "score": 50
+  },
+  {
+    "univUp": "cangzhou-normal-university",
+    "univLogo": "logo-jpg\u002F7545744400.jpg",
+    "univNameCn": "沧州师范学院",
+    "univNameEn": "Cangzhou Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "changji-university",
+    "univLogo": "logo-jpg\u002F1738244300.jpg",
+    "univNameCn": "昌吉学院",
+    "univNameEn": "Changji University",
+    "score": 50
+  },
+  {
+    "univUp": "changsha-normal-university",
+    "univLogo": "logo-jpg\u002F3063398500.jpg",
+    "univNameCn": "长沙师范学院",
+    "univNameEn": "Changsha Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "changzhi-university",
+    "univLogo": "logo-jpg\u002F6834033600.jpg",
+    "univNameCn": "长治学院",
+    "univNameEn": "Changzhi University",
+    "score": 50
+  },
+  {
+    "univUp": "chizhou-university",
+    "univLogo": "logo\u002F31711737.png",
+    "univNameCn": "池州学院",
+    "univNameEn": "Chizhou University",
+    "score": 50
+  },
+  {
+    "univUp": "chuxiong-normal-university",
+    "univLogo": "logo\u002F62283799.png",
+    "univNameCn": "楚雄师范学院",
+    "univNameEn": "Chuxiong Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "west-yunnan-university",
+    "univLogo": "logo-jpg\u002F4442061900.jpg",
+    "univNameCn": "滇西科技师范学院",
+    "univNameEn": "West Yunnan University",
+    "score": 50
+  },
+  {
+    "univUp": "west-yunnan-university-of-applied-sciences",
+    "univLogo": "logo-jpg\u002F9547042700.jpg",
+    "univNameCn": "滇西应用技术大学",
+    "univNameEn": "West Yunnan University of Applied Sciences",
+    "score": 50
+  },
+  {
+    "univUp": "ordos-institute-of-technology",
+    "univLogo": "logo-jpg\u002F7932247000.jpg",
+    "univNameCn": "鄂尔多斯应用技术学院",
+    "univNameEn": "Ordos Institute of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "east-china-institute-of-technology-yangtze-river-college",
+    "univLogo": "logo-jpg\u002F4406712200.jpg",
+    "univNameCn": "赣东学院",
+    "univNameEn": "East China Institute of Technology, Yangtze River College",
+    "score": 50
+  },
+  {
+    "univUp": "college-of-applied-science-jiangxi-university-of-science-and-technology",
+    "univLogo": "logo\u002F74855408.png",
+    "univNameCn": "赣南科技学院",
+    "univNameEn": "College of Applied Science, Jiangxi University of Science and Technology",
+    "score": 50
+  },
+  {
+    "univUp": "gansu-normal-university-for-nationalities",
+    "univLogo": "logo-jpg\u002F6463626300.jpg",
+    "univNameCn": "甘肃民族师范学院",
+    "univNameEn": "Gansu Normal University for Nationalities",
+    "score": 50
+  },
+  {
+    "univUp": "guangxi-science-and-technology-normal-university",
+    "univLogo": "logo-jpg\u002F8668105300.jpg",
+    "univNameCn": "广西科技师范学院",
+    "univNameEn": "Guangxi Science and Technology Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "guangxi-normal-university-for-nationalities",
+    "univLogo": "logo-jpg\u002F8391212800.jpg",
+    "univNameCn": "广西民族师范学院",
+    "univNameEn": "Guangxi Normal University for Nationalities",
+    "score": 50
+  },
+  {
+    "univUp": "guangxi-vocational-normal-university",
+    "univLogo": "logo-jpg\u002F8192216600.jpg",
+    "univNameCn": "广西职业师范学院",
+    "univNameEn": "Guangxi Vocational Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "guilin-university-of-aerospace-technology",
+    "univLogo": "logo\u002F78821750.png",
+    "univNameCn": "桂林航天工业学院",
+    "univNameEn": "Guilin University of Aerospace Technology",
+    "score": 50
+  },
+  {
+    "univUp": "guizhou-university-of-engineering-science",
+    "univLogo": "logo-jpg\u002F3605984000.jpg",
+    "univNameCn": "贵州工程应用技术学院",
+    "univNameEn": "Guizhou University of Engineering Science",
+    "score": 50
+  },
+  {
+    "univUp": "handan-college",
+    "univLogo": "logo\u002F22418873.png",
+    "univNameCn": "邯郸学院",
+    "univNameEn": "Handan University",
+    "score": 50
+  },
+  {
+    "univUp": "hanjiang-normal-university",
+    "univLogo": "logo-jpg\u002F8409386600.jpg",
+    "univNameCn": "汉江师范学院",
+    "univNameEn": "Hanjiang Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "hebei-university-of-environmental-engineering",
+    "univLogo": "logo-jpg\u002F5184991800.jpg",
+    "univNameCn": "河北环境工程学院",
+    "univNameEn": "Hebei University of Environmental Engineering",
+    "score": 50
+  },
+  {
+    "univUp": "hebei-normal-university-for-nationalities",
+    "univLogo": "logo-jpg\u002F4961844000.jpg",
+    "univNameCn": "河北民族师范学院",
+    "univNameEn": "Hebei Normal University for Nationalities",
+    "score": 50
+  },
+  {
+    "univUp": "hebei-university-of-water-resources-and-electric-engineering",
+    "univLogo": "logo-jpg\u002F7761479100.jpg",
+    "univNameCn": "河北水利电力学院",
+    "univNameEn": "Hebei University of Water Resources and Electric Engineering",
+    "score": 50
+  },
+  {
+    "univUp": "hechi-university",
+    "univLogo": "logo-jpg\u002F8043470000.jpg",
+    "univNameCn": "河池学院",
+    "univNameEn": "Hechi University",
+    "score": 50
+  },
+  {
+    "univUp": "jianghuai-college-of-anhui-university",
+    "univLogo": "logo-jpg\u002F4560160500.jpg",
+    "univNameCn": "合肥理工学院",
+    "univNameEn": "Jianghuai College of Anhui University",
+    "score": 50
+  },
+  {
+    "univUp": "heihe-university",
+    "univLogo": "logo-jpg\u002F6108486600.jpg",
+    "univNameCn": "黑河学院",
+    "univNameEn": "Heihe University",
+    "score": 50
+  },
+  {
+    "univUp": "heilongjiang-university-of-technology",
+    "univLogo": "logo-jpg\u002F4358643700.jpg",
+    "univNameCn": "黑龙江工业学院",
+    "univNameEn": "Heilongjiang University of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "henan-institute-of-technology",
+    "univLogo": "logo-jpg\u002F2200013300.jpg",
+    "univNameCn": "河南工学院",
+    "univNameEn": "Henan Institute of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "henan-university-of-animal-husbandry-and-economy",
+    "univLogo": "logo\u002F55458057.png",
+    "univNameCn": "河南牧业经济学院",
+    "univNameEn": "Henan University of Animal Husbandry and Economy",
+    "score": 50
+  },
+  {
+    "univUp": "hengshui-university",
+    "univLogo": "logo-jpg\u002F1780203800.jpg",
+    "univNameCn": "衡水学院",
+    "univNameEn": "Hengshui University",
+    "score": 50
+  },
+  {
+    "univUp": "hetao-college",
+    "univLogo": "logo-jpg\u002F6352286800.jpg",
+    "univNameCn": "河套学院",
+    "univNameEn": "Hetao University",
+    "score": 50
+  },
+  {
+    "univUp": "heze-university",
+    "univLogo": "logo-jpg\u002F6859622100.jpg",
+    "univNameCn": "菏泽学院",
+    "univNameEn": "Heze University",
+    "score": 50
+  },
+  {
+    "univUp": "honghe-university",
+    "univLogo": "logo\u002F87705412.png",
+    "univNameCn": "红河学院",
+    "univNameEn": "Honghe University",
+    "score": 50
+  },
+  {
+    "univUp": "hulunbuir-university",
+    "univLogo": "logo\u002F37984077.png",
+    "univNameCn": "呼伦贝尔学院",
+    "univNameEn": "Hulunbuir University",
+    "score": 50
+  },
+  {
+    "univUp": "jilin-agricultural-science-and-technology-university",
+    "univLogo": "logo-jpg\u002F3050964900.jpg",
+    "univNameCn": "吉林农业科技学院",
+    "univNameEn": "Jilin Agricultural Science and Technology University",
+    "score": 50
+  },
+  {
+    "univUp": "jingchu-university-of-technology",
+    "univLogo": "logo\u002F77437503.png",
+    "univNameCn": "荆楚理工学院",
+    "univNameEn": "Jingchu University of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "jingdezhen-university",
+    "univLogo": "logo\u002F87006671.png",
+    "univNameCn": "景德镇学院",
+    "univNameEn": "Jingdezhen University",
+    "score": 50
+  },
+  {
+    "univUp": "jining-normal-university",
+    "univLogo": "logo-jpg\u002F1592444300.jpg",
+    "univNameCn": "集宁师范学院",
+    "univNameEn": "Jining Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "jining-university",
+    "univLogo": "logo\u002F45162710.png",
+    "univNameCn": "济宁学院",
+    "univNameEn": "Jining University",
+    "score": 50
+  },
+  {
+    "univUp": "jinzhong-university",
+    "univLogo": "logo-jpg\u002F9083433800.jpg",
+    "univNameCn": "晋中学院",
+    "univNameEn": "Jinzhong University",
+    "score": 50
+  },
+  {
+    "univUp": "kashi-university",
+    "univLogo": "logo-jpg\u002F3795453200.jpg",
+    "univNameCn": "喀什大学",
+    "univNameEn": "Kashi University",
+    "score": 50
+  },
+  {
+    "univUp": "lanzhou-city-university",
+    "univLogo": "logo\u002F61174686.png",
+    "univNameCn": "兰州城市学院",
+    "univNameEn": "Lanzhou City University",
+    "score": 50
+  },
+  {
+    "univUp": "lanzhou-institute-of-technology",
+    "univLogo": "logo-jpg\u002F9986906100.jpg",
+    "univNameCn": "兰州工业学院",
+    "univNameEn": "Lanzhou Institute of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "lanzhou-university-of-arts-and-science",
+    "univLogo": "logo\u002F34544153.png",
+    "univNameCn": "兰州文理学院",
+    "univNameEn": "Lanzhou University of Arts and Science",
+    "score": 50
+  },
+  {
+    "univUp": "eastern-liaoning-university",
+    "univLogo": "logo\u002F32502477.png",
+    "univNameCn": "辽东学院",
+    "univNameEn": "Liaodong University",
+    "score": 50
+  },
+  {
+    "univUp": "liaoning-institute-of-science-and-technology",
+    "univLogo": "logo-jpg\u002F2349550300.jpg",
+    "univNameCn": "辽宁科技学院",
+    "univNameEn": "Liaoning Institute of Science and Technology",
+    "score": 50
+  },
+  {
+    "univUp": "luliang-university",
+    "univLogo": "logo\u002F57608847.png",
+    "univNameCn": "吕梁学院",
+    "univNameEn": "Lyuliang University",
+    "score": 50
+  },
+  {
+    "univUp": "pingxiang-university",
+    "univLogo": "logo-jpg\u002F2474541200.jpg",
+    "univNameCn": "萍乡学院",
+    "univNameEn": "Pingxiang University",
+    "score": 50
+  },
+  {
+    "univUp": "puer-university",
+    "univLogo": "logo-jpg\u002F1659450100.jpg",
+    "univNameCn": "普洱学院",
+    "univNameEn": "Puer University",
+    "score": 50
+  },
+  {
+    "univUp": "shandong-agriculture-and-engineering-university",
+    "univLogo": "logo\u002F72581679.png",
+    "univNameCn": "山东农业工程学院",
+    "univNameEn": "Shandong Agriculture and Engineering University",
+    "score": 50
+  },
+  {
+    "univUp": "shandong-youth-university-of-political-science",
+    "univLogo": "logo-jpg\u002F8794886600.jpg",
+    "univNameCn": "山东青年政治学院",
+    "univNameEn": "Shandong Youth University of Political Science",
+    "score": 50
+  },
+  {
+    "univUp": "shengli-college-china-university-of-petroleum",
+    "univLogo": "logo\u002F14620125.png",
+    "univNameCn": "山东石油化工学院",
+    "univNameEn": "SHANDONG INSTITUTE OF PETROLEUM AND CHEMICAL TECHNOLOGY",
+    "score": 50
+  },
+  {
+    "univUp": "shangluo-university",
+    "univLogo": "logo\u002F56711450.png",
+    "univNameCn": "商洛学院",
+    "univNameEn": "Shangluo University",
+    "score": 50
+  },
+  {
+    "univUp": "modern-college-of-humanities-and-sciences-of-shanxi-normal-university",
+    "univLogo": "logo-jpg\u002F9849610400.jpg",
+    "univNameCn": "山西电子科技学院",
+    "univNameEn": "Modern College of Humanities and Sciences of Shanxi Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "shanxi-institute-of-technology",
+    "univLogo": "logo-jpg\u002F5595557000.jpg",
+    "univNameCn": "山西工程技术学院",
+    "univNameEn": "Shanxi Institute of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "shanxi-college-of-technology",
+    "univLogo": "logo-jpg\u002F4799562900.jpg",
+    "univNameCn": "山西工学院",
+    "univNameEn": "SHANXI COLLEGE OF TECHNOLOGY",
+    "score": 50
+  },
+  {
+    "univUp": "huake-college-of-taiyuan-university-of-science-and-technology-1",
+    "univLogo": "logo-jpg\u002F36dc69f3d4.jpg",
+    "univNameCn": "山西科技学院",
+    "univNameEn": "Huake College of Taiyuan University of Science and Technology",
+    "score": 50
+  },
+  {
+    "univUp": "shanxi-institute-of-energy",
+    "univLogo": "logo-jpg\u002F7446893200.jpg",
+    "univNameCn": "山西能源学院",
+    "univNameEn": "Shanxi Institute of Energy",
+    "score": 50
+  },
+  {
+    "univUp": "shaanxi-xueqian-normal-university",
+    "univLogo": "logo-jpg\u002F1691016600.jpg",
+    "univNameCn": "陕西学前师范学院",
+    "univNameEn": "Shaanxi Xueqian Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "sichuan-university-for-nationalities",
+    "univLogo": "logo-jpg\u002F6044899600.jpg",
+    "univNameCn": "四川民族学院",
+    "univNameEn": "Sichuan Minzu College",
+    "score": 50
+  },
+  {
+    "univUp": "sichuan-university-of-arts-and-science",
+    "univLogo": "logo\u002F52936789.png",
+    "univNameCn": "四川文理学院",
+    "univNameEn": "Sichuan University of Arts and Science",
+    "score": 50
+  },
+  {
+    "univUp": "suihua-university",
+    "univLogo": "logo-jpg\u002F3200894300.jpg",
+    "univNameCn": "绥化学院",
+    "univNameEn": "Suihua University",
+    "score": 50
+  },
+  {
+    "univUp": "taiyuan-university",
+    "univLogo": "logo-jpg\u002F6208575900.jpg",
+    "univNameCn": "太原学院",
+    "univNameEn": "Taiyuan University",
+    "score": 50
+  },
+  {
+    "univUp": "taizhou-university-tzu",
+    "univLogo": "logo\u002F46820207.png",
+    "univNameCn": "泰州学院",
+    "univNameEn": "Taizhou University",
+    "score": 50
+  },
+  {
+    "univUp": "tangshan-college",
+    "univLogo": "logo\u002F60481068.png",
+    "univNameCn": "唐山学院",
+    "univNameEn": "Tangshan University",
+    "score": 50
+  },
+  {
+    "univUp": "tianjin-sino-german-university-of-applied-sciences",
+    "univLogo": "logo-jpg\u002F8663864500.jpg",
+    "univNameCn": "天津中德应用技术大学",
+    "univNameEn": "Tianjin Sino-German University of Applied Sciences",
+    "score": 50
+  },
+  {
+    "univUp": "wenshan-university",
+    "univLogo": "logo-jpg\u002F9311830300.jpg",
+    "univNameCn": "文山学院",
+    "univNameEn": "Wenshan University",
+    "score": 50
+  },
+  {
+    "univUp": "wuzhou-university",
+    "univLogo": "logo-jpg\u002F3573615200.jpg",
+    "univNameCn": "梧州学院",
+    "univNameEn": "Wuzhou University",
+    "score": 50
+  },
+  {
+    "univUp": "xingtai-university",
+    "univLogo": "logo\u002F16573557.png",
+    "univNameCn": "邢台学院",
+    "univNameEn": "Xingtai University",
+    "score": 50
+  },
+  {
+    "univUp": "xingyi-normal-university-for-nationalities",
+    "univLogo": "logo-jpg\u002F4357856000.jpg",
+    "univNameCn": "兴义民族师范学院",
+    "univNameEn": "Xingyi Normal University for Nationalities",
+    "score": 50
+  },
+  {
+    "univUp": "xinjiang-institute-of-engineering",
+    "univLogo": "logo-jpg\u002F9851006000.jpg",
+    "univNameCn": "新疆工程学院",
+    "univNameEn": "Xinjiang Institute of Engineering",
+    "score": 50
+  },
+  {
+    "univUp": "xinjiang-institute-of-technology",
+    "univLogo": "logo\u002F80391865.png",
+    "univNameCn": "新疆理工学院",
+    "univNameEn": "Xinjiang Institute of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "college-of-science-technology-shihezi-university",
+    "univLogo": "logo\u002F54885562.png",
+    "univNameCn": "新疆政法学院",
+    "univNameEn": "Xinjiang Institute Of Political Science And Law",
+    "score": 50
+  },
+  {
+    "univUp": "xinyu-university",
+    "univLogo": "logo-jpg\u002F6113099900.jpg",
+    "univNameCn": "新余学院",
+    "univNameEn": "Xinyu University",
+    "score": 50
+  },
+  {
+    "univUp": "xinzhou-teachers-university",
+    "univLogo": "logo\u002F87333253.png",
+    "univNameCn": "忻州师范学院",
+    "univNameEn": "Xinzhou Teachers University",
+    "score": 50
+  },
+  {
+    "univUp": "yuncheng-university",
+    "univLogo": "logo\u002F26090569.png",
+    "univNameCn": "运城学院",
+    "univNameEn": "Yuncheng University",
+    "score": 50
+  },
+  {
+    "univUp": "yuzhang-normal-university",
+    "univLogo": "logo\u002F95302268.png",
+    "univNameCn": "豫章师范学院",
+    "univNameEn": "Yuzhang Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "zhangjiakou-university",
+    "univLogo": "logo-jpg\u002F7082706800.jpg",
+    "univNameCn": "张家口学院",
+    "univNameEn": "Zhangjiakou University",
+    "score": 50
+  },
+  {
+    "univUp": "zhaotong-university",
+    "univLogo": "logo-jpg\u002F6432819300.jpg",
+    "univNameCn": "昭通学院",
+    "univNameEn": "Zhaotong University",
+    "score": 50
+  },
+  {
+    "univUp": "zhengzhou-institute-of-technology",
+    "univLogo": "logo-jpg\u002F8369306300.jpg",
+    "univNameCn": "郑州工程技术学院",
+    "univNameEn": "Zhengzhou University of Technology",
+    "score": 50
+  },
+  {
+    "univUp": "zhengzhou-normal-university",
+    "univLogo": "logo\u002F81495500.png",
+    "univNameCn": "郑州师范学院",
+    "univNameEn": "Zhengzhou Normal University",
+    "score": 50
+  },
+  {
+    "univUp": "fujian-business-university",
+    "univLogo": "logo-jpg\u002F9573594800.jpg",
+    "univNameCn": "福建商学院",
+    "univNameEn": "Fujian Business University",
+    "score": 50
+  },
+  {
+    "univUp": "gansu-medical-college",
+    "univLogo": "logo\u002F62474494.png",
+    "univNameCn": "甘肃医学院",
+    "univNameEn": "Gansu Medical College",
+    "score": 50
+  },
+  {
+    "univUp": "guangxi-police-college",
+    "univLogo": "logo-jpg\u002F1486874900.jpg",
+    "univNameCn": "广西警察学院",
+    "univNameEn": "Guangxi Police College",
+    "score": 50
+  },
+  {
+    "univUp": "guilin-tourism-university",
+    "univLogo": "logo-jpg\u002F6921966100.jpg",
+    "univNameCn": "桂林旅游学院",
+    "univNameEn": "Guilin Tourism University",
+    "score": 50
+  },
+  {
+    "univUp": "guizhou-university-of-commerce",
+    "univLogo": "logo-jpg\u002F9421381500.jpg",
+    "univNameCn": "贵州商学院",
+    "univNameEn": "Guizhou University of Commerce",
+    "score": 50
+  },
+  {
+    "univUp": "harbin-finance-university",
+    "univLogo": "logo-jpg\u002F2031831500.jpg",
+    "univNameCn": "哈尔滨金融学院",
+    "univNameEn": "Harbin Finance University",
+    "score": 50
+  },
+  {
+    "univUp": "hebei-sport-university",
+    "univLogo": "logo-jpg\u002F3548386900.jpg",
+    "univNameCn": "河北体育学院",
+    "univNameEn": "Hebei Sport University",
+    "score": 50
+  },
+  {
+    "univUp": "henan-finance-university",
+    "univLogo": "logo-jpg\u002F6214810500.jpg",
+    "univNameCn": "河南财政金融学院",
+    "univNameEn": "Henan Finance University",
+    "score": 50
+  },
+  {
+    "univUp": "he-nan-ti-yu-xue-yuan",
+    "univLogo": "logo\u002Ff865e166c.png",
+    "univNameCn": "河南体育学院",
+    "univNameEn": "Henan Sport University",
+    "score": 50
+  },
+  {
+    "univUp": "hohhot-minzu-college",
+    "univLogo": "logo-jpg\u002F8368944400.jpg",
+    "univNameCn": "呼和浩特民族学院",
+    "univNameEn": "Hohhot Minzu College",
+    "score": 50
+  },
+  {
+    "univUp": "hunan-womens-university",
+    "univLogo": "logo-jpg\u002F3219937800.jpg",
+    "univNameCn": "湖南女子学院",
+    "univNameEn": "Hunan Women's University",
+    "score": 50
+  },
+  {
+    "univUp": "hunan-university-of-medicine",
+    "univLogo": "logo-jpg\u002F6162304300.jpg",
+    "univNameCn": "湖南医药学院",
+    "univNameEn": "Hunan University of Medicine",
+    "score": 50
+  },
+  {
+    "univUp": "jilin-business-and-technology-college",
+    "univLogo": "logo-jpg\u002F1466830300.jpg",
+    "univNameCn": "吉林工商学院",
+    "univNameEn": "Jilin Business and Technology College",
+    "score": 50
+  },
+  {
+    "univUp": "shanxi-police-college",
+    "univLogo": "logo-jpg\u002F8761544800.jpg",
+    "univNameCn": "山西警察学院",
+    "univNameEn": "Shanxi Police College",
+    "score": 50
+  },
+  {
+    "univUp": "xinjiang-second-medical-college",
+    "univLogo": "logo\u002F98042163.png",
+    "univNameCn": "新疆第二医学院",
+    "univNameEn": "Xinjiang Second Medical College",
+    "score": 50
+  },
+  {
+    "univUp": "xinjiang-police-college",
+    "univLogo": "logo-jpg\u002F4186830100.jpg",
+    "univNameCn": "新疆警察学院",
+    "univNameEn": "Xinjiang Police College",
+    "score": 50
+  },
+  {
+    "univUp": "xinjiang-university-of-finance-economics-business-college",
+    "univLogo": "logo\u002F69457659.png",
+    "univNameCn": "新疆科技学院",
+    "univNameEn": "Xinjiang University of Science and Technology",
+    "score": 50
+  }
+]

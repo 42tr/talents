@@ -1,0 +1,208 @@
+/* PDF Viewer Styles - Cyberpunk Theme */
+
+.pdf-container {
+    height: calc(100vh - 200px);
+    min-height: 550px;
+    /* max-height: 800px; */
+    border: 2px solid var(--cyber-blue);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--cyber-bg-secondary);
+    position: sticky;
+    top: 10px;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    width: 100%;
+}
+
+.pdf-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    background-color: #1a1a2e;
+    border: none;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.2));
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .pdf-container {
+        min-height: 500px;
+        height: calc(100vh - 180px);
+        margin-bottom: 20px;
+    }
+
+    .pdf-viewer {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .pdf-container {
+        min-height: 400px;
+        height: calc(100vh - 150px);
+        margin-bottom: 15px;
+    }
+
+    .pdf-viewer {
+        min-height: 400px;
+    }
+}
+
+/* Styles for when PDF is not available */
+.pdf-not-available {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(26, 26, 46, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+}
+
+.no-pdf-message {
+    text-align: center;
+    padding: 35px;
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-purple);
+    border-radius: 6px;
+    background-color: rgba(10, 10, 15, 0.9);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+        border-color: var(--cyber-purple);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(157, 78, 221, 0.8);
+        border-color: var(--cyber-blue);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+        border-color: var(--cyber-purple);
+    }
+}
+
+.no-pdf-message i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+    color: var(--cyber-pink);
+}
+
+.no-pdf-message p {
+    font-size: 18px;
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+/* Loading state styles */
+.loading-pdf {
+    border: 2px solid var(--cyber-blue);
+    animation: border-pulse 1.5s infinite alternate;
+    min-width: 250px;
+    text-align: center;
+}
+
+.loading-pdf i {
+    color: var(--cyber-blue);
+    animation: spin 2s linear infinite;
+    font-size: 46px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+@keyframes border-pulse {
+    0% {
+        border-color: var(--cyber-blue);
+        box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+        transform: scale(1);
+    }
+    100% {
+        border-color: var(--cyber-purple);
+        box-shadow: 0 0 30px rgba(157, 78, 221, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 991px) {
+    /* Adjust styles for tablets */
+    .no-pdf-message {
+        padding: 30px;
+        max-width: 80%;
+    }
+
+    .no-pdf-message i {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Make it more mobile-friendly */
+    .no-pdf-message {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    .no-pdf-message i {
+        font-size: 38px;
+        margin-bottom: 12px;
+    }
+
+    .no-pdf-message p {
+        font-size: 17px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Sticky positioning for the PDF container */
+.sticky-top {
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+    height: fit-content;
+}
+
+/* Adjustments for horizontal scrolling on very small screens */
+@media (max-width: 576px) {
+    .pdf-container {
+        min-height: 350px;
+        height: calc(100vh - 120px);
+    }
+
+    .pdf-viewer {
+        min-height: 350px;
+    }
+}

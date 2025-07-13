@@ -1,0 +1,535 @@
+/* Talent Details Cyberpunk Theme Styles */
+
+/* Main container for talent details */
+.talent-details-container {
+    padding: 0 10px;
+    color: var(--text-primary);
+    font-family: "Rajdhani", sans-serif;
+    height: calc(100vh - 200px);
+    min-height: 550px;
+    max-height: 800px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cyber-purple) var(--cyber-bg-secondary);
+}
+
+.talent-details-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.talent-details-container::-webkit-scrollbar-track {
+    background: var(--cyber-bg-secondary);
+}
+
+.talent-details-container::-webkit-scrollbar-thumb {
+    background-color: var(--cyber-purple);
+    border-radius: 2px;
+}
+
+/* Cyber panels */
+.cyber-panel {
+    background-color: rgba(26, 26, 46, 0.8);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    width: 100%;
+}
+
+.cyber-panel:hover {
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+}
+
+.cyber-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0, 245, 255, 0.1) 50%,
+            transparent 100%
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.02) 2px,
+            rgba(255, 255, 255, 0.02) 4px
+        );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cyber-panel-header {
+    position: relative;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--cyber-blue);
+    background: linear-gradient(
+        90deg,
+        rgba(26, 26, 46, 0.9),
+        rgba(10, 10, 15, 0.95)
+    );
+    display: flex;
+    align-items: center;
+}
+
+.cyber-panel-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cyber-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+}
+
+.cyber-panel-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        var(--cyber-blue),
+        var(--cyber-purple),
+        transparent
+    );
+    margin-left: 15px;
+}
+
+.cyber-panel-body {
+    padding: 18px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Detail rows */
+.cyber-detail {
+    display: flex;
+    margin-bottom: 8px;
+    padding: 8px 5px;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-detail:hover {
+    background-color: rgba(0, 245, 255, 0.08);
+}
+
+.detail-label {
+    min-width: 85px;
+    color: var(--cyber-blue);
+    font-weight: 600;
+    margin-right: 15px;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    flex: 1;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+/* Links */
+.cyber-link {
+    color: var(--cyber-pink);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cyber-link:hover {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.8);
+}
+
+.cyber-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cyber-pink),
+        transparent
+    );
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.cyber-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Skills styling */
+.cyber-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-badge {
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 46, 0.8),
+        rgba(10, 10, 15, 0.9)
+    );
+    border: 1px solid var(--cyber-purple);
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-badge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(157, 78, 221, 0.2),
+        transparent
+    );
+    transition: all 0.6s ease;
+}
+
+.skill-badge:hover {
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.skill-badge:hover::before {
+    left: 100%;
+}
+
+/* Score metrics */
+.score-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-around;
+}
+
+.score-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.score-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    text-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+}
+
+.cyber-score-circle {
+    --score-color: var(--cyber-blue);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 46, 0.6),
+        rgba(10, 10, 15, 0.8)
+    );
+    border: 2px solid var(--score-color);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-score-circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 50%;
+    box-shadow: inset 0 0 15px rgba(0, 245, 255, 0.3);
+    background: radial-gradient(
+        circle at center,
+        transparent 30%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+.cyber-score-circle.average {
+    width: 85px;
+    height: 85px;
+    border-width: 3px;
+    box-shadow: 0 0 20px var(--score-color);
+}
+
+.score-value {
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--score-color);
+    z-index: 2;
+    text-shadow: 0 0 5px var(--score-color);
+}
+
+.cyber-score-circle.average .score-value {
+    font-size: 28px;
+}
+
+/* Interview record area */
+.cyber-input-container {
+    background-color: rgba(10, 10, 15, 0.7);
+    border: 1px solid var(--cyber-purple);
+    border-radius: 6px;
+    padding: 20px;
+    position: relative;
+    overflow: visible; /* Changed from hidden to allow content expansion */
+    height: auto; /* Allow container to expand with content */
+    max-height: none; /* No max-height for container */
+}
+
+.cyber-input-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--cyber-purple),
+        var(--cyber-blue),
+        var(--cyber-purple)
+    );
+    z-index: 1;
+}
+
+.cyber-textarea {
+    background-color: rgba(26, 26, 46, 0.8);
+    color: var(--text-primary);
+    border: 1px solid var(--cyber-blue);
+    font-size: 15px;
+    font-family: "Rajdhani", sans-serif;
+    resize: vertical;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+/* Auto-resizing textarea */
+.cyber-textarea.auto-resize {
+    resize: none;
+    min-height: 100px;
+    max-height: 700px; /* Increased max-height for very long content */
+    width: 100%;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: height 0.1s ease;
+}
+
+/* When content exceeds max height, show scrollbar */
+.cyber-textarea.auto-resize.scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 2px solid var(--cyber-blue); /* Add border to indicate scrollable */
+    padding-right: 10px; /* Add padding for scrollbar */
+}
+
+/* When content is within bounds, hide scrollbar */
+.cyber-textarea.auto-resize:not(.scrollable) {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar for textarea */
+.cyber-textarea.auto-resize::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cyber-textarea.auto-resize::-webkit-scrollbar-track {
+    background: rgba(26, 26, 46, 0.8);
+}
+
+.cyber-textarea.auto-resize::-webkit-scrollbar-thumb {
+    background-color: var(--cyber-blue);
+    border-radius: 2px;
+}
+
+.cyber-textarea:focus {
+    background-color: rgba(26, 26, 46, 0.9);
+    border-color: var(--cyber-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 110, 0.4);
+    outline: none;
+}
+
+.cyber-button {
+    position: relative;
+    background: linear-gradient(135deg, var(--cyber-purple), var(--cyber-blue));
+    border: none;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cyber-button .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.cyber-button .btn-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: all 0.6s ease;
+}
+
+.cyber-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+}
+
+.cyber-button:hover .btn-glow {
+    left: 100%;
+}
+
+.cyber-button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+    .talent-details-container {
+        padding: 5px;
+        height: calc(100vh - 150px);
+        min-height: 400px;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .cyber-textarea.auto-resize {
+        min-height: 80px;
+        max-height: 400px; /* Increased max-height on mobile */
+    }
+
+    .cyber-textarea.auto-resize.scrollable {
+        padding-right: 8px; /* Increased padding for scrollbar on mobile */
+    }
+
+    .cyber-panel {
+        margin-bottom: 15px;
+    }
+
+    .cyber-detail {
+        flex-direction: column;
+        padding-bottom: 10px;
+        padding-top: 5px;
+    }
+
+    .detail-label {
+        margin-bottom: 5px;
+    }
+
+    .score-metrics {
+        gap: 15px;
+    }
+
+    .cyber-score-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cyber-score-circle.average {
+        width: 70px;
+        height: 70px;
+    }
+
+    .score-value {
+        font-size: 18px;
+    }
+
+    .cyber-score-circle.average .score-value {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .talent-details-container {
+        height: calc(100vh - 120px);
+        min-height: 350px;
+    }
+
+    .cyber-textarea.auto-resize {
+        min-height: 60px;
+        font-size: 14px;
+        max-height: 350px; /* Increased max-height on very small screens */
+    }
+
+    .cyber-score-circle {
+        width: 55px;
+        height: 55px;
+    }
+
+    .cyber-score-circle.average {
+        width: 65px;
+        height: 65px;
+    }
+
+    .score-value {
+        font-size: 16px;
+    }
+
+    .cyber-score-circle.average .score-value {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .score-metrics {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .score-metric {
+        width: calc(50% - 10px);
+        margin-bottom: 15px;
+    }
+}

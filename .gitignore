@@ -18,6 +18,7 @@ Thumbs.db
 *.iws
 *.ipr
 *.bak
+*.pdf
 
 # 编译生成的文件
 /target/
@@ -89,3 +90,5 @@ Thumbs.db
 .eslintcache
 .stylelintcache
 .vercel
+
+talents

@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"talents/config"
 	"talents/db"
 	"talents/llm"
 	"time"
@@ -30,7 +31,7 @@ func extractByTika(path string) (string, error) {
 	}
 
 	// 设置请求头
-	req, err := http.NewRequest("PUT", os.Getenv("TIKA_URL"), body)
+	req, err := http.NewRequest("PUT", config.TIKA_URL, body)
 	if err != nil {
 		return "", err
 	}

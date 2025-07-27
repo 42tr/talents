@@ -3,6 +3,7 @@ module talents
 go 1.24.4
 
 require (
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-contrib/cors v1.7.5
 	github.com/gin-gonic/gin v1.10.1
 	github.com/joho/godotenv v1.5.1

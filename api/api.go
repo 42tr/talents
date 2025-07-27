@@ -7,16 +7,20 @@ import (
 	"io/fs"
 	"mime/multipart"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"sort"
 	"strconv"
+	"strings"
 	"sync"
 	"time"
 
+	"talents/config"
 	"talents/db"
 	"talents/pdf"
 	"talents/utils"
+	"talents/utils/jwt"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -28,6 +32,7 @@ var staticFiles embed.FS
 func Router() *gin.Engine {
 	r := gin.Default()
 	r.Use(cors.Default())
+	r.Use(AuthRequired())
 
 	// API endpoints
 	r.POST("/talent", createTalent)
@@ -68,6 +73,32 @@ func Router() *gin.Engine {
 	})
 
 	return r
+}
+
+// AuthRequired 需要登录
+func AuthRequired() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		host := c.Request.Host
+		if strings.HasPrefix(host, "localhost") {
+			c.Set("uid", 1)
+			c.Next()
+			return
+		}
+		uid, err := jwt.Get(c)
+		if err == nil {
+			c.Set("uid", uid)
+			c.Next()
+			return
+		}
+		scheme := "http"
+		if c.Request.TLS != nil {
+			scheme = "https"
+		}
+		fullReturnURL := scheme + "://" + host
+		loginURL := config.AUTH_URL + "?url=" + url.QueryEscape(fullReturnURL)
+		c.Redirect(http.StatusTemporaryRedirect, loginURL)
+		c.Abort()
+	}
 }
 
 func createTalent(c *gin.Context) {

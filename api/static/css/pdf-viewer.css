@@ -2,8 +2,9 @@
 
 .pdf-container {
     height: calc(100vh - 140px);
-    min-height: 650px;
-    /* max-height: 800px; */
+    height: min(calc(100vh - 140px), 800px);
+    min-height: 0;
+    max-height: calc(100vh - 140px);
     border: 2px solid var(--cyber-blue);
     border-radius: 4px;
     overflow: hidden;
@@ -31,7 +32,7 @@
 .pdf-viewer {
     width: 100%;
     height: 100%;
-    min-height: 600px;
+    min-height: 0;
     background-color: #1a1a2e;
     border: none;
     display: block;
@@ -41,25 +42,29 @@
 /* Responsive adjustments */
 @media (max-width: 991px) {
     .pdf-container {
-        min-height: 500px;
         height: calc(100vh - 120px);
+        height: min(calc(100vh - 120px), 700px);
+        max-height: calc(100vh - 120px);
+        min-height: 0;
         margin-bottom: 20px;
     }
 
     .pdf-viewer {
-        min-height: 600px;
+        min-height: 0;
     }
 }
 
 @media (max-width: 767px) {
     .pdf-container {
-        min-height: 400px;
         height: calc(100vh - 100px);
+        height: min(calc(100vh - 100px), 600px);
+        max-height: calc(100vh - 100px);
+        min-height: 0;
         margin-bottom: 15px;
     }
 
     .pdf-viewer {
-        min-height: 400px;
+        min-height: 0;
     }
 }
 
@@ -197,11 +202,13 @@
 /* Adjustments for horizontal scrolling on very small screens */
 @media (max-width: 576px) {
     .pdf-container {
-        min-height: 350px;
         height: calc(100vh - 120px);
+        height: min(calc(100vh - 120px), 520px);
+        max-height: calc(100vh - 120px);
+        min-height: 0;
     }
 
     .pdf-viewer {
-        min-height: 350px;
+        min-height: 0;
     }
 }

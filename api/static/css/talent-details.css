@@ -11,7 +11,8 @@
     flex: 1 1 auto;
     display: flex;
     padding: 12px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #talentModal .modal-footer {
@@ -49,6 +50,29 @@
     flex: 1 1 55%;
     padding-left: 12px;
     min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media (max-width: 1200px) {
+    #talentModal .talent-detail-container {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .pdf-column,
+    .details-column {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .pdf-column {
+        padding-right: 0;
+    }
+
+    .details-column {
+        padding-left: 0;
+    }
 }
 
 /* Main container for talent details */
@@ -86,7 +110,7 @@
     box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     height: fit-content;
     width: 100%;
 }
@@ -160,7 +184,7 @@
     padding: 18px;
     position: relative;
     z-index: 2;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Detail rows */
@@ -170,7 +194,7 @@
     padding: 8px 5px;
     border-bottom: 1px solid rgba(0, 245, 255, 0.3);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .cyber-detail:hover {

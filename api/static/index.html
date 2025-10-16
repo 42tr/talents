@@ -197,23 +197,14 @@
                             <div
                                 class="d-flex flex-row flex-nowrap talent-detail-container"
                                 style="
-                                    min-height: 650px;
                                     overflow-x: auto;
-                                    overflow-y: hidden;
                                     position: relative;
+                                    width: 100%;
                                 "
                             >
                                 <!-- Left column: Original file (PDF) -->
-                                <div
-                                    style="
-                                        width: 40%;
-                                        min-width: 300px;
-                                        padding-right: 10px;
-                                        flex-shrink: 0;
-                                    "
-                                    id="pdfViewerContainer"
-                                >
-                                    <div class="pdf-container sticky-top">
+                                <div class="talent-column pdf-column" id="pdfViewerContainer">
+                                    <div class="pdf-container">
                                         <iframe
                                             id="pdfViewer"
                                             class="pdf-viewer"
@@ -237,16 +228,7 @@
                                 </div>
 
                                 <!-- Right column: Talent details -->
-                                <div
-                                    style="
-                                        width: 60%;
-                                        min-width: 300px;
-                                        padding-left: 10px;
-                                        overflow-y: auto;
-                                        flex-shrink: 0;
-                                    "
-                                    id="talentDetails"
-                                >
+                                <div class="talent-column details-column" id="talentDetails">
                                     <!-- 人才详情将通过JavaScript填充 -->
                                 </div>
                             </div>

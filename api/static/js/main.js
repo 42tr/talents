@@ -371,8 +371,8 @@ function showTalentDetails(talent) {
     talentModal: talentModal,
   });
 
-  // Add cyberpunk themed container class to talent details
-  detailsContainer.className = "talent-details-container cyber-theme";
+  // Ensure detail container keeps layout classes and theme styles
+  detailsContainer.classList.add("talent-details-container", "cyber-theme");
 
   modalTitle.textContent = `${talent.name} 的详细信息`;
   modalTitle.style.color = scoreColor;
@@ -411,7 +411,7 @@ function showTalentDetails(talent) {
   const jobPositionHtml = `<span class="job-position-detail">${escapeHtml(talent.jobPosition || "未指定")}</span>`;
 
   detailsContainer.innerHTML = `
-        <div class="cyber-panel mb-4">
+        <div class="cyber-panel">
             <div class="cyber-panel-header">
                 <span class="cyber-panel-title">基本档案信息</span>
                 <div class="cyber-panel-line"></div>

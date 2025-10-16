@@ -12,6 +12,7 @@ var AUTH_URL string
 var TIKA_URL string
 var LLM_URL string
 var LLM_KEY string
+var LLM_MODEL string
 
 func init() {
 	err := godotenv.Load()
@@ -41,5 +42,9 @@ func init() {
 	LLM_KEY = os.Getenv("LLM_KEY")
 	if LLM_KEY == "" {
 		panic("LLM_KEY is not set")
+	}
+	LLM_MODEL = os.Getenv("LLM_MODEL")
+	if LLM_MODEL == "" {
+		panic("LLM_MODEL is not set")
 	}
 }

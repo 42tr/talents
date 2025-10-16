@@ -22,6 +22,7 @@
     flex: 1 1 auto;
     min-height: 0;
     align-items: stretch;
+    gap: 12px;
 }
 
 #pdfViewerContainer,
@@ -29,6 +30,25 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+.talent-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.pdf-column {
+    flex: 0 0 40%;
+    max-width: 45%;
+    padding-right: 12px;
+    min-height: 0;
+}
+
+.details-column {
+    flex: 1 1 55%;
+    padding-left: 12px;
+    min-height: 0;
 }
 
 /* Main container for talent details */

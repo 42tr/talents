@@ -18,7 +18,7 @@ func Chat(query string) (string, error) {
 	resp, err := cli.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
-			Model: "deepseek-chat",
+			Model: config.LLM_MODEL,
 			Messages: []openai.ChatCompletionMessage{
 				{Role: "user", Content: query},
 			},

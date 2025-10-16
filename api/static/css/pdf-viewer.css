@@ -1,20 +1,21 @@
 /* PDF Viewer Styles - Cyberpunk Theme */
 
 .pdf-container {
-    height: calc(100vh - 200px);
-    min-height: 550px;
+    height: calc(100vh - 140px);
+    min-height: 650px;
     /* max-height: 800px; */
     border: 2px solid var(--cyber-blue);
     border-radius: 4px;
     overflow: hidden;
     background-color: var(--cyber-bg-secondary);
-    position: sticky;
-    top: 10px;
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.25);
+    margin-bottom: 0;
     z-index: 10;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .pdf-container::before {
@@ -33,16 +34,15 @@
     min-height: 600px;
     background-color: #1a1a2e;
     border: none;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.2));
     display: block;
+    flex: 1 1 auto;
 }
 
 /* Responsive adjustments */
 @media (max-width: 991px) {
     .pdf-container {
         min-height: 500px;
-        height: calc(100vh - 180px);
+        height: calc(100vh - 120px);
         margin-bottom: 20px;
     }
 
@@ -54,7 +54,7 @@
 @media (max-width: 767px) {
     .pdf-container {
         min-height: 400px;
-        height: calc(100vh - 150px);
+        height: calc(100vh - 100px);
         margin-bottom: 15px;
     }
 
@@ -192,7 +192,6 @@
     position: sticky;
     top: 10px;
     z-index: 10;
-    height: fit-content;
 }
 
 /* Adjustments for horizontal scrolling on very small screens */

@@ -632,8 +632,10 @@ function showTalentDetails(talent) {
       console.error("Error loading PDF");
     };
 
-    // Set PDF viewer src after setting up event handlers
-    pdfViewer.src = `/${talent.resumePath}`;
+    // Set PDF viewer src after setting up event handlers (force page width view)
+    const resumeUrl = `/${talent.resumePath}`;
+    const hashSeparator = resumeUrl.includes("#") ? "&" : "#";
+    pdfViewer.src = `${resumeUrl}${hashSeparator}zoom=page-width`;
 
     // Add class to indicate PDF is loaded
     pdfContainer.classList.add("pdf-loaded");

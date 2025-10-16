@@ -1,16 +1,47 @@
 /* Talent Details Cyberpunk Theme Styles */
 
+/* Modal layout adjustments */
+#talentModal .modal-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#talentModal .modal-body {
+    flex: 1 1 auto;
+    display: flex;
+    padding: 12px;
+    overflow: hidden;
+}
+
+#talentModal .modal-footer {
+    flex-shrink: 0;
+}
+
+#talentModal .talent-detail-container {
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: stretch;
+}
+
+#pdfViewerContainer,
+#talentDetails {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 /* Main container for talent details */
 .talent-details-container {
     padding: 0 10px;
     color: var(--text-primary);
     font-family: "Rajdhani", sans-serif;
-    height: calc(100vh - 200px);
-    min-height: 550px;
-    max-height: 800px;
+    height: 100%;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--cyber-purple) var(--cyber-bg-secondary);
+    flex: 1 1 auto;
+    min-height: 0;
 }
 
 .talent-details-container::-webkit-scrollbar {

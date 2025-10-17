@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/static/css/style.css" />
         <link rel="stylesheet" href="/static/css/pdf-viewer.css" />
         <link rel="stylesheet" href="/static/css/talent-details.css" />
+        <!-- PDF.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
         <style>
             @media (max-width: 767px) {
                 .talent-detail-container {
@@ -205,13 +207,24 @@
                                 <!-- Left column: Original file (PDF) -->
                                 <div class="talent-column pdf-column" id="pdfViewerContainer">
                                     <div class="pdf-container">
-                                        <iframe
-                                            id="pdfViewer"
-                                            class="pdf-viewer"
-                                            src=""
-                                            frameborder="0"
-                                            title="简历预览"
-                                        ></iframe>
+                                        <div id="pdfViewer" class="pdf-viewer">
+                                            <div id="pdfContainer" class="pdf-canvas-container"></div>
+                                            <div id="pdfControls" class="pdf-controls">
+                                                <button id="prevPage" class="pdf-btn">上一页</button>
+                                                <span id="pageInfo" class="page-info">1 / 1</span>
+                                                <button id="nextPage" class="pdf-btn">下一页</button>
+                                                <select id="scaleSelect" class="scale-select">
+                                                    <option value="auto">自适应</option>
+                                                    <option value="page-width">适合宽度</option>
+                                                    <option value="0.5">50%</option>
+                                                    <option value="0.75">75%</option>
+                                                    <option value="1">100%</option>
+                                                    <option value="1.25">125%</option>
+                                                    <option value="1.5">150%</option>
+                                                    <option value="2">200%</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <!-- No PDF overlay -->
                                         <div
                                             id="noPdfOverlay"

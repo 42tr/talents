@@ -1,10 +1,8 @@
 /* PDF Viewer Styles - Cyberpunk Theme */
 
 .pdf-container {
-    height: calc(100vh - 140px);
-    height: min(calc(100vh - 140px), 800px);
+    height: 100%;
     min-height: 0;
-    max-height: calc(100vh - 140px);
     border: 2px solid var(--cyber-blue);
     border-radius: 4px;
     overflow: hidden;
@@ -35,8 +33,118 @@
     min-height: 0;
     background-color: #1a1a2e;
     border: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+}
+
+.pdf-canvas-container {
+    flex: 1;
+    overflow: auto;
+    background: #1a1a2e;
+    scroll-behavior: smooth;
+    will-change: scroll-position;
+}
+
+.pdf-page {
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--cyber-blue);
+    display: block;
+    will-change: transform;
+    transform: translateZ(0);
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-quality;
+    image-rendering: smooth;
+    transition: all 0.3s ease;
+}
+
+.pdf-page.current-page {
+    border-color: var(--cyber-pink);
+    box-shadow: 0 4px 12px rgba(255, 0, 110, 0.4);
+}
+
+.pdf-page-wrapper {
+    position: relative;
+    padding: 5px 0;
+}
+
+.pdf-page-number {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(157, 78, 221, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Orbitron', monospace;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.pdf-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(26, 26, 46, 0.9);
+    border-top: 1px solid var(--cyber-blue);
+    flex-shrink: 0;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+.pdf-btn {
+    background: linear-gradient(135deg, var(--cyber-purple), var(--cyber-blue));
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.pdf-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.pdf-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.page-info {
+    color: var(--cyber-blue);
+    font-size: 12px;
+    font-family: 'Orbitron', monospace;
+    min-width: 60px;
+    text-align: center;
+}
+
+.scale-select {
+    background: rgba(26, 26, 46, 0.9);
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-purple);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.scale-select:focus {
+    outline: none;
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
 }
 
 /* Responsive adjustments */

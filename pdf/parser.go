@@ -59,45 +59,11 @@ func extractByTika(path string) (string, error) {
 
 // ExtractText extracts text content from a PDF file
 func ExtractText(path string) (string, error) {
-	// f, r, err := pdf.Open(path)
-	// if err != nil {
-	// 	return "", err
-	// }
-	// defer f.Close()
-
-	// totalPage := r.NumPage()
-	// text := ""
-	// for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
-	// 	page := r.Page(pageIndex)
-	// 	if page.V.IsNull() {
-	// 		continue
-	// 	}
-	// 	content, err := page.GetPlainText(nil)
-	// 	if err != nil {
-	// 		fmt.Printf("读取第 %d 页失败: %v\n", pageIndex, err)
-	// 		continue
-	// 	}
-	// 	fmt.Printf("第 %d 页内容：\n%s\n", pageIndex, content)
-	// 	text += content
-	// }
-	// // Check if the text contains Chinese characters
-	// containsChinese := false
-	// for _, r := range text {
-	// 	if r >= '\u4e00' && r <= '\u9fff' {
-	// 		containsChinese = true
-	// 		break
-	// 	}
-	// }
-
-	// If no Chinese characters are found, try extracting with Tika
-	// if containsChinese {
-	fmt.Println("No Chinese characters found, trying Tika extraction...")
 	tikaText, err := extractByTika(path)
 	if err != nil {
 		fmt.Printf("Tika extraction failed: %v\n", err)
 		return "", err
 	}
-	// }
 	return tikaText, nil
 }
 
@@ -137,22 +103,30 @@ func GenerateTalentFromPDF(path string) (*db.Talent, error) {
 	}
 	fmt.Println(text)
 
-	query := fmt.Sprintf(PROMPT, time.Now().Format("2006-01-02"), text)
-	resp, err := llm.Chat(query)
-	if err != nil {
-		return nil, err
-	}
-	fmt.Println(resp)
-
 	// Parse the extracted text to create a Talent
 	talent := &db.Talent{}
+	for _ = range 3 {
+		query := fmt.Sprintf(PROMPT, time.Now().Format("2006-01-02"), text)
+		resp, err := llm.Chat(query)
+		if err != nil {
+			continue
+		}
+		fmt.Println(resp)
 
-	resp = strings.ReplaceAll(resp, "```json", "")
-	resp = strings.ReplaceAll(resp, "```", "")
+		start := strings.Index(resp, "{")
+		if start == -1 {
+			continue
+		}
+		end := strings.Index(resp[start:], "}")
+		if end == -1 {
+			continue
+		}
+		resp = resp[start : end+1]
 
-	err = json.Unmarshal([]byte(resp), &talent)
-	if err != nil {
-		return nil, err
+		err = json.Unmarshal([]byte(resp), &talent)
+		if err == nil {
+			break
+		}
 	}
 
 	talent.CalcScore()

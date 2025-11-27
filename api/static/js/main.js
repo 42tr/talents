@@ -14,6 +14,144 @@ let renderedPages = new Map(); // 已渲染的页面缓存
 let visiblePages = new Set(); // 当前可见的页面
 let currentPage = 1; // 当前滚动到的页面
 
+// Auto-save interview record with debouncing
+function setupAutoSaveInterviewRecord(talent) {
+  const textarea = document.getElementById("interviewRecordText");
+  const statusElement = document.getElementById("interviewRecordStatus");
+
+  if (!textarea || !statusElement) return;
+
+  let saveTimeout = null;
+  let isSaving = false;
+  let lastSavedContent = textarea.value;
+  let pendingSave = false;
+
+  // Function to update status display
+  function updateStatus(message, type = "muted") {
+    statusElement.innerHTML = message;
+    statusElement.className = `small mt-1 ${type === "success" ? "text-success" :
+      type === "warning" ? "text-warning" :
+      type === "danger" ? "text-danger" : "text-muted"}`;
+  }
+
+  // Function to save interview record
+  function saveInterviewRecord() {
+    if (isSaving) {
+      pendingSave = true;
+      return;
+    }
+
+    const currentContent = textarea.value;
+
+    // Check if content actually changed
+    if (currentContent === lastSavedContent) {
+      updateStatus('<i class="bi bi-check-circle"></i> 已保存');
+      return;
+    }
+
+    // Validate input length
+    if (currentContent.length > 10000) {
+      updateStatus('<i class="bi bi-exclamation-triangle"></i> 内容过长（超过10000字）', 'danger');
+      return;
+    }
+
+    isSaving = true;
+    pendingSave = false;
+    updateStatus('<i class="bi bi-arrow-repeat spinning"></i> 保存中...', 'warning');
+
+    // Call API to save interview record with timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+    fetch(`/talent/${talent.phone}/interview-record`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ interviewRecord: currentContent }),
+      signal: controller.signal,
+    })
+      .then((response) => {
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+          // Different error handling based on status code
+          if (response.status === 404) {
+            throw new Error("找不到该人才信息");
+          } else if (response.status === 400) {
+            throw new Error("请求数据无效");
+          } else if (response.status === 500) {
+            throw new Error("服务器错误，请稍后再试");
+          } else {
+            throw new Error(`保存失败 (${response.status})`);
+          }
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("自动保存成功:", data);
+
+        // Update local talentsData to reflect the saved interview record
+        if (talentsData && Array.isArray(talentsData)) {
+          const talentIndex = talentsData.findIndex(
+            (t) => t.phone == talent.phone,
+          );
+          if (talentIndex !== -1) {
+            talentsData[talentIndex].interviewRecord = currentContent;
+            console.log("本地数据已更新:", talentsData[talentIndex]);
+          }
+        }
+
+        lastSavedContent = currentContent;
+        updateStatus('<i class="bi bi-check-circle"></i> 已保存', 'success');
+
+        // Check if there's a pending save
+        if (pendingSave) {
+          setTimeout(() => saveInterviewRecord(), 100);
+        }
+      })
+      .catch((error) => {
+        // Handle different error types
+        let errorMsg = "保存失败";
+
+        if (error.name === "AbortError") {
+          errorMsg = "请求超时";
+        } else if (error.message) {
+          errorMsg = error.message;
+        }
+
+        console.error("自动保存面试记录错误:", error);
+        updateStatus(`<i class="bi bi-exclamation-triangle"></i> ${errorMsg}`, 'danger');
+      })
+      .finally(() => {
+        isSaving = false;
+      });
+  }
+
+  // Debounced save function
+  function debouncedSave() {
+    clearTimeout(saveTimeout);
+    updateStatus('<i class="bi bi-clock"></i> 等待保存...', 'muted');
+
+    saveTimeout = setTimeout(() => {
+      saveInterviewRecord();
+    }, 2000); // Wait 2 seconds after user stops typing
+  }
+
+  // Listen for input changes
+  textarea.addEventListener("input", function() {
+    debouncedSave();
+  });
+
+  // Listen for paste events
+  textarea.addEventListener("paste", function() {
+    setTimeout(() => debouncedSave(), 100);
+  });
+
+  // Initial status
+  updateStatus('<i class="bi bi-check-circle"></i> 已保存');
+}
+
 // Initialize the application when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize PDF.js
@@ -554,15 +692,14 @@ function showTalentDetails(talent) {
                  <span class="cyber-panel-title">面试记录</span>
                  <div class="cyber-panel-line"></div>
              </div>
-             <div class="cyber-panel-body">
-                 <div class="interview-record-container cyber-input-container">
-                     <textarea id="interviewRecordText" class="form-control cyber-textarea mb-2 auto-resize" style="min-height: 100px; height: auto;" placeholder="请输入面试记录...">${escapeHtml(talent.interviewRecord || "")}</textarea>
-                     <button id="saveInterviewRecordBtn" class="btn btn-primary cyber-button" data-phone="${talent.phone}">
-                         <span class="btn-text">保存面试记录</span>
-                         <span class="btn-glow"></span>
-                     </button>
-                 </div>
-             </div>
+              <div class="cyber-panel-body">
+                  <div class="interview-record-container cyber-input-container">
+                      <textarea id="interviewRecordText" class="form-control cyber-textarea mb-2 auto-resize" style="min-height: 100px; height: auto;" placeholder="请输入面试记录...">${escapeHtml(talent.interviewRecord || "")}</textarea>
+                      <div id="interviewRecordStatus" class="text-muted small mt-1" style="font-size: 0.8rem;">
+                          <i class="bi bi-check-circle text-success"></i> 已保存
+                      </div>
+                  </div>
+              </div>
          </div>
     `;
 
@@ -666,100 +803,8 @@ function showTalentDetails(talent) {
     talentModal.show();
     console.log("模态框显示成功");
 
-     // Set up interview record save button
-     const saveInterviewRecordBtn = document.getElementById(
-       "saveInterviewRecordBtn",
-     );
-     if (saveInterviewRecordBtn) {
-       saveInterviewRecordBtn.addEventListener("click", function () {
-         const phone = this.getAttribute("data-phone");
-         const interviewRecord = document.getElementById(
-           "interviewRecordText",
-         ).value;
-
-         // Validate input
-         if (interviewRecord.length > 10000) {
-           showAlert("warning", "面试记录内容过长，请保持在10000字以内");
-           return;
-         }
-
-         // Show loading state
-         this.disabled = true;
-         this.innerHTML =
-           '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 保存中...';
-
-         // Call API to save interview record with timeout
-         const controller = new AbortController();
-         const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
-         fetch(`/talent/${phone}/interview-record`, {
-           method: "POST",
-           headers: {
-             "Content-Type": "application/json",
-           },
-           body: JSON.stringify({ interviewRecord: interviewRecord }),
-           signal: controller.signal,
-         })
-           .then((response) => {
-             clearTimeout(timeoutId);
-
-             if (!response.ok) {
-               // Different error handling based on status code
-               if (response.status === 404) {
-                 throw new Error("找不到该人才信息");
-               } else if (response.status === 400) {
-                 throw new Error("请求数据无效");
-               } else if (response.status === 500) {
-                 throw new Error("服务器错误，请稍后再试");
-               } else {
-                 throw new Error(`保存失败 (${response.status})`);
-               }
-             }
-             return response.json();
-           })
-           .then((data) => {
-             console.log("保存成功:", data);
-
-             // Update local talentsData to reflect the saved interview record
-             const interviewRecord = document.getElementById(
-               "interviewRecordText",
-             ).value;
-             if (talentsData && Array.isArray(talentsData)) {
-               const talentIndex = talentsData.findIndex(
-                 (t) => t.phone == phone,
-               );
-               if (talentIndex !== -1) {
-                 talentsData[talentIndex].interviewRecord = interviewRecord;
-                 console.log("本地数据已更新:", talentsData[talentIndex]);
-               }
-             }
-
-             // Show success message
-             showAlert("success", "面试记录已保存");
-
-             // Reset button state
-             this.disabled = false;
-             this.innerHTML = "保存面试记录";
-           })
-           .catch((error) => {
-             // Handle different error types
-             let errorMsg = "保存失败";
-
-             if (error.name === "AbortError") {
-               errorMsg = "请求超时，请检查网络连接";
-             } else if (error.message) {
-               errorMsg = error.message;
-             }
-
-             console.error("保存面试记录错误:", error);
-             showAlert("danger", errorMsg);
-
-             // Reset button state
-             this.disabled = false;
-             this.innerHTML = "保存面试记录";
-           });
-       });
-     }
+     // Set up auto-save for interview record
+     setupAutoSaveInterviewRecord(talent);
 
      // Set up reparse resume button
      const reparseResumeBtn = document.getElementById("reparseResumeBtn");
@@ -1831,6 +1876,15 @@ document.addEventListener("DOMContentLoaded", function () {
       height: 100%;
       background: linear-gradient(90deg, #9d4edd, #ff006e, #00f5ff);
       animation: scan 2s linear infinite;
+    }
+
+    .spinning {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     @keyframes scan {

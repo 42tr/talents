@@ -547,21 +547,7 @@ function showTalentDetails(talent) {
             </div>
         </div>
 
-        <div class="cyber-panel mb-4">
-             <div class="cyber-panel-header">
-                 <span class="cyber-panel-title">简历操作</span>
-                 <div class="cyber-panel-line"></div>
-             </div>
-             <div class="cyber-panel-body">
-                 <div class="d-flex gap-2">
-                     <button id="reparseResumeBtn" class="btn btn-warning cyber-button" data-phone="${talent.phone}">
-                         <i class="bi bi-arrow-repeat me-1"></i>
-                         <span class="btn-text">重新解析简历</span>
-                         <span class="btn-glow"></span>
-                     </button>
-                 </div>
-             </div>
-         </div>
+
 
          <div class="cyber-panel">
              <div class="cyber-panel-header">
@@ -778,6 +764,7 @@ function showTalentDetails(talent) {
      // Set up reparse resume button
      const reparseResumeBtn = document.getElementById("reparseResumeBtn");
      if (reparseResumeBtn) {
+       reparseResumeBtn.setAttribute("data-phone", talent.phone);
        reparseResumeBtn.addEventListener("click", function () {
          const phone = this.getAttribute("data-phone");
 

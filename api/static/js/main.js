@@ -17,8 +17,9 @@ let currentPage = 1; // 当前滚动到的页面
 // Initialize the application when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize PDF.js
-  if (typeof pdfjsLib !== 'undefined') {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  if (typeof pdfjsLib !== "undefined") {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
   }
 
   // Initialize Bootstrap modals
@@ -617,7 +618,7 @@ function showTalentDetails(talent) {
   // Set resume link and PDF viewer
   if (talent.resumePath) {
     const resumeUrl = `/${talent.resumePath}`;
-    
+
     // Check if we need to load a different PDF
     if (currentPdfUrl !== resumeUrl) {
       currentPdfUrl = resumeUrl;
@@ -625,8 +626,10 @@ function showTalentDetails(talent) {
     } else {
       // PDF is already loaded, just show it
       const pdfViewer = document.getElementById("pdfViewer");
+      const pdfIframe = document.getElementById("pdfIframe");
       const noPdfOverlay = document.getElementById("noPdfOverlay");
       pdfViewer.style.display = "flex";
+      pdfIframe.style.display = "block";
       noPdfOverlay.classList.add("d-none");
     }
 
@@ -638,8 +641,10 @@ function showTalentDetails(talent) {
     resetPDFViewer();
     currentPdfUrl = null;
     const pdfViewer = document.getElementById("pdfViewer");
+    const pdfIframe = document.getElementById("pdfIframe");
     const noPdfOverlay = document.getElementById("noPdfOverlay");
     pdfViewer.style.display = "none";
+    pdfIframe.style.display = "none";
     noPdfOverlay.innerHTML = `
       <div class="no-pdf-message">
         <i class="bi bi-file-earmark-x"></i>
@@ -1220,7 +1225,10 @@ function escapeHtml(str) {
 function loadPDF(url) {
   const noPdfOverlay = document.getElementById("noPdfOverlay");
   const pdfViewer = document.getElementById("pdfViewer");
-  
+  const pdfIframe = document.getElementById("pdfIframe");
+  const pdfContainer = document.getElementById("pdfContainer");
+  const pdfControls = document.getElementById("pdfControls");
+
   // 显示加载状态
   noPdfOverlay.innerHTML = `
     <div class="no-pdf-message loading-pdf">
@@ -1230,31 +1238,24 @@ function loadPDF(url) {
   `;
   noPdfOverlay.classList.remove("d-none");
   pdfViewer.style.display = "none";
-  
-  // 加载PDF文档
-  pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-    pdfDoc = pdfDoc_;
-    document.getElementById('pageInfo').textContent = `1 / ${pdfDoc.numPages}`;
-    
-    // 重置状态
-    renderedPages.clear();
-    visiblePages.clear();
-    currentPage = 1;
-    pageNum = 1;
-    
-    // 渲染所有页面
-    renderAllPages();
-    
-    // 设置控件事件
-    setupPDFControls();
-    
-    // 隐藏加载状态，显示PDF查看器
+
+  // 使用iframe加载PDF
+  pdfIframe.src = url;
+  pdfIframe.onload = function () {
+    // 隐藏加载状态，显示PDF iframe
     noPdfOverlay.classList.add("d-none");
     pdfViewer.style.display = "flex";
-    
-    console.log("PDF loaded successfully with", pdfDoc.numPages, "pages");
-  }).catch(function(error) {
-    console.error("Error loading PDF:", error);
+    pdfIframe.style.display = "block";
+
+    // 隐藏旧的canvas容器和控件
+    pdfContainer.style.display = "none";
+    pdfControls.style.display = "none";
+
+    console.log("PDF loaded successfully in iframe");
+  };
+
+  pdfIframe.onerror = function () {
+    console.error("Error loading PDF in iframe");
     noPdfOverlay.innerHTML = `
       <div class="no-pdf-message">
         <i class="bi bi-exclamation-triangle"></i>
@@ -1263,30 +1264,31 @@ function loadPDF(url) {
     `;
     noPdfOverlay.classList.remove("d-none");
     pdfViewer.style.display = "none";
-  });
+    pdfIframe.style.display = "none";
+  };
 }
 
 function renderAllPages() {
-  const container = document.getElementById('pdfContainer');
-  container.innerHTML = '';
-  
+  const container = document.getElementById("pdfContainer");
+  container.innerHTML = "";
+
   // 为每一页创建容器
   for (let pageNumber = 1; pageNumber <= pdfDoc.numPages; pageNumber++) {
-    const pageWrapper = document.createElement('div');
-    pageWrapper.className = 'pdf-page-wrapper';
+    const pageWrapper = document.createElement("div");
+    pageWrapper.className = "pdf-page-wrapper";
     pageWrapper.id = `page-wrapper-${pageNumber}`;
-    
-    const pageNumberLabel = document.createElement('div');
-    pageNumberLabel.className = 'pdf-page-number';
+
+    const pageNumberLabel = document.createElement("div");
+    pageNumberLabel.className = "pdf-page-number";
     pageNumberLabel.textContent = `${pageNumber} / ${pdfDoc.numPages}`;
-    
+
     pageWrapper.appendChild(pageNumberLabel);
     container.appendChild(pageWrapper);
-    
+
     // 渲染页面
     renderPage(pageNumber, pageWrapper);
   }
-  
+
   // 设置滚动监听
   setupScrollListener();
 }
@@ -1295,124 +1297,130 @@ function renderPage(pageNumber, container) {
   if (renderedPages.has(pageNumber)) {
     return; // 已经渲染过
   }
-  
-  pdfDoc.getPage(pageNumber).then(function(page) {
+
+  pdfDoc.getPage(pageNumber).then(function (page) {
     // 创建canvas
-    const canvas = document.createElement('canvas');
-    canvas.className = 'pdf-page';
+    const canvas = document.createElement("canvas");
+    canvas.className = "pdf-page";
     canvas.id = `page-${pageNumber}`;
-    
-    const ctx = canvas.getContext('2d');
-    
+
+    const ctx = canvas.getContext("2d");
+
     // 获取设备像素比以提高清晰度（限制最大值避免过度渲染）
     const devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-    
+
     // 计算缩放和视口
-    const containerWidth = document.getElementById('pdfContainer').clientWidth - 40; // 减去padding
-    let viewport = page.getViewport({scale: 1.0});
-    
+    const containerWidth =
+      document.getElementById("pdfContainer").clientWidth - 40; // 减去padding
+    let viewport = page.getViewport({ scale: 1.0 });
+
     // 自动适应宽度
-    if (document.getElementById('scaleSelect').value === 'page-width' || 
-        document.getElementById('scaleSelect').value === 'auto') {
+    if (
+      document.getElementById("scaleSelect").value === "page-width" ||
+      document.getElementById("scaleSelect").value === "auto"
+    ) {
       scale = containerWidth / viewport.width;
     } else {
-      scale = parseFloat(document.getElementById('scaleSelect').value) || 1.0;
+      scale = parseFloat(document.getElementById("scaleSelect").value) || 1.0;
     }
-    
+
     // 计算最终视口
-    viewport = page.getViewport({scale: scale});
-    
+    viewport = page.getViewport({ scale: scale });
+
     // 设置canvas尺寸（应用设备像素比提高清晰度）
     const canvasWidth = Math.floor(viewport.width * devicePixelRatio);
     const canvasHeight = Math.floor(viewport.height * devicePixelRatio);
-    
+
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
-    
+
     // 设置canvas显示尺寸
-    canvas.style.width = Math.floor(viewport.width) + 'px';
-    canvas.style.height = Math.floor(viewport.height) + 'px';
-    
+    canvas.style.width = Math.floor(viewport.width) + "px";
+    canvas.style.height = Math.floor(viewport.height) + "px";
+
     // 设置高质量渲染上下文
     ctx.imageSmoothingEnabled = true;
     if (ctx.imageSmoothingQuality) {
-      ctx.imageSmoothingQuality = 'high';
+      ctx.imageSmoothingQuality = "high";
     }
-    
+
     // 缩放上下文以匹配设备像素比
     ctx.scale(devicePixelRatio, devicePixelRatio);
-    
+
     // 渲染参数
     const renderContext = {
       canvasContext: ctx,
-      viewport: viewport
+      viewport: viewport,
     };
-    
+
     // 渲染页面
     const renderTask = page.render(renderContext);
-    renderTask.promise.then(function() {
-      container.appendChild(canvas);
-      renderedPages.set(pageNumber, canvas);
-      
-      // 如果是第一页，标记为当前页
-      if (pageNumber === 1) {
-        canvas.classList.add('current-page');
-      }
-      
-      console.log(`Page ${pageNumber} rendered`);
-    }).catch(function(error) {
-      console.error(`Error rendering page ${pageNumber}:`, error);
-    });
+    renderTask.promise
+      .then(function () {
+        container.appendChild(canvas);
+        renderedPages.set(pageNumber, canvas);
+
+        // 如果是第一页，标记为当前页
+        if (pageNumber === 1) {
+          canvas.classList.add("current-page");
+        }
+
+        console.log(`Page ${pageNumber} rendered`);
+      })
+      .catch(function (error) {
+        console.error(`Error rendering page ${pageNumber}:`, error);
+      });
   });
 }
 
 function setupScrollListener() {
-  const container = document.getElementById('pdfContainer');
+  const container = document.getElementById("pdfContainer");
   let ticking = false;
-  
+
   function updateCurrentPage() {
     const containerRect = container.getBoundingClientRect();
     const containerCenter = containerRect.top + containerRect.height / 2;
-    
+
     let closestPage = 1;
     let closestDistance = Infinity;
-    
+
     for (let pageNumber = 1; pageNumber <= pdfDoc.numPages; pageNumber++) {
       const pageElement = document.getElementById(`page-${pageNumber}`);
       if (pageElement) {
         const pageRect = pageElement.getBoundingClientRect();
         const pageCenter = pageRect.top + pageRect.height / 2;
         const distance = Math.abs(pageCenter - containerCenter);
-        
+
         if (distance < closestDistance) {
           closestDistance = distance;
           closestPage = pageNumber;
         }
       }
     }
-    
+
     if (closestPage !== currentPage) {
       // 移除旧页面的高亮
       const oldPage = document.getElementById(`page-${currentPage}`);
       if (oldPage) {
-        oldPage.classList.remove('current-page');
+        oldPage.classList.remove("current-page");
       }
-      
+
       // 添加新页面的高亮
       const newPage = document.getElementById(`page-${closestPage}`);
       if (newPage) {
-        newPage.classList.add('current-page');
+        newPage.classList.add("current-page");
       }
-      
+
       currentPage = closestPage;
-      document.getElementById('pageInfo').textContent = `${currentPage} / ${pdfDoc.numPages}`;
+      document.getElementById("pageInfo").textContent =
+        `${currentPage} / ${pdfDoc.numPages}`;
       updateNavButtons();
     }
-    
+
     ticking = false;
   }
-  
-  container.addEventListener('scroll', function() {
+
+  container.addEventListener("scroll", function () {
     if (!ticking) {
       requestAnimationFrame(updateCurrentPage);
       ticking = true;
@@ -1422,56 +1430,56 @@ function setupScrollListener() {
 
 function setupPDFControls() {
   // 上一页 - 滚动到上一页
-  document.getElementById('prevPage').onclick = function() {
+  document.getElementById("prevPage").onclick = function () {
     if (currentPage <= 1) return;
     scrollToPage(currentPage - 1);
   };
-  
+
   // 下一页 - 滚动到下一页
-  document.getElementById('nextPage').onclick = function() {
+  document.getElementById("nextPage").onclick = function () {
     if (currentPage >= pdfDoc.numPages) return;
     scrollToPage(currentPage + 1);
   };
-  
+
   // 缩放控制 - 重新渲染所有页面
-  document.getElementById('scaleSelect').onchange = function() {
-    const container = document.getElementById('pdfContainer');
+  document.getElementById("scaleSelect").onchange = function () {
+    const container = document.getElementById("pdfContainer");
     const scrollTop = container.scrollTop;
     const scrollRatio = scrollTop / container.scrollHeight;
-    
+
     // 清除缓存并重新渲染
     renderedPages.clear();
     renderAllPages();
-    
+
     // 尝试保持滚动位置
     setTimeout(() => {
       container.scrollTop = container.scrollHeight * scrollRatio;
     }, 100);
   };
-  
+
   // 键盘导航
-  document.addEventListener('keydown', function(e) {
-    if (document.getElementById('talentModal').classList.contains('show')) {
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+  document.addEventListener("keydown", function (e) {
+    if (document.getElementById("talentModal").classList.contains("show")) {
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         if (currentPage > 1) {
           scrollToPage(currentPage - 1);
         }
         e.preventDefault();
-      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         if (currentPage < pdfDoc.numPages) {
           scrollToPage(currentPage + 1);
         }
         e.preventDefault();
-      } else if (e.key === 'Home') {
+      } else if (e.key === "Home") {
         scrollToPage(1);
         e.preventDefault();
-      } else if (e.key === 'End') {
+      } else if (e.key === "End") {
         scrollToPage(pdfDoc.numPages);
         e.preventDefault();
       }
     }
   });
-  
+
   updateNavButtons();
 }
 
@@ -1479,15 +1487,15 @@ function scrollToPage(pageNumber) {
   const pageElement = document.getElementById(`page-${pageNumber}`);
   if (pageElement) {
     pageElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+      behavior: "smooth",
+      block: "start",
     });
   }
 }
 
 function updateNavButtons() {
-  document.getElementById('prevPage').disabled = (currentPage <= 1);
-  document.getElementById('nextPage').disabled = (currentPage >= pdfDoc.numPages);
+  document.getElementById("prevPage").disabled = currentPage <= 1;
+  document.getElementById("nextPage").disabled = currentPage >= pdfDoc.numPages;
 }
 
 function resetPDFViewer() {
@@ -1499,10 +1507,16 @@ function resetPDFViewer() {
   renderedPages.clear();
   visiblePages.clear();
   currentPage = 1;
-  
-  const container = document.getElementById('pdfContainer');
+
+  const container = document.getElementById("pdfContainer");
+  const pdfIframe = document.getElementById("pdfIframe");
+
   if (container) {
-    container.innerHTML = '';
+    container.innerHTML = "";
+  }
+
+  if (pdfIframe) {
+    pdfIframe.src = "";
   }
 }
 

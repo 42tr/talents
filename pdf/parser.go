@@ -86,6 +86,7 @@ const PROMPT = `<optimized_prompt>
 7. 输出时不要返回 markdown 标识
 8. 应聘岗位指简历中明确提到的求职意向岗位，如果没有明确提到，请根据简历内容推断最可能的岗位，应聘岗位只能是：前端、后端、运维、嵌入式、算法
 9. 手机号为 11 位
+10. 输出的 json 中不要带注释
 </instructions>
 
 <output_format>
@@ -117,10 +118,11 @@ func GenerateTalentFromPDF(path string) (*db.Talent, error) {
 		if start == -1 {
 			continue
 		}
-		end := strings.Index(resp[start:], "}")
+		end := strings.Index(resp, "}")
 		if end == -1 {
 			continue
 		}
+		fmt.Println(start, end)
 		resp = resp[start : end+1]
 
 		err = json.Unmarshal([]byte(resp), &talent)

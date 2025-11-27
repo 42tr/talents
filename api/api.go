@@ -26,7 +26,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//go:embed static/index.html static/css/* static/js/*
+//go:embed static/index.html static/css/* static/js/* static/font/*
 var staticFiles embed.FS
 
 func Router() *gin.Engine {

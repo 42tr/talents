@@ -4,15 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TALENT-NET | 赛博人才数据库</title>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        />
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/static/css/style.css" />
         <link rel="stylesheet" href="/static/css/pdf-viewer.css" />
         <link rel="stylesheet" href="/static/css/talent-details.css" />
-        <!-- PDF.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+        <script src="/static/js/pdf.min.js"></script>
         <style>
             @media (max-width: 767px) {
                 .talent-detail-container {
@@ -205,23 +201,72 @@
                                 "
                             >
                                 <!-- Left column: Original file (PDF) -->
-                                <div class="talent-column pdf-column" id="pdfViewerContainer">
+                                <div
+                                    class="talent-column pdf-column"
+                                    id="pdfViewerContainer"
+                                >
                                     <div class="pdf-container">
                                         <div id="pdfViewer" class="pdf-viewer">
-                                            <div id="pdfContainer" class="pdf-canvas-container"></div>
-                                            <div id="pdfControls" class="pdf-controls">
-                                                <button id="prevPage" class="pdf-btn">上一页</button>
-                                                <span id="pageInfo" class="page-info">1 / 1</span>
-                                                <button id="nextPage" class="pdf-btn">下一页</button>
-                                                <select id="scaleSelect" class="scale-select">
-                                                    <option value="auto">自适应</option>
-                                                    <option value="page-width">适合宽度</option>
-                                                    <option value="0.5">50%</option>
-                                                    <option value="0.75">75%</option>
-                                                    <option value="1">100%</option>
-                                                    <option value="1.25">125%</option>
-                                                    <option value="1.5">150%</option>
-                                                    <option value="2">200%</option>
+                                            <iframe
+                                                id="pdfIframe"
+                                                class="pdf-iframe"
+                                                style="display: none"
+                                            ></iframe>
+                                            <div
+                                                id="pdfContainer"
+                                                class="pdf-canvas-container"
+                                                style="display: none"
+                                            ></div>
+                                            <div
+                                                id="pdfControls"
+                                                class="pdf-controls"
+                                                style="display: none"
+                                            >
+                                                <button
+                                                    id="prevPage"
+                                                    class="pdf-btn"
+                                                >
+                                                    上一页
+                                                </button>
+                                                <span
+                                                    id="pageInfo"
+                                                    class="page-info"
+                                                    >1 / 1</span
+                                                >
+                                                <button
+                                                    id="nextPage"
+                                                    class="pdf-btn"
+                                                >
+                                                    下一页
+                                                </button>
+                                                <select
+                                                    id="scaleSelect"
+                                                    class="scale-select"
+                                                >
+                                                    <option value="auto">
+                                                        自适应
+                                                    </option>
+                                                    <option value="page-width">
+                                                        适合宽度
+                                                    </option>
+                                                    <option value="0.5">
+                                                        50%
+                                                    </option>
+                                                    <option value="0.75">
+                                                        75%
+                                                    </option>
+                                                    <option value="1">
+                                                        100%
+                                                    </option>
+                                                    <option value="1.25">
+                                                        125%
+                                                    </option>
+                                                    <option value="1.5">
+                                                        150%
+                                                    </option>
+                                                    <option value="2">
+                                                        200%
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -241,7 +286,10 @@
                                 </div>
 
                                 <!-- Right column: Talent details -->
-                                <div class="talent-column details-column" id="talentDetails">
+                                <div
+                                    class="talent-column details-column"
+                                    id="talentDetails"
+                                >
                                     <!-- 人才详情将通过JavaScript填充 -->
                                 </div>
                             </div>
@@ -350,11 +398,8 @@
             </div>
         </template>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-        />
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="/static/font/bootstrap-icons.css" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"

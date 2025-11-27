@@ -44,6 +44,7 @@ func Router() *gin.Engine {
 	r.POST("/talent/upload-resumes", uploadMultipleResumesAndCreateTalents)
 	r.POST("/talents/recalculate-scores", recalculateScores)
 	r.POST("/talent/:id/interview-record", updateInterviewRecord)
+	r.POST("/talent/:id/reparse-resume", reparseResume)
 	r.Static("/resumes", "./resumes")
 	r.GET("/resume/:phone", getResumeByPhone)
 
@@ -531,5 +532,56 @@ func updateInterviewRecord(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"message": "面试记录已更新",
 		"talent":  talent,
+	})
+}
+
+// reparseResume handles re-parsing a talent's resume
+func reparseResume(c *gin.Context) {
+	id := c.Param("id")
+	fmt.Printf("Re-parsing resume for talent ID: %s\n", id)
+
+	// Get the talent first
+	talent, err := db.GetTalent(id)
+	if err != nil {
+		fmt.Printf("Error retrieving talent: %v\n", err)
+		c.JSON(http.StatusNotFound, gin.H{"error": "人才信息未找到", "details": err.Error()})
+		return
+	}
+
+	if talent.ResumePath == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "该人才没有简历文件"})
+		return
+	}
+
+	// Check if resume file exists
+	if _, err := os.Stat(talent.ResumePath); os.IsNotExist(err) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "简历文件不存在"})
+		return
+	}
+
+	// Re-parse the resume
+	newTalent, err := pdf.GenerateTalentFromPDF(talent.ResumePath)
+	if err != nil {
+		fmt.Printf("Error re-parsing resume: %v\n", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "重新解析简历失败", "details": err.Error()})
+		return
+	}
+
+	// Preserve the original Phone, ResumePath, Hash, and InterviewRecord
+	newTalent.Phone = talent.Phone
+	newTalent.ResumePath = talent.ResumePath
+	newTalent.Hash = talent.Hash
+	newTalent.InterviewRecord = talent.InterviewRecord
+
+	// Update the talent in the database
+	if err := db.UpdateTalent(id, newTalent); err != nil {
+		fmt.Printf("Error updating talent: %v\n", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "更新人才信息失败", "details": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "简历重新解析完成",
+		"talent":  newTalent,
 	})
 }

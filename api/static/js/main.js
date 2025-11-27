@@ -547,21 +547,37 @@ function showTalentDetails(talent) {
             </div>
         </div>
 
-        <div class="cyber-panel">
-            <div class="cyber-panel-header">
-                <span class="cyber-panel-title">面试记录</span>
-                <div class="cyber-panel-line"></div>
-            </div>
-            <div class="cyber-panel-body">
-                <div class="interview-record-container cyber-input-container">
-                    <textarea id="interviewRecordText" class="form-control cyber-textarea mb-2 auto-resize" style="min-height: 100px; height: auto;" placeholder="请输入面试记录...">${escapeHtml(talent.interviewRecord || "")}</textarea>
-                    <button id="saveInterviewRecordBtn" class="btn btn-primary cyber-button" data-phone="${talent.phone}">
-                        <span class="btn-text">保存面试记录</span>
-                        <span class="btn-glow"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <div class="cyber-panel mb-4">
+             <div class="cyber-panel-header">
+                 <span class="cyber-panel-title">简历操作</span>
+                 <div class="cyber-panel-line"></div>
+             </div>
+             <div class="cyber-panel-body">
+                 <div class="d-flex gap-2">
+                     <button id="reparseResumeBtn" class="btn btn-warning cyber-button" data-phone="${talent.phone}">
+                         <i class="bi bi-arrow-repeat me-1"></i>
+                         <span class="btn-text">重新解析简历</span>
+                         <span class="btn-glow"></span>
+                     </button>
+                 </div>
+             </div>
+         </div>
+
+         <div class="cyber-panel">
+             <div class="cyber-panel-header">
+                 <span class="cyber-panel-title">面试记录</span>
+                 <div class="cyber-panel-line"></div>
+             </div>
+             <div class="cyber-panel-body">
+                 <div class="interview-record-container cyber-input-container">
+                     <textarea id="interviewRecordText" class="form-control cyber-textarea mb-2 auto-resize" style="min-height: 100px; height: auto;" placeholder="请输入面试记录...">${escapeHtml(talent.interviewRecord || "")}</textarea>
+                     <button id="saveInterviewRecordBtn" class="btn btn-primary cyber-button" data-phone="${talent.phone}">
+                         <span class="btn-text">保存面试记录</span>
+                         <span class="btn-glow"></span>
+                     </button>
+                 </div>
+             </div>
+         </div>
     `;
 
   // Auto-resize interview record textarea
@@ -664,100 +680,185 @@ function showTalentDetails(talent) {
     talentModal.show();
     console.log("模态框显示成功");
 
-    // Set up interview record save button
-    const saveInterviewRecordBtn = document.getElementById(
-      "saveInterviewRecordBtn",
-    );
-    if (saveInterviewRecordBtn) {
-      saveInterviewRecordBtn.addEventListener("click", function () {
-        const phone = this.getAttribute("data-phone");
-        const interviewRecord = document.getElementById(
-          "interviewRecordText",
-        ).value;
+     // Set up interview record save button
+     const saveInterviewRecordBtn = document.getElementById(
+       "saveInterviewRecordBtn",
+     );
+     if (saveInterviewRecordBtn) {
+       saveInterviewRecordBtn.addEventListener("click", function () {
+         const phone = this.getAttribute("data-phone");
+         const interviewRecord = document.getElementById(
+           "interviewRecordText",
+         ).value;
 
-        // Validate input
-        if (interviewRecord.length > 10000) {
-          showAlert("warning", "面试记录内容过长，请保持在10000字以内");
-          return;
-        }
+         // Validate input
+         if (interviewRecord.length > 10000) {
+           showAlert("warning", "面试记录内容过长，请保持在10000字以内");
+           return;
+         }
 
-        // Show loading state
-        this.disabled = true;
-        this.innerHTML =
-          '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 保存中...';
+         // Show loading state
+         this.disabled = true;
+         this.innerHTML =
+           '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 保存中...';
 
-        // Call API to save interview record with timeout
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+         // Call API to save interview record with timeout
+         const controller = new AbortController();
+         const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
 
-        fetch(`/talent/${phone}/interview-record`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ interviewRecord: interviewRecord }),
-          signal: controller.signal,
-        })
-          .then((response) => {
-            clearTimeout(timeoutId);
+         fetch(`/talent/${phone}/interview-record`, {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({ interviewRecord: interviewRecord }),
+           signal: controller.signal,
+         })
+           .then((response) => {
+             clearTimeout(timeoutId);
 
-            if (!response.ok) {
-              // Different error handling based on status code
-              if (response.status === 404) {
-                throw new Error("找不到该人才信息");
-              } else if (response.status === 400) {
-                throw new Error("请求数据无效");
-              } else if (response.status === 500) {
-                throw new Error("服务器错误，请稍后再试");
-              } else {
-                throw new Error(`保存失败 (${response.status})`);
-              }
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.log("保存成功:", data);
+             if (!response.ok) {
+               // Different error handling based on status code
+               if (response.status === 404) {
+                 throw new Error("找不到该人才信息");
+               } else if (response.status === 400) {
+                 throw new Error("请求数据无效");
+               } else if (response.status === 500) {
+                 throw new Error("服务器错误，请稍后再试");
+               } else {
+                 throw new Error(`保存失败 (${response.status})`);
+               }
+             }
+             return response.json();
+           })
+           .then((data) => {
+             console.log("保存成功:", data);
 
-            // Update local talentsData to reflect the saved interview record
-            const interviewRecord = document.getElementById(
-              "interviewRecordText",
-            ).value;
-            if (talentsData && Array.isArray(talentsData)) {
-              const talentIndex = talentsData.findIndex(
-                (t) => t.phone == phone,
-              );
-              if (talentIndex !== -1) {
-                talentsData[talentIndex].interviewRecord = interviewRecord;
-                console.log("本地数据已更新:", talentsData[talentIndex]);
-              }
-            }
+             // Update local talentsData to reflect the saved interview record
+             const interviewRecord = document.getElementById(
+               "interviewRecordText",
+             ).value;
+             if (talentsData && Array.isArray(talentsData)) {
+               const talentIndex = talentsData.findIndex(
+                 (t) => t.phone == phone,
+               );
+               if (talentIndex !== -1) {
+                 talentsData[talentIndex].interviewRecord = interviewRecord;
+                 console.log("本地数据已更新:", talentsData[talentIndex]);
+               }
+             }
 
-            // Show success message
-            showAlert("success", "面试记录已保存");
+             // Show success message
+             showAlert("success", "面试记录已保存");
 
-            // Reset button state
-            this.disabled = false;
-            this.innerHTML = "保存面试记录";
-          })
-          .catch((error) => {
-            // Handle different error types
-            let errorMsg = "保存失败";
+             // Reset button state
+             this.disabled = false;
+             this.innerHTML = "保存面试记录";
+           })
+           .catch((error) => {
+             // Handle different error types
+             let errorMsg = "保存失败";
 
-            if (error.name === "AbortError") {
-              errorMsg = "请求超时，请检查网络连接";
-            } else if (error.message) {
-              errorMsg = error.message;
-            }
+             if (error.name === "AbortError") {
+               errorMsg = "请求超时，请检查网络连接";
+             } else if (error.message) {
+               errorMsg = error.message;
+             }
 
-            console.error("保存面试记录错误:", error);
-            showAlert("danger", errorMsg);
+             console.error("保存面试记录错误:", error);
+             showAlert("danger", errorMsg);
 
-            // Reset button state
-            this.disabled = false;
-            this.innerHTML = "保存面试记录";
-          });
-      });
-    }
+             // Reset button state
+             this.disabled = false;
+             this.innerHTML = "保存面试记录";
+           });
+       });
+     }
+
+     // Set up reparse resume button
+     const reparseResumeBtn = document.getElementById("reparseResumeBtn");
+     if (reparseResumeBtn) {
+       reparseResumeBtn.addEventListener("click", function () {
+         const phone = this.getAttribute("data-phone");
+
+         // Confirm action
+         if (!confirm("确定要重新解析该人才的简历吗？这将覆盖当前的所有信息。")) {
+           return;
+         }
+
+         // Show loading state
+         this.disabled = true;
+         this.innerHTML =
+           '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 解析中...';
+
+         // Call API to reparse resume with timeout
+         const controller = new AbortController();
+         const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout for parsing
+
+         fetch(`/talent/${phone}/reparse-resume`, {
+           method: "POST",
+           signal: controller.signal,
+         })
+           .then((response) => {
+             clearTimeout(timeoutId);
+
+             if (!response.ok) {
+               // Different error handling based on status code
+               if (response.status === 404) {
+                 throw new Error("找不到该人才信息");
+               } else if (response.status === 400) {
+                 throw new Error("该人才没有简历文件");
+               } else if (response.status === 500) {
+                 throw new Error("服务器错误，请稍后再试");
+               } else {
+                 throw new Error(`解析失败 (${response.status})`);
+               }
+             }
+             return response.json();
+           })
+           .then((data) => {
+             console.log("重新解析成功:", data);
+
+             // Update local talentsData
+             if (talentsData && Array.isArray(talentsData)) {
+               const talentIndex = talentsData.findIndex(
+                 (t) => t.phone == phone,
+               );
+               if (talentIndex !== -1) {
+                 talentsData[talentIndex] = data.talent;
+                 console.log("本地数据已更新:", talentsData[talentIndex]);
+               }
+             }
+
+             // Show success message
+             showAlert("success", "简历重新解析完成");
+
+             // Refresh the talent details modal
+             showTalentDetails(data.talent);
+
+             // Reset button state
+             this.disabled = false;
+             this.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i> 重新解析简历';
+           })
+           .catch((error) => {
+             // Handle different error types
+             let errorMsg = "解析失败";
+
+             if (error.name === "AbortError") {
+               errorMsg = "请求超时，请检查网络连接";
+             } else if (error.message) {
+               errorMsg = error.message;
+             }
+
+             console.error("重新解析简历错误:", error);
+             showAlert("danger", errorMsg);
+
+             // Reset button state
+             this.disabled = false;
+             this.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i> 重新解析简历';
+           });
+       });
+     }
   } catch (error) {
     console.error("显示模态框时出错:", error);
   }

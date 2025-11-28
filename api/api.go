@@ -18,6 +18,7 @@ import (
 
 	"talents/config"
 	"talents/db"
+	"talents/llm"
 	"talents/pdf"
 	"talents/utils"
 	"talents/utils/jwt"
@@ -45,6 +46,7 @@ func Router() *gin.Engine {
 	r.POST("/talents/recalculate-scores", recalculateScores)
 	r.POST("/talent/:id/interview-record", updateInterviewRecord)
 	r.POST("/talent/:id/reparse-resume", reparseResume)
+	r.POST("/talent/:id/generate-interview-questions", generateInterviewQuestions)
 	r.Static("/resumes", "./resumes")
 	r.GET("/resume/:phone", getResumeByPhone)
 
@@ -583,5 +585,70 @@ func reparseResume(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"message": "简历重新解析完成",
 		"talent":  newTalent,
+	})
+}
+
+// generateInterviewQuestions generates interview questions based on resume content
+func generateInterviewQuestions(c *gin.Context) {
+	id := c.Param("id")
+	fmt.Printf("Generating interview questions for talent ID: %s\n", id)
+
+	// Get the talent first
+	talent, err := db.GetTalent(id)
+	if err != nil {
+		fmt.Printf("Error retrieving talent: %v\n", err)
+		c.JSON(http.StatusNotFound, gin.H{"error": "人才信息未找到", "details": err.Error()})
+		return
+	}
+
+	if talent.ResumePath == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "该人才没有简历文件"})
+		return
+	}
+
+	// Check if resume file exists
+	if _, err := os.Stat(talent.ResumePath); os.IsNotExist(err) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "简历文件不存在"})
+		return
+	}
+
+	// Extract text from PDF using Go library
+	resumeText, err := pdf.ExtractText(talent.ResumePath)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "提取简历文本失败", "details": err.Error()})
+		return
+	}
+
+	// Create prompt for generating interview questions
+	prompt := fmt.Sprintf(`根据以下简历内容，为%s岗位生成10个针对性的面试问题。
+
+简历内容：
+%s
+
+要求：
+1. 问题要具体针对简历中提到的技能和工作经验
+2. 包含技术问题、项目经验问题和行为问题
+3. 问题要有深度，能够考察候选人的实际能力
+4. 每个问题后简要说明考察点
+
+请用以下格式输出：
+1. [问题1] - [考察点]
+2. [问题2] - [考察点]
+...
+10. [问题10] - [考察点]`, talent.JobPosition, resumeText)
+
+	fmt.Println(prompt)
+
+	// Generate questions using LLM
+	questions, err := llm.Chat(prompt)
+	if err != nil {
+		fmt.Printf("Error generating interview questions: %v\n", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "生成面试问题失败", "details": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message":   "面试问题生成完成",
+		"questions": questions,
 	})
 }

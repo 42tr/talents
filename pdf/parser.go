@@ -12,6 +12,8 @@ import (
 	"talents/db"
 	"talents/llm"
 	"time"
+
+	"github.com/ledongthuc/pdf"
 )
 
 func extractByTika(path string) (string, error) {
@@ -57,14 +59,44 @@ func extractByTika(path string) (string, error) {
 
 }
 
-// ExtractText extracts text content from a PDF file
-func ExtractText(path string) (string, error) {
-	tikaText, err := extractByTika(path)
+// extractByGoLib extracts text from PDF using Go library
+func extractByGoLib(path string) (string, error) {
+	file, r, err := pdf.Open(path)
 	if err != nil {
-		fmt.Printf("Tika extraction failed: %v\n", err)
 		return "", err
 	}
-	return tikaText, nil
+	defer file.Close()
+
+	var text strings.Builder
+	text.WriteString(path + "\n")
+
+	// Extract text from all pages
+	for i := 1; i <= r.NumPage(); i++ {
+		page := r.Page(i)
+		if page.V.IsNull() {
+			continue
+		}
+
+		pageText, err := page.GetPlainText(nil)
+		if err != nil {
+			continue
+		}
+
+		text.WriteString(pageText)
+		text.WriteString("\n")
+	}
+
+	return text.String(), nil
+}
+
+// ExtractText extracts text content from a PDF file
+func ExtractText(path string) (string, error) {
+	goLibText, err := extractByGoLib(path)
+	if err != nil {
+		fmt.Printf("Go lib extraction failed: %v\n", err)
+		return "", err
+	}
+	return goLibText, nil
 }
 
 const PROMPT = `<optimized_prompt>

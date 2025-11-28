@@ -14,6 +14,79 @@ let renderedPages = new Map(); // 已渲染的页面缓存
 let visiblePages = new Set(); // 当前可见的页面
 let currentPage = 1; // 当前滚动到的页面
 
+// Generate interview questions based on resume
+function generateInterviewQuestions(talent) {
+  const textarea = document.getElementById("interviewRecordText");
+  const generateBtn = document.getElementById("generateQuestionsBtn");
+
+  if (!textarea || !generateBtn) return;
+
+  // Check if textarea has content and ask for confirmation
+  if (textarea.value.trim() !== "") {
+    if (!confirm("面试记录已有内容，生成的问题将覆盖现有内容。是否继续？")) {
+      return;
+    }
+  }
+
+  // Show loading state
+  generateBtn.disabled = true;
+  generateBtn.innerHTML = '<i class="bi bi-robot me-1"></i> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 生成中...';
+
+  // Call API to generate interview questions
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout for LLM
+
+  fetch(`/talent/${talent.phone}/generate-interview-questions`, {
+    method: "POST",
+    signal: controller.signal,
+  })
+    .then((response) => {
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error("找不到该人才信息");
+        } else if (response.status === 400) {
+          throw new Error("该人才没有简历文件");
+        } else if (response.status === 500) {
+          throw new Error("服务器错误，请稍后再试");
+        } else {
+          throw new Error(`生成失败 (${response.status})`);
+        }
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("生成面试问题成功:", data);
+
+      // Set the generated questions in textarea
+      textarea.value = data.questions || "生成失败，请重试";
+
+      // Trigger auto-save
+      textarea.dispatchEvent(new Event('input'));
+
+      // Show success message
+      showAlert("success", "面试问题生成完成");
+    })
+    .catch((error) => {
+      let errorMsg = "生成失败";
+
+      if (error.name === "AbortError") {
+        errorMsg = "请求超时，请检查网络连接";
+      } else if (error.message) {
+        errorMsg = error.message;
+      }
+
+      console.error("生成面试问题错误:", error);
+      showAlert("danger", errorMsg);
+    })
+    .finally(() => {
+      // Reset button state
+      generateBtn.disabled = false;
+      generateBtn.innerHTML = '<i class="bi bi-robot me-1"></i> <span class="btn-text">生成面试问题</span> <span class="btn-glow"></span>';
+    });
+}
+
 // Auto-save interview record with debouncing
 function setupAutoSaveInterviewRecord(talent) {
   const textarea = document.getElementById("interviewRecordText");
@@ -150,6 +223,14 @@ function setupAutoSaveInterviewRecord(talent) {
 
   // Initial status
   updateStatus('<i class="bi bi-check-circle"></i> 已保存');
+
+  // Set up generate questions button
+  const generateQuestionsBtn = document.getElementById("generateQuestionsBtn");
+  if (generateQuestionsBtn) {
+    generateQuestionsBtn.addEventListener("click", function() {
+      generateInterviewQuestions(talent);
+    });
+  }
 }
 
 // Initialize the application when the DOM is loaded
@@ -694,6 +775,14 @@ function showTalentDetails(talent) {
              </div>
               <div class="cyber-panel-body">
                   <div class="interview-record-container cyber-input-container">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                          <label class="form-label mb-0">面试记录</label>
+                          <button id="generateQuestionsBtn" class="btn btn-outline-info btn-sm cyber-button">
+                              <i class="bi bi-robot me-1"></i>
+                              <span class="btn-text">生成面试问题</span>
+                              <span class="btn-glow"></span>
+                          </button>
+                      </div>
                       <textarea id="interviewRecordText" class="form-control cyber-textarea mb-2 auto-resize" style="min-height: 100px; height: auto;" placeholder="请输入面试记录...">${escapeHtml(talent.interviewRecord || "")}</textarea>
                       <div id="interviewRecordStatus" class="text-muted small mt-1" style="font-size: 0.8rem;">
                           <i class="bi bi-check-circle text-success"></i> 已保存
